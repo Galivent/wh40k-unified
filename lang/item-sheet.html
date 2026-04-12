@@ -1,0 +1,48 @@
+<form class="wh40k-sheet wh40k-item" autocomplete="off">
+  <header class="wh40k-header" style="padding:10px 14px;">
+    <img class="wh40k-portrait" src="{{img}}" data-edit="img" style="width:56px;height:56px;"/>
+    <div class="wh40k-header-main">
+      <input class="wh40k-name-input" type="text" name="name" value="{{name}}" placeholder="Item Name"/>
+      <div class="wh40k-header-fields">
+        <div class="wh40k-field-group">
+          <label>Type</label>
+          <span style="font-family:'Cinzel',serif;font-size:0.75rem;color:#c9a84c;">{{item.type}}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div style="padding:12px;display:flex;flex-direction:column;gap:10px;overflow-y:auto;flex:1;">
+    {{#if system.damage}}
+    <div class="wh40k-card">
+      <div class="wh40k-card-title">Weapon Stats</div>
+      <div class="wh40k-skills-grid">
+        <div class="wh40k-field-group"><label>Class</label><select name="system.weaponClass"><option value="pistol">Pistol</option><option value="basic">Basic</option><option value="heavy">Heavy</option><option value="melee">Melee</option><option value="thrown">Thrown</option><option value="exotic">Exotic</option></select></div>
+        <div class="wh40k-field-group"><label>Type</label><input type="text" name="system.weaponType" value="{{system.weaponType}}"/></div>
+        <div class="wh40k-field-group"><label>Range (m)</label><input type="number" name="system.range" value="{{system.range}}"/></div>
+        <div class="wh40k-field-group"><label>Damage</label><input type="text" name="system.damage" value="{{system.damage}}"/></div>
+        <div class="wh40k-field-group"><label>Damage Type</label><select name="system.damageType"><option value="E">Energy (E)</option><option value="I">Impact (I)</option><option value="X">Explosive (X)</option><option value="R">Rending (R)</option></select></div>
+        <div class="wh40k-field-group"><label>Penetration</label><input type="number" name="system.penetration" value="{{system.penetration}}"/></div>
+        <div class="wh40k-field-group"><label>Clip</label><input type="number" name="system.clip.max" value="{{system.clip.max}}"/></div>
+        <div class="wh40k-field-group"><label>Reload</label><input type="text" name="system.reload" value="{{system.reload}}"/></div>
+        <div class="wh40k-field-group"><label>Craftsmanship</label><select name="system.craftsmanship"><option value="poor">Poor</option><option value="common">Common</option><option value="good">Good</option><option value="best">Best</option></select></div>
+      </div>
+    </div>
+    {{/if}}
+    <div class="wh40k-card">
+      <div class="wh40k-card-title">Special Rules & Description</div>
+      <textarea name="system.special" class="wh40k-textarea" placeholder="Qualities, flaws, special rules...">{{system.special}}</textarea>
+    </div>
+    {{#if system.description}}
+    <div class="wh40k-card">
+      <div class="wh40k-card-title">Description</div>
+      <textarea name="system.description" class="wh40k-textarea" placeholder="Item description...">{{system.description}}</textarea>
+    </div>
+    {{/if}}
+    {{#if system.benefit}}
+    <div class="wh40k-card">
+      <div class="wh40k-card-title">Benefit</div>
+      <textarea name="system.benefit" class="wh40k-textarea" placeholder="Talent or trait benefit...">{{system.benefit}}</textarea>
+    </div>
+    {{/if}}
+  </div>
+</form>

@@ -1,0 +1,331 @@
+<form class="wh40k-sheet wh40k-character" autocomplete="off">
+
+  <!-- HEADER -->
+  <header class="wh40k-header">
+    <img class="wh40k-portrait" src="{{img}}" data-edit="img" title="Change portrait"/>
+    <div class="wh40k-header-main">
+      <input class="wh40k-name-input" type="text" name="name" value="{{name}}" placeholder="Character Name"/>
+      <div class="wh40k-header-fields">
+        <div class="wh40k-field-group">
+          <label>Origin</label>
+          <select name="system.origin">
+            <option value="dark-heresy"  {{wh40k_selected system.origin "dark-heresy"}}>Dark Heresy</option>
+            <option value="rogue-trader" {{wh40k_selected system.origin "rogue-trader"}}>Rogue Trader</option>
+            <option value="only-war"     {{wh40k_selected system.origin "only-war"}}>Only War</option>
+          </select>
+        </div>
+        <div class="wh40k-field-group">
+          <label>Career</label>
+          <input type="text" name="system.career" value="{{system.career}}" placeholder="e.g. Arbitrator"/>
+        </div>
+        <div class="wh40k-field-group">
+          <label>Rank</label>
+          <input type="number" name="system.rank" value="{{system.rank}}" min="1" max="8" style="width:50px;"/>
+        </div>
+        <div class="wh40k-field-group">
+          <label>Homeworld</label>
+          <input type="text" name="system.homeworld" value="{{system.homeworld}}" placeholder="e.g. Hive World"/>
+        </div>
+        <div class="wh40k-field-group">
+          <label>Divination</label>
+          <input type="text" name="system.divination" value="{{system.divination}}" placeholder="Your divination..."/>
+        </div>
+      </div>
+    </div>
+    <!-- Wounds / Fate / Corruption quick block -->
+    <div class="wh40k-header-vitals">
+      <div class="wh40k-vital-box">
+        <span class="wh40k-vital-label">Wounds</span>
+        <div class="wh40k-vital-values">
+          <input type="number" name="system.wounds.value" value="{{system.wounds.value}}" min="0"/>
+          <span>/</span>
+          <input type="number" name="system.wounds.max" value="{{system.wounds.max}}" min="0"/>
+        </div>
+        <div class="wh40k-bar-track"><div class="wh40k-bar-fill wh40k-bar-wounds" style="width:{{woundsPct}}%"></div></div>
+      </div>
+      <div class="wh40k-vital-box">
+        <span class="wh40k-vital-label">Fate</span>
+        <div class="wh40k-vital-values">
+          <input type="number" name="system.fate.value" value="{{system.fate.value}}" min="0"/>
+          <span>/</span>
+          <input type="number" name="system.fate.max" value="{{system.fate.max}}" min="0"/>
+        </div>
+        <div class="wh40k-fate-row">
+          <button type="button" data-action="use-fate"     title="Use Fate Point">✦ Use</button>
+          <button type="button" data-action="burn-fate"    title="Burn Fate Point">🔥 Burn</button>
+          <button type="button" data-action="restore-fate" title="Restore Fate">↺</button>
+        </div>
+      </div>
+      <div class="wh40k-vital-box">
+        <span class="wh40k-vital-label">Corruption</span>
+        <input type="number" name="system.corruption" value="{{system.corruption}}" min="0" max="100" style="width:50px;text-align:center;"/>
+      </div>
+      <div class="wh40k-vital-box">
+        <span class="wh40k-vital-label">Insanity</span>
+        <input type="number" name="system.insanity" value="{{system.insanity}}" min="0" max="100" style="width:50px;text-align:center;"/>
+      </div>
+    </div>
+  </header>
+
+  <!-- TABS -->
+  <nav class="wh40k-tabs">
+    <a class="wh40k-tab item" data-tab="core">⚙ Characteristics</a>
+    <a class="wh40k-tab item" data-tab="skills">📋 Skills</a>
+    <a class="wh40k-tab item" data-tab="combat">⚔ Combat</a>
+    <a class="wh40k-tab item" data-tab="talents">✦ Talents</a>
+    <a class="wh40k-tab item" data-tab="gear">🎒 Gear</a>
+    <a class="wh40k-tab item" data-tab="notes">📜 Notes</a>
+  </nav>
+
+  <div class="wh40k-tab-content">
+
+    <!-- ── CHARACTERISTICS TAB ── -->
+    <div data-tab="core" class="wh40k-tab-panel">
+      <div class="wh40k-two-col">
+
+        <!-- Characteristics -->
+        <div class="wh40k-card">
+          <div class="wh40k-card-title">Characteristics</div>
+          <table class="wh40k-char-table">
+            <thead>
+              <tr>
+                <th>Characteristic</th>
+                <th>Base</th>
+                <th>Advance</th>
+                <th>Total</th>
+                <th>Bonus</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each chars as |c key|}}
+              <tr>
+                <td class="wh40k-char-name">{{c.label}}</td>
+                <td><input type="number" name="system.characteristics.{{key}}.base" value="{{c.base}}" min="0" max="100"/></td>
+                <td><input type="number" name="system.characteristics.{{key}}.advance" value="{{c.advance}}" min="0" max="60"/></td>
+                <td class="wh40k-char-total">{{c.total}}</td>
+                <td class="wh40k-char-bonus">{{c.bonus}}</td>
+                <td><button type="button" class="wh40k-char-roll wh40k-roll-btn" data-char="{{key}}" title="Roll {{c.label}}">d100</button></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Movement & Psy -->
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div class="wh40k-card">
+            <div class="wh40k-card-title">Movement</div>
+            <div class="wh40k-movement-grid">
+              <div class="wh40k-move-box">
+                <span>Half</span>
+                <input type="number" name="system.movement.half" value="{{system.movement.half}}"/>
+                <span>m</span>
+              </div>
+              <div class="wh40k-move-box">
+                <span>Full</span>
+                <input type="number" name="system.movement.full" value="{{system.movement.full}}"/>
+                <span>m</span>
+              </div>
+              <div class="wh40k-move-box">
+                <span>Charge</span>
+                <input type="number" name="system.movement.charge" value="{{system.movement.charge}}"/>
+                <span>m</span>
+              </div>
+              <div class="wh40k-move-box">
+                <span>Run</span>
+                <input type="number" name="system.movement.run" value="{{system.movement.run}}"/>
+                <span>m</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="wh40k-card">
+            <div class="wh40k-card-title">Psy Rating</div>
+            <div class="wh40k-psy-row">
+              <div class="wh40k-move-box">
+                <span>Rating</span>
+                <input type="number" name="system.psy.rating" value="{{system.psy.rating}}" min="0" max="10"/>
+              </div>
+              <div class="wh40k-move-box">
+                <span>Focus</span>
+                <input type="number" name="system.psy.focus" value="{{system.psy.focus}}" min="0"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="wh40k-card">
+            <div class="wh40k-card-title">Armour Points</div>
+            <div class="wh40k-armour-grid">
+              <div></div>
+              <div class="wh40k-armour-box">
+                <span>Head</span>
+                <input type="number" name="system.armourPoints.head" value="{{system.armourPoints.head}}" min="0"/>
+              </div>
+              <div></div>
+              <div class="wh40k-armour-box">
+                <span>L.Arm</span>
+                <input type="number" name="system.armourPoints.leftArm" value="{{system.armourPoints.leftArm}}" min="0"/>
+              </div>
+              <div class="wh40k-armour-box">
+                <span>Body</span>
+                <input type="number" name="system.armourPoints.body" value="{{system.armourPoints.body}}" min="0"/>
+              </div>
+              <div class="wh40k-armour-box">
+                <span>R.Arm</span>
+                <input type="number" name="system.armourPoints.rightArm" value="{{system.armourPoints.rightArm}}" min="0"/>
+              </div>
+              <div></div>
+              <div class="wh40k-armour-box">
+                <span>L.Leg</span>
+                <input type="number" name="system.armourPoints.leftLeg" value="{{system.armourPoints.leftLeg}}" min="0"/>
+              </div>
+              <div class="wh40k-armour-box">
+                <span>R.Leg</span>
+                <input type="number" name="system.armourPoints.rightLeg" value="{{system.armourPoints.rightLeg}}" min="0"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="wh40k-card">
+            <div class="wh40k-card-title">Experience</div>
+            <div class="wh40k-exp-grid">
+              <div class="wh40k-move-box">
+                <span>Total</span>
+                <input type="number" name="system.experience.total" value="{{system.experience.total}}" min="0"/>
+              </div>
+              <div class="wh40k-move-box">
+                <span>Spent</span>
+                <input type="number" name="system.experience.spent" value="{{system.experience.spent}}" min="0"/>
+              </div>
+              <div class="wh40k-move-box">
+                <span>Current</span>
+                <input type="number" name="system.experience.current" value="{{system.experience.current}}" min="0"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── SKILLS TAB ── -->
+    <div data-tab="skills" class="wh40k-tab-panel" style="display:none;">
+      <div class="wh40k-card wh40k-card-full">
+        <div class="wh40k-card-title">Skills <button type="button" data-action="add-skill" class="wh40k-add-btn">+ Add Skill</button></div>
+        <div class="wh40k-skills-notice">Skills are tracked as advances on characteristics. Use the Characteristics tab to roll. Custom skills can be added below.</div>
+        <textarea name="system.skills" class="wh40k-textarea" placeholder="List custom skills and their levels here, e.g.:&#10;Awareness (Per) — Trained (+10)&#10;Deceive (Fel) — Expert (+20)&#10;Medicae (Int) — Trained (+10)">{{system.skills}}</textarea>
+      </div>
+    </div>
+
+    <!-- ── COMBAT TAB ── -->
+    <div data-tab="combat" class="wh40k-tab-panel" style="display:none;">
+      <div class="wh40k-card wh40k-card-full">
+        <div class="wh40k-card-title">Weapons <button type="button" data-action="add-item" data-type="weapon" class="wh40k-add-btn">+ Add Weapon</button></div>
+        {{#if weapons.length}}
+        <table class="wh40k-item-table">
+          <thead><tr><th>Name</th><th>Class</th><th>Range</th><th>RoF</th><th>Dmg</th><th>Pen</th><th>Clip</th><th>Qualities</th><th></th></tr></thead>
+          <tbody>
+            {{#each weapons as |w|}}
+            <tr data-item-id="{{w.id}}">
+              <td class="wh40k-item-name">{{w.name}}</td>
+              <td>{{w.system.weaponClass}}</td>
+              <td>{{w.system.range}}m</td>
+              <td>{{w.system.rateOfFire.single}}/{{w.system.rateOfFire.semi}}/{{w.system.rateOfFire.full}}</td>
+              <td>{{w.system.damage}}</td>
+              <td>{{w.system.penetration}}</td>
+              <td>{{w.system.clip.value}}/{{w.system.clip.max}}</td>
+              <td>{{w.system.qualities}}</td>
+              <td class="wh40k-item-controls">
+                <button type="button" class="wh40k-weapon-roll wh40k-roll-btn" title="Attack Roll">🎯</button>
+                <button type="button" class="wh40k-weapon-damage wh40k-roll-btn" title="Damage Roll">⚔</button>
+                <button type="button" class="wh40k-item-delete wh40k-del-btn" title="Delete">✕</button>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        {{else}}
+        <div class="wh40k-empty">No weapons. Click "+ Add Weapon" to add one.</div>
+        {{/if}}
+      </div>
+
+      <div class="wh40k-card wh40k-card-full">
+        <div class="wh40k-card-title">Armour <button type="button" data-action="add-item" data-type="armour" class="wh40k-add-btn">+ Add Armour</button></div>
+        {{#each armour as |a|}}
+        <div class="wh40k-item-row" data-item-id="{{a.id}}">
+          <span class="wh40k-item-name">{{a.name}}</span>
+          <span class="wh40k-item-detail">{{a.system.armourType}}</span>
+          <button type="button" class="wh40k-item-delete wh40k-del-btn">✕</button>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <!-- ── TALENTS TAB ── -->
+    <div data-tab="talents" class="wh40k-tab-panel" style="display:none;">
+      <div class="wh40k-two-col">
+        <div class="wh40k-card">
+          <div class="wh40k-card-title">Talents <button type="button" data-action="add-item" data-type="talent" class="wh40k-add-btn">+ Add</button></div>
+          {{#each talents as |t|}}
+          <div class="wh40k-item-row" data-item-id="{{t.id}}">
+            <div>
+              <span class="wh40k-item-name">{{t.name}}</span>
+              <span class="wh40k-item-tier">Tier {{t.system.tier}}</span>
+            </div>
+            <button type="button" class="wh40k-item-delete wh40k-del-btn">✕</button>
+          </div>
+          {{/each}}
+        </div>
+        <div class="wh40k-card">
+          <div class="wh40k-card-title">Traits <button type="button" data-action="add-item" data-type="trait" class="wh40k-add-btn">+ Add</button></div>
+          {{#each traits as |t|}}
+          <div class="wh40k-item-row" data-item-id="{{t.id}}">
+            <span class="wh40k-item-name">{{t.name}}</span>
+            <button type="button" class="wh40k-item-delete wh40k-del-btn">✕</button>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="wh40k-card wh40k-card-full">
+        <div class="wh40k-card-title">Psychic Powers <button type="button" data-action="add-item" data-type="psychicpower" class="wh40k-add-btn">+ Add</button></div>
+        {{#each powers as |p|}}
+        <div class="wh40k-item-row" data-item-id="{{p.id}}">
+          <span class="wh40k-item-name">{{p.name}}</span>
+          <span class="wh40k-item-detail">{{p.system.discipline}} — Threshold {{p.system.threshold}}</span>
+          <button type="button" class="wh40k-item-delete wh40k-del-btn">✕</button>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <!-- ── GEAR TAB ── -->
+    <div data-tab="gear" class="wh40k-tab-panel" style="display:none;">
+      <div class="wh40k-card wh40k-card-full">
+        <div class="wh40k-card-title">Gear & Equipment <button type="button" data-action="add-item" data-type="gear" class="wh40k-add-btn">+ Add Gear</button></div>
+        {{#each gear as |g|}}
+        <div class="wh40k-item-row" data-item-id="{{g.id}}">
+          <span class="wh40k-item-name">{{g.name}}</span>
+          <span class="wh40k-item-detail">Qty: {{g.system.quantity}}</span>
+          <button type="button" class="wh40k-item-delete wh40k-del-btn">✕</button>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <!-- ── NOTES TAB ── -->
+    <div data-tab="notes" class="wh40k-tab-panel" style="display:none;">
+      <div class="wh40k-two-col">
+        <div class="wh40k-card">
+          <div class="wh40k-card-title">Background</div>
+          <textarea name="system.background" class="wh40k-textarea wh40k-textarea-tall" placeholder="Character background, personality, appearance...">{{system.background}}</textarea>
+        </div>
+        <div class="wh40k-card">
+          <div class="wh40k-card-title">Notes</div>
+          <textarea name="system.notes" class="wh40k-textarea wh40k-textarea-tall" placeholder="Session notes, contacts, mission info...">{{system.notes}}</textarea>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</form>

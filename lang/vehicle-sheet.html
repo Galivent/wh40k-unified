@@ -1,0 +1,45 @@
+<form class="wh40k-sheet wh40k-vehicle" autocomplete="off">
+  <header class="wh40k-header">
+    <img class="wh40k-portrait" src="{{img}}" data-edit="img"/>
+    <div class="wh40k-header-main">
+      <input class="wh40k-name-input" type="text" name="name" value="{{name}}" placeholder="Vehicle Name"/>
+    </div>
+  </header>
+  <nav class="wh40k-tabs">
+    <a class="wh40k-tab item" data-tab="profile">Profile</a>
+    <a class="wh40k-tab item" data-tab="weapons">Weapons</a>
+    <a class="wh40k-tab item" data-tab="notes">Notes</a>
+  </nav>
+  <div class="wh40k-tab-content">
+    <div data-tab="profile" class="wh40k-tab-panel">
+      <div class="wh40k-card wh40k-card-full">
+        <div class="wh40k-card-title">Vehicle — Full sheet coming next iteration</div>
+        <p style="font-family:'Crimson Text',serif;color:#d4c49a;padding:8px;">Data is stored. Full fields coming soon.</p>
+        {{#if system.hull}}
+        <div class="wh40k-stat-block">
+          <div class="wh40k-stat-header"><span>Hull Integrity</span>
+            <div><input type="number" name="system.hull.value" value="{{system.hull.value}}" style="width:45px;"/> / <input type="number" name="system.hull.max" value="{{system.hull.max}}" style="width:45px;"/></div>
+          </div>
+          <div class="wh40k-bar-track"><div class="wh40k-bar-fill wh40k-bar-wounds" style="width:{{hullPct}}%"></div></div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+    <div data-tab="weapons" class="wh40k-tab-panel" style="display:none;">
+      <div class="wh40k-card wh40k-card-full">
+        <div class="wh40k-card-title">Weapons <button type="button" data-action="add-item" data-type="weapon" class="wh40k-add-btn">+ Add</button></div>
+        {{#each weapons as |w|}}
+        <div class="wh40k-item-row" data-item-id="{{w.id}}">
+          <span class="wh40k-item-name">{{w.name}}</span>
+          <button type="button" class="wh40k-item-delete wh40k-del-btn">x</button>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    <div data-tab="notes" class="wh40k-tab-panel" style="display:none;">
+      <div class="wh40k-card wh40k-card-full">
+        <textarea name="system.history" class="wh40k-textarea wh40k-textarea-tall" placeholder="History and notes...">{{system.history}}</textarea>
+      </div>
+    </div>
+  </div>
+</form>

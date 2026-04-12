@@ -1,0 +1,82 @@
+<form class="wh40k-sheet wh40k-npc" autocomplete="off">
+  <header class="wh40k-header">
+    <img class="wh40k-portrait" src="{{img}}" data-edit="img" title="Change portrait"/>
+    <div class="wh40k-header-main">
+      <input class="wh40k-name-input" type="text" name="name" value="{{name}}" placeholder="NPC Name"/>
+      <div class="wh40k-header-fields">
+        <div class="wh40k-field-group">
+          <label>Type</label>
+          <input type="text" name="system.npcType" value="{{system.npcType}}" placeholder="e.g. Heretic, Guardsman"/>
+        </div>
+        <div class="wh40k-field-group">
+          <label>Threat</label>
+          <select name="system.threatLevel">
+            <option value="minion"    {{wh40k_selected system.threatLevel "minion"}}>Minion</option>
+            <option value="standard"  {{wh40k_selected system.threatLevel "standard"}}>Standard</option>
+            <option value="elite"     {{wh40k_selected system.threatLevel "elite"}}>Elite</option>
+            <option value="boss"      {{wh40k_selected system.threatLevel "boss"}}>Boss</option>
+          </select>
+        </div>
+        <div class="wh40k-field-group">
+          <label>Wounds</label>
+          <div style="display:flex;align-items:center;gap:4px;">
+            <input type="number" name="system.wounds.value" value="{{system.wounds.value}}" min="0" style="width:45px;"/>
+            <span>/</span>
+            <input type="number" name="system.wounds.max" value="{{system.wounds.max}}" min="0" style="width:45px;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav class="wh40k-tabs">
+    <a class="wh40k-tab item" data-tab="core">⚙ Stats</a>
+    <a class="wh40k-tab item" data-tab="combat">⚔ Combat</a>
+    <a class="wh40k-tab item" data-tab="notes">📜 Notes</a>
+  </nav>
+  <div class="wh40k-tab-content">
+    <div data-tab="core" class="wh40k-tab-panel">
+      <div class="wh40k-card wh40k-card-full">
+        <div class="wh40k-card-title">Characteristics</div>
+        <table class="wh40k-char-table">
+          <thead><tr><th>Characteristic</th><th>Base</th><th>Advance</th><th>Total</th><th>Bonus</th><th></th></tr></thead>
+          <tbody>
+            {{#each chars as |c key|}}
+            <tr>
+              <td class="wh40k-char-name">{{c.label}}</td>
+              <td><input type="number" name="system.characteristics.{{key}}.base" value="{{c.base}}" min="0" max="100"/></td>
+              <td><input type="number" name="system.characteristics.{{key}}.advance" value="{{c.advance}}" min="0"/></td>
+              <td class="wh40k-char-total">{{c.total}}</td>
+              <td class="wh40k-char-bonus">{{c.bonus}}</td>
+              <td><button type="button" class="wh40k-char-roll wh40k-roll-btn" data-char="{{key}}">d100</button></td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+      <div class="wh40k-card wh40k-card-full">
+        <div class="wh40k-card-title">Traits</div>
+        <textarea name="system.traits" class="wh40k-textarea" placeholder="List NPC traits here...">{{system.traits}}</textarea>
+      </div>
+    </div>
+    <div data-tab="combat" class="wh40k-tab-panel" style="display:none;">
+      <div class="wh40k-card wh40k-card-full">
+        <div class="wh40k-card-title">Weapons <button type="button" data-action="add-item" data-type="weapon" class="wh40k-add-btn">+ Add</button></div>
+        {{#each weapons as |w|}}
+        <div class="wh40k-item-row" data-item-id="{{w.id}}">
+          <span class="wh40k-item-name">{{w.name}}</span>
+          <span class="wh40k-item-detail">{{w.system.damage}} Pen {{w.system.penetration}}</span>
+          <button type="button" class="wh40k-weapon-roll wh40k-roll-btn">🎯</button>
+          <button type="button" class="wh40k-weapon-damage wh40k-roll-btn">⚔</button>
+          <button type="button" class="wh40k-item-delete wh40k-del-btn">✕</button>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    <div data-tab="notes" class="wh40k-tab-panel" style="display:none;">
+      <div class="wh40k-card wh40k-card-full">
+        <div class="wh40k-card-title">Notes</div>
+        <textarea name="system.notes" class="wh40k-textarea wh40k-textarea-tall" placeholder="NPC description, tactics, roleplaying notes...">{{system.notes}}</textarea>
+      </div>
+    </div>
+  </div>
+</form>

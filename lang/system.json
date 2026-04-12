@@ -1,0 +1,37 @@
+{
+  "id": "wh40k-unified",
+  "title": "Warhammer 40,000 Unified — Dark Heresy, Rogue Trader, Only War",
+  "description": "A unified game system for all WH40K TTRPG lines. Supports Dark Heresy 2e, Rogue Trader, and Only War characters, vehicles, void ships, dogfighting, and Imperial Knights.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "13"
+  },
+  "authors": [{ "name": "Your Name Here" }],
+  "esmodules": ["scripts/wh40k.js"],
+  "styles": ["styles/wh40k.css"],
+  "languages": [{ "lang": "en", "name": "English", "path": "lang/en.json" }],
+  "documentTypes": {
+    "Actor": {
+      "character": { "label": "Character" },
+      "npc":       { "label": "NPC" },
+      "voidship":  { "label": "Void Ship" },
+      "vehicle":   { "label": "Vehicle" },
+      "knight":    { "label": "Imperial Knight" },
+      "fighter":   { "label": "Fighter / Bomber" }
+    },
+    "Item": {
+      "weapon":    { "label": "Weapon" },
+      "armour":    { "label": "Armour" },
+      "gear":      { "label": "Gear" },
+      "talent":    { "label": "Talent" },
+      "trait":     { "label": "Trait" },
+      "psychicpower": { "label": "Psychic Power" },
+      "shipcomponent": { "label": "Ship Component" },
+      "vehiclecomponent": { "label": "Vehicle Component" }
+    }
+  },
+  "url": "https://github.com/YOURUSERNAME/wh40k-unified",
+  "manifest": "https://raw.githubusercontent.com/YOURUSERNAME/wh40k-unified/main/system.json",
+  "download": "https://github.com/YOURUSERNAME/wh40k-unified/archive/refs/heads/main.zip"
+}
