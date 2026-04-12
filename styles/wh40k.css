@@ -546,3 +546,178 @@
 .wh40k-failure { color: #cc4444; font-weight: 600; }
 .wh40k-critical { color: #ffcc00; font-weight: 700; }
 .wh40k-fumble  { color: #ff4444; font-weight: 700; }
+
+/* ═══════════════════════════════════════════════════════
+   VOID SHIP SHEET SPECIFIC STYLES
+════════════════════════════════════════════════════════ */
+
+.wh40k-bar-hull   { background: linear-gradient(90deg, #1a5a1a, #44aa44); }
+.wh40k-bar-crew   { background: linear-gradient(90deg, #6a3a1a, #cc8844); }
+.wh40k-bar-morale { background: linear-gradient(90deg, #5a1a5a, #aa44aa); }
+
+/* Profile stat cells */
+.vs-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.vs-stat-cell {
+  background: rgba(201,168,76,0.04);
+  border: 1px solid rgba(201,168,76,0.1);
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vs-stat-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  color: var(--wh-text-dim);
+  text-transform: uppercase;
+}
+
+.vs-stat-cell input {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.1rem;
+  color: var(--wh-gold);
+  background: transparent;
+  border: none;
+  width: 70px;
+  padding: 0;
+}
+.vs-stat-cell input:focus { outline: none; }
+
+.vs-stat-unit {
+  font-size: 0.58rem;
+  color: var(--wh-text-dim);
+  font-family: 'Cinzel', serif;
+}
+
+/* Weapon table status */
+.vs-weapon-row.vs-status-damaged td { background: rgba(200,136,0,0.07); }
+.vs-weapon-row.vs-status-destroyed td { background: rgba(139,26,26,0.1); opacity: 0.55; }
+
+.vs-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+.vs-dot-ok        { background: #44aa44; box-shadow: 0 0 4px #44aa44; }
+.vs-dot-damaged   { background: #cc8800; box-shadow: 0 0 4px #cc8800; }
+.vs-dot-destroyed { background: #cc2222; box-shadow: 0 0 4px #cc2222; }
+
+/* Component list */
+.vs-component-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.vs-comp-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 5px;
+  border: 1px solid transparent;
+  transition: all 0.12s;
+}
+.vs-comp-row:hover { border-color: rgba(201,168,76,0.15); background: rgba(201,168,76,0.02); }
+
+.vs-comp-name {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  color: var(--wh-text);
+  font-family: 'Crimson Text', serif;
+  font-size: 0.85rem;
+  padding: 1px 3px;
+  min-width: 0;
+}
+.vs-comp-bonus {
+  width: 110px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+  color: var(--wh-gold-dim);
+  font-family: 'Crimson Text', serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  padding: 1px 3px;
+}
+.vs-comp-status-sel {
+  background: rgba(201,168,76,0.05);
+  border: 1px solid var(--wh-border);
+  color: var(--wh-text-dim);
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  padding: 1px 3px;
+  width: 80px;
+}
+
+/* Combat action buttons */
+.vs-action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.vs-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  padding: 7px 9px;
+  border: 1px solid var(--wh-border);
+  background: rgba(201,168,76,0.03);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+}
+
+.vs-action-btn:hover { background: rgba(201,168,76,0.09); border-color: var(--wh-gold-dim); }
+
+.vs-action-primary { border-color: rgba(201,168,76,0.2); }
+.vs-action-danger  { border-color: rgba(139,26,26,0.4); }
+.vs-action-danger:hover { background: rgba(139,26,26,0.12); border-color: var(--wh-crimson-bright); }
+.vs-action-neutral { border-color: var(--wh-border); }
+
+.vs-action-icon { font-size: 1rem; }
+.vs-action-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  color: var(--wh-text);
+  text-transform: uppercase;
+}
+.vs-action-desc {
+  font-family: 'Crimson Text', serif;
+  font-size: 0.72rem;
+  color: var(--wh-text-dim);
+  font-style: italic;
+}
+
+/* Status checkboxes */
+.vs-status-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border: 1px solid var(--wh-border);
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  color: var(--wh-text-dim);
+  letter-spacing: 0.06em;
+  transition: all 0.12s;
+}
+.vs-status-check:hover { border-color: var(--wh-gold-dim); color: var(--wh-text); }
+.vs-status-check input[type="checkbox"] { accent-color: var(--wh-gold); }
