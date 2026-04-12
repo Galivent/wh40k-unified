@@ -337,12 +337,14 @@ class WH40KNPCSheet extends WH40KBaseSheet {
 
 // ── VOID SHIP SHEET ─────────────────────────────────────────────
 
+// ── VOID SHIP SHEET ─────────────────────────────────────────────
+
 class WH40KVoidShipSheet extends WH40KBaseSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["wh40k", "sheet", "voidship"],
       template: "systems/wh40k-unified/templates/voidship-sheet.html",
-      width: 840, height: 700,
+      width: 860, height: 720,
       tabs: [{ navSelector: ".wh40k-tabs", contentSelector: ".wh40k-tab-content", initial: "profile" }],
       resizable: true
     });
@@ -351,59 +353,170 @@ class WH40KVoidShipSheet extends WH40KBaseSheet {
   getData() {
     const data = super.getData();
     const sys  = data.system;
-    data.hullPct    = this._pct(sys.hull?.value,    sys.hull?.max);
-    data.shieldPct  = this._pct(sys.shields?.value, sys.shields?.max);
-    data.crewPct    = this._pct(sys.crew?.value,    sys.crew?.max);
-    data.moralePct  = this._pct(sys.morale?.value,  sys.morale?.max);
+    data.hullPct   = this._pct(sys.hull?.value,    sys.hull?.max);
+    data.shieldPct = this._pct(sys.shields?.value, sys.shields?.max);
+    data.crewPct   = this._pct(sys.crew?.value,    sys.crew?.max);
+    data.moralePct = this._pct(sys.morale?.value,  sys.morale?.max);
     return data;
   }
 
   activateListeners(html) {
     super.activateListeners(html);
     if (!this.isEditable) return;
-    html.find("[data-action='lock-on']").click(()   => this._lockOn());
-    html.find("[data-action='evasive']").click(()   => this._evasive());
-    html.find("[data-action='new-course']").click(()=> this._newCourse());
-    html.find("[data-action='brace']").click(()     => this._brace());
-    html.find("[data-action='repair']").click(()    => this._repair());
-    html.find("[data-action='ram']").click(()       => this._ram());
-    html.find("[data-action='fire-all']").click(()  => this._fireAll());
+
+    // Skill rolls on Profile tab
+    html.find(".vs-skill-roll").click(ev => {
+      const skill = ev.currentTarget.dataset.skill;
+      const label = ev.currentTarget.dataset.label;
+      const val   = this.actor.system.skills?.[skill] ?? 40;
+      WH40KRoll.characteristic(this.actor, label, val);
+    });
+
+    // Fire individual weapon component
+    html.find(".vs-fire-weapon").click(ev => {
+      const row  = ev.currentTarget.closest("[data-item-id]");
+      const item = this.actor.items.get(row?.dataset.itemId);
+      if (!item) return;
+      const locked = this.actor.getFlag("wh40k-unified", "lockedOn");
+      const bs     = (this.actor.system.skills?.ballisticSkill ?? 40) + (locked ? 20 : 0);
+      if (locked) this.actor.unsetFlag("wh40k-unified", "lockedOn");
+      WH40KRoll.characteristic(this.actor, `⚔ ${item.name}${locked ? " (+20 Lock On)" : ""}`, bs);
+    });
+
+    // Combat action buttons
+    html.find("[data-action='lock-on']").click(()        => this._lockOn());
+    html.find("[data-action='evasive']").click(()        => this._evasive());
+    html.find("[data-action='new-course']").click(()     => this._newCourse());
+    html.find("[data-action='brace']").click(()          => this._brace());
+    html.find("[data-action='repair']").click(()         => this._repair());
+    html.find("[data-action='ram']").click(()            => this._ram());
+    html.find("[data-action='fire-all']").click(()       => this._fireAll());
+    html.find("[data-action='silent-running']").click(()  => this._silentRunning());
+    html.find("[data-action='torpedo-salvo']").click(()  => this._torpedoSalvo());
+    html.find("[data-action='withdraw']").click(()       => this._withdraw());
+
+    // Component add/delete
+    html.find("[data-action='add-essential']").click(()    => this._addComponent("essentialComponents"));
+    html.find("[data-action='add-supplemental']").click(() => this._addComponent("supplementalComponents"));
+    html.find(".vs-del-comp").click(ev => {
+      const row  = ev.currentTarget.closest(".vs-comp-row");
+      const key  = row?.dataset.compKey;
+      const type = row?.dataset.compType;
+      if (key && type) this._deleteComponent(type, key);
+    });
+
+    // Live status dot update
+    html.find(".vs-comp-status-sel").change(ev => {
+      const dot = ev.currentTarget.closest(".vs-comp-row")?.querySelector(".vs-status-dot");
+      if (dot) dot.className = `vs-status-dot vs-dot-${ev.currentTarget.value}`;
+    });
   }
+
+  // ── Combat Actions ───────────────────────────────────────────
 
   async _lockOn() {
     const sk = this.actor.system.skills?.ballisticSkill ?? 40;
-    await WH40KRoll.characteristic(this.actor, "🎯 Lock On", sk);
+    const res = await WH40KRoll.characteristic(this.actor, "🎯 Lock On", sk);
+    if (res.success) {
+      await this.actor.setFlag("wh40k-unified", "lockedOn", true);
+      ui.notifications.info(`${this.actor.name} has locked on! Next attack gains +20 BS.`);
+    }
   }
+
   async _evasive() {
     const sk = (this.actor.system.skills?.pilot ?? 40) + (this.actor.system.manoeuvrability ?? 0);
-    await WH40KRoll.characteristic(this.actor, "💨 Evasive Manoeuvres", sk);
+    const res = await WH40KRoll.characteristic(this.actor, "💨 Evasive Manoeuvres", sk);
+    if (res.success) await this.actor.update({ "system.statusEvasive": true });
   }
+
   async _newCourse() {
-    const sk = (this.actor.system.skills?.pilot ?? 40) + (this.actor.system.manoeuvrability ?? 0);
-    await WH40KRoll.characteristic(this.actor, "🧭 Come to New Course", sk);
+    const sk  = (this.actor.system.skills?.pilot ?? 40) + (this.actor.system.manoeuvrability ?? 0);
+    const res = await WH40KRoll.characteristic(this.actor, "🧭 Come to New Course", sk);
+    const deg = res.success ? "up to 90°" : "up to 45°";
+    await this._chatMsg("🧭 New Course", `Ship may turn ${deg} this turn.`);
   }
+
   async _brace() {
-    await WH40KRoll.characteristic(this.actor, "🛡 Brace for Impact", this.actor.system.skills?.command ?? 40);
+    const res = await WH40KRoll.characteristic(this.actor, "🛡 Brace for Impact", this.actor.system.skills?.command ?? 40);
+    if (res.success) await this.actor.update({ "system.statusBraced": true });
   }
+
   async _repair() {
     const sk  = this.actor.system.skills?.techUse ?? 40;
     const res = await WH40KRoll.characteristic(this.actor, "🔧 Damage Control", sk);
     if (res.success) {
-      const rep = Math.floor(Math.random() * 3) + 1;
+      const rep = res.degrees + Math.floor(Math.random() * 3);
       const cur = this.actor.system.hull?.value ?? 0;
       const max = this.actor.system.hull?.max   ?? 0;
       await this.actor.update({ "system.hull.value": Math.min(cur + rep, max) });
+      await this._chatMsg("🔧 Repairs Complete", `${rep} Hull Integrity restored. Now at ${Math.min(cur + rep, max)}/${max}.`);
     }
   }
+
   async _ram() {
-    await WH40KRoll.characteristic(this.actor, "⚡ RAM", this.actor.system.skills?.pilot ?? 40);
-  }
-  async _fireAll() {
-    const comps = this.actor.items.filter(i => i.type === "shipcomponent" && i.system.componentType === "weapon");
-    if (!comps.length) { ui.notifications.warn("No weapon components found!"); return; }
-    for (const c of comps) {
-      await WH40KRoll.characteristic(this.actor, `⚔ ${c.name}`, this.actor.system.skills?.ballisticSkill ?? 40);
+    const sk  = (this.actor.system.skills?.pilot ?? 40) + (this.actor.system.manoeuvrability ?? 0);
+    const res = await WH40KRoll.characteristic(this.actor, "⚡ RAM", sk);
+    if (res.success) {
+      const dmg = await new Roll("1d10+" + Math.floor((this.actor.system.hull?.max ?? 40) / 10)).evaluate();
+      await this._chatMsg("⚡ RAMMING SPEED!", `Target suffers <b style="color:#cc2222">${dmg.total} Hull damage</b>. This vessel takes <b style="color:#cc2222">${Math.floor(dmg.total / 2)}</b>.`);
     }
+  }
+
+  async _fireAll() {
+    const weapons = this.actor.items.filter(i => i.type === "shipcomponent");
+    if (!weapons.length) { ui.notifications.warn("No ship components configured as weapons!"); return; }
+    const locked = this.actor.getFlag("wh40k-unified", "lockedOn");
+    const bs     = (this.actor.system.skills?.ballisticSkill ?? 40) + (locked ? 20 : 0);
+    if (locked) await this.actor.unsetFlag("wh40k-unified", "lockedOn");
+    for (const w of weapons) {
+      await WH40KRoll.characteristic(this.actor, `⚔ ${w.name}${locked ? " (+20)" : ""}`, bs);
+    }
+  }
+
+  async _silentRunning() {
+    const res = await WH40KRoll.characteristic(this.actor, "🔕 Silent Running", this.actor.system.skills?.techUse ?? 40);
+    if (res.success) {
+      await this.actor.update({ "system.statusSilent": true });
+      await this._chatMsg("🔕 Silent Running", "Detection rating reduced by 30. All active augurs shut down.");
+    }
+  }
+
+  async _torpedoSalvo() {
+    const torps = this.actor.system.torpedoes;
+    if (!torps || torps.value <= 0) { ui.notifications.warn("No torpedoes remaining!"); return; }
+    const res = await WH40KRoll.characteristic(this.actor, "🚀 Torpedo Salvo", this.actor.system.skills?.ballisticSkill ?? 40);
+    if (res.success) {
+      await this.actor.update({ "system.torpedoes.value": torps.value - 1 });
+      const dmg = await new Roll("2d10+4").evaluate();
+      await this._chatMsg("🚀 Torpedo Impact!", `Torpedo strikes! <b style="color:#cc2222">${dmg.total} damage</b> ignoring shields. ${torps.value - 1} torpedoes remaining.`);
+    } else {
+      await this.actor.update({ "system.torpedoes.value": torps.value - 1 });
+      await this._chatMsg("🚀 Torpedo Salvo", `Torpedo missed. ${torps.value - 1} remaining.`);
+    }
+  }
+
+  async _withdraw() {
+    const sk  = (this.actor.system.skills?.pilot ?? 40) + (this.actor.system.manoeuvrability ?? 0);
+    const res = await WH40KRoll.characteristic(this.actor, "🏳 Withdraw", sk);
+    if (res.success) {
+      await this._chatMsg("🏳 Withdrawal", "Successfully disengaged from combat.");
+    } else {
+      await this._chatMsg("🏳 Withdrawal Failed", "Could not disengage — enemy maintains firing solutions.");
+    }
+  }
+
+  // ── Component Helpers ────────────────────────────────────────
+
+  async _addComponent(field) {
+    const comps = foundry.utils.deepClone(this.actor.system[field] || {});
+    comps["c" + Date.now()] = { name: "New Component", bonus: "", status: "ok" };
+    await this.actor.update({ [`system.${field}`]: comps });
+  }
+
+  async _deleteComponent(type, key) {
+    const comps = foundry.utils.deepClone(this.actor.system[type] || {});
+    delete comps[key];
+    await this.actor.update({ [`system.${type}`]: comps });
   }
 }
 
