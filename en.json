@@ -1,0 +1,17 @@
+{
+  "WH40K.ActorTypes.character": "Character",
+  "WH40K.ActorTypes.npc": "NPC",
+  "WH40K.ActorTypes.voidship": "Void Ship",
+  "WH40K.ActorTypes.vehicle": "Vehicle",
+  "WH40K.ActorTypes.knight": "Imperial Knight",
+  "WH40K.ActorTypes.fighter": "Fighter / Bomber",
+  "WH40K.Characteristics.ws": "Weapon Skill",
+  "WH40K.Characteristics.bs": "Ballistic Skill",
+  "WH40K.Characteristics.str": "Strength",
+  "WH40K.Characteristics.tou": "Toughness",
+  "WH40K.Characteristics.agi": "Agility",
+  "WH40K.Characteristics.int": "Intelligence",
+  "WH40K.Characteristics.per": "Perception",
+  "WH40K.Characteristics.wil": "Willpower",
+  "WH40K.Characteristics.fel": "Fellowship"
+}
