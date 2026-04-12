@@ -7,7 +7,7 @@
     "minimum": "13",
     "verified": "14"
   },
-  "authors": [{ "name": "Your Name Here" }],
+  "authors": [{ "name": "Galivent" }],
   "esmodules": ["scripts/wh40k.js"],
   "styles": ["styles/wh40k.css"],
   "languages": [{ "lang": "en", "name": "English", "path": "lang/en.json" }],
@@ -31,7 +31,7 @@
       "vehiclecomponent": { "label": "Vehicle Component" }
     }
   },
-  "url": "https://github.com/YOURUSERNAME/wh40k-unified",
-  "manifest": "https://raw.githubusercontent.com/YOURUSERNAME/wh40k-unified/main/system.json",
-  "download": "https://github.com/YOURUSERNAME/wh40k-unified/archive/refs/heads/main.zip"
+  "url": "https://github.com/Galivent/wh40k-unified",
+  "manifest": "https://raw.githubusercontent.com/Galivent/wh40k-unified/main/system.json",
+  "download": "https://github.com/Galivent/wh40k-unified/archive/refs/heads/main.zip"
 }
