@@ -1,37 +1,98 @@
 {
   "Actor": {
-    "types": ["character", "npc", "voidship", "vehicle", "knight", "fighter"],
+    "types": [
+      "character",
+      "npc",
+      "voidship",
+      "vehicle",
+      "knight",
+      "fighter"
+    ],
     "templates": {
       "characteristics": {
         "characteristics": {
-          "ws":  { "base": 25, "advance": 0, "label": "Weapon Skill" },
-          "bs":  { "base": 25, "advance": 0, "label": "Ballistic Skill" },
-          "str": { "base": 25, "advance": 0, "label": "Strength" },
-          "tou": { "base": 25, "advance": 0, "label": "Toughness" },
-          "agi": { "base": 25, "advance": 0, "label": "Agility" },
-          "int": { "base": 25, "advance": 0, "label": "Intelligence" },
-          "per": { "base": 25, "advance": 0, "label": "Perception" },
-          "wil": { "base": 25, "advance": 0, "label": "Willpower" },
-          "fel": { "base": 25, "advance": 0, "label": "Fellowship" }
+          "ws": {
+            "base": 25,
+            "advance": 0,
+            "label": "Weapon Skill"
+          },
+          "bs": {
+            "base": 25,
+            "advance": 0,
+            "label": "Ballistic Skill"
+          },
+          "str": {
+            "base": 25,
+            "advance": 0,
+            "label": "Strength"
+          },
+          "tou": {
+            "base": 25,
+            "advance": 0,
+            "label": "Toughness"
+          },
+          "agi": {
+            "base": 25,
+            "advance": 0,
+            "label": "Agility"
+          },
+          "int": {
+            "base": 25,
+            "advance": 0,
+            "label": "Intelligence"
+          },
+          "per": {
+            "base": 25,
+            "advance": 0,
+            "label": "Perception"
+          },
+          "wil": {
+            "base": 25,
+            "advance": 0,
+            "label": "Willpower"
+          },
+          "fel": {
+            "base": 25,
+            "advance": 0,
+            "label": "Fellowship"
+          }
         }
       },
       "wounds": {
-        "wounds": { "value": 10, "max": 10 },
-        "fatigue": { "value": 0, "max": 10 }
+        "wounds": {
+          "value": 10,
+          "max": 10
+        },
+        "fatigue": {
+          "value": 0,
+          "max": 10
+        }
       },
       "fate": {
-        "fate":       { "value": 1, "max": 1 },
+        "fate": {
+          "value": 1,
+          "max": 1
+        },
         "corruption": 0,
-        "insanity":   0
+        "insanity": 0
       },
       "biography": {
         "background": "",
         "notes": "",
-        "experience": { "current": 0, "total": 0, "spent": 0 }
+        "experience": {
+          "current": 0,
+          "total": 0,
+          "spent": 0
+        }
       }
     },
     "character": {
-      "templates": ["characteristics", "wounds", "fate", "biography"],
+      "templates": [
+        "characteristics",
+        "wounds",
+        "fate",
+        "biography"
+      ],
       "origin": "dark-heresy",
       "rank": 1,
       "career": "",
@@ -40,27 +101,60 @@
       "skills": {},
       "aptitudes": [],
       "armourPoints": {
-        "head": 0, "body": 0,
-        "leftArm": 0, "rightArm": 0,
-        "leftLeg": 0, "rightLeg": 0
+        "head": 0,
+        "body": 0,
+        "leftArm": 0,
+        "rightArm": 0,
+        "leftLeg": 0,
+        "rightLeg": 0
       },
-      "movement": { "half": 0, "full": 0, "charge": 0, "run": 0 },
-      "psy": { "rating": 0, "focus": 0 }
+      "movement": {
+        "half": 0,
+        "full": 0,
+        "charge": 0,
+        "run": 0
+      },
+      "psy": {
+        "rating": 0,
+        "focus": 0
+      }
     },
     "npc": {
-      "templates": ["characteristics", "wounds"],
+      "templates": [
+        "characteristics",
+        "wounds"
+      ],
       "npcType": "",
       "threatLevel": "minion",
       "skills": {},
       "traits": [],
-      "armourPoints": { "all": 0 },
-      "movement": { "half": 0, "full": 0, "charge": 0, "run": 0 }
+      "armourPoints": {
+        "all": 0
+      },
+      "movement": {
+        "half": 0,
+        "full": 0,
+        "charge": 0,
+        "run": 0
+      }
     },
     "voidship": {
-      "hull":    { "value": 40, "max": 40 },
-      "shields": { "value": 1,  "max": 1 },
-      "crew":    { "value": 100, "max": 100 },
-      "morale":  { "value": 100, "max": 100 },
+      "hull": {
+        "value": 40,
+        "max": 40
+      },
+      "shields": {
+        "value": 1,
+        "max": 1
+      },
+      "crew": {
+        "value": 100,
+        "max": 100
+      },
+      "morale": {
+        "value": 100,
+        "max": 100
+      },
       "shipClass": "",
       "shipType": "frigate",
       "faction": "imperium",
@@ -75,38 +169,84 @@
       "powerMax": 40,
       "machineSpirit": "none",
       "skills": {
-        "command": 40, "pilot": 40,
-        "navigate": 40, "techUse": 40,
-        "ballisticSkill": 40, "scrutiny": 35
+        "command": 40,
+        "pilot": 40,
+        "navigate": 40,
+        "techUse": 40,
+        "ballisticSkill": 40,
+        "scrutiny": 35
       },
       "crew_complement": "25,000",
       "crew_quality": "competent",
-      "torpedoes": { "value": 0, "max": 0, "type": "Standard" },
+      "torpedoes": {
+        "value": 0,
+        "max": 0,
+        "type": "Standard"
+      },
       "history": "",
       "specialRules": "",
       "profitFactor": 0,
       "renown": "unknown",
-      "achievements": ""
+      "achievements": "",
+      "heading": 0,
+      "currentSpeed": 0,
+      "combatModifiers": "",
+      "statusLockedOn": false,
+      "statusEvasive": false,
+      "statusBraced": false,
+      "statusSilent": false,
+      "crew_captain_name": "",
+      "crew_navigator_name": "",
+      "crew_helmsman_name": "",
+      "crew_enginseer_name": "",
+      "crew_missionary_name": ""
     },
     "vehicle": {
-      "hull":      { "value": 30, "max": 30 },
-      "crew":      { "value": 4,  "max": 4 },
+      "hull": {
+        "value": 30,
+        "max": 30
+      },
+      "crew": {
+        "value": 4,
+        "max": 4
+      },
       "vehicleType": "tank",
       "faction": "imperium",
-      "armour": { "front": 10, "side": 10, "rear": 8 },
-      "speed": { "tactical": 10, "combat": 20, "cruise": 60 },
+      "armour": {
+        "front": 10,
+        "side": 10,
+        "rear": 8
+      },
+      "speed": {
+        "tactical": 10,
+        "combat": 20,
+        "cruise": 60
+      },
       "manoeuvrability": 0,
       "size": "massive",
-      "integrity": { "value": 30, "max": 30 },
+      "integrity": {
+        "value": 30,
+        "max": 30
+      },
       "crew_positions": {},
       "history": "",
       "specialRules": ""
     },
     "knight": {
-      "hull":     { "value": 50, "max": 50 },
-      "shields":  { "value": 2,  "max": 2 },
+      "hull": {
+        "value": 50,
+        "max": 50
+      },
+      "shields": {
+        "value": 2,
+        "max": 2
+      },
       "knightType": "Questoris",
-      "armour": { "front": 18, "side": 14, "rear": 10 },
+      "armour": {
+        "front": 18,
+        "side": 14,
+        "rear": 10
+      },
       "speed": 10,
       "pilot": "",
       "house": "",
@@ -114,8 +254,14 @@
       "specialRules": ""
     },
     "fighter": {
-      "hull":   { "value": 15, "max": 15 },
-      "crew":   { "value": 1,  "max": 1 },
+      "hull": {
+        "value": 15,
+        "max": 15
+      },
+      "crew": {
+        "value": 1,
+        "max": 1
+      },
       "fighterType": "fighter",
       "faction": "imperium",
       "speed": 30,
@@ -127,7 +273,16 @@
     }
   },
   "Item": {
-    "types": ["weapon", "armour", "gear", "talent", "trait", "psychicpower", "shipcomponent", "vehiclecomponent"],
+    "types": [
+      "weapon",
+      "armour",
+      "gear",
+      "talent",
+      "trait",
+      "psychicpower",
+      "shipcomponent",
+      "vehiclecomponent"
+    ],
     "templates": {},
     "weapon": {
       "weaponClass": "basic",
@@ -136,8 +291,15 @@
       "damageType": "E",
       "penetration": 0,
       "range": 100,
-      "rateOfFire": { "single": true, "semi": 0, "full": 0 },
-      "clip": { "value": 30, "max": 30 },
+      "rateOfFire": {
+        "single": true,
+        "semi": 0,
+        "full": 0
+      },
+      "clip": {
+        "value": 30,
+        "max": 30
+      },
       "reload": "Full",
       "qualities": [],
       "flaws": [],
@@ -147,7 +309,14 @@
     },
     "armour": {
       "armourType": "light",
-      "locations": { "head": 0, "body": 0, "leftArm": 0, "rightArm": 0, "leftLeg": 0, "rightLeg": 0 },
+      "locations": {
+        "head": 0,
+        "body": 0,
+        "leftArm": 0,
+        "rightArm": 0,
+        "leftLeg": 0,
+        "rightLeg": 0
+      },
       "qualities": [],
       "special": "",
       "craftsmanship": "common",

@@ -1,0 +1,723 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --wh-gold: #c9a84c;
+  --wh-gold-bright: #f0c060;
+  --wh-gold-dim: #7a5f2a;
+  --wh-crimson: #8b1a1a;
+  --wh-crimson-bright: #cc2222;
+  --wh-panel: #141008;
+  --wh-panel2: #1e1a12;
+  --wh-border: #2a2015;
+  --wh-text: #d4c49a;
+  --wh-text-dim: #7a6a4a;
+  --wh-blue: #4488cc;
+  --wh-green: #44aa44;
+}
+
+/* ── SHEET WINDOW ── */
+.wh40k-sheet {
+  font-family: 'Crimson Text', serif;
+  background: var(--wh-panel);
+  color: var(--wh-text);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app.sheet .window-content {
+  background: var(--wh-panel);
+  padding: 0;
+}
+
+/* ── HEADER ── */
+.wh40k-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, #1a1308 0%, var(--wh-panel) 100%);
+  border-bottom: 2px solid var(--wh-gold-dim);
+  flex-shrink: 0;
+}
+
+.wh40k-portrait {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid var(--wh-gold-dim);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.wh40k-portrait:hover { border-color: var(--wh-gold); }
+
+.wh40k-header-main { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+
+.wh40k-name-input {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.2rem;
+  color: var(--wh-gold);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--wh-gold-dim);
+  width: 100%;
+  padding: 2px 0;
+  text-shadow: 0 0 12px rgba(201,168,76,0.25);
+}
+.wh40k-name-input:focus { outline: none; border-bottom-color: var(--wh-gold); }
+
+.wh40k-header-fields { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; }
+
+.wh40k-field-group { display: flex; flex-direction: column; gap: 2px; }
+
+.wh40k-field-group label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.52rem;
+  letter-spacing: 0.12em;
+  color: var(--wh-text-dim);
+  text-transform: uppercase;
+}
+
+.wh40k-field-group input,
+.wh40k-field-group select {
+  background: rgba(201,168,76,0.05);
+  border: 1px solid var(--wh-border);
+  color: var(--wh-text);
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  padding: 3px 5px;
+}
+
+.wh40k-field-group select { cursor: pointer; }
+
+/* ── HEADER VITALS ── */
+.wh40k-header-vitals {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+  min-width: 140px;
+}
+
+.wh40k-vital-box {
+  background: rgba(201,168,76,0.04);
+  border: 1px solid var(--wh-border);
+  padding: 5px 8px;
+}
+
+.wh40k-vital-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.52rem;
+  letter-spacing: 0.12em;
+  color: var(--wh-text-dim);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.wh40k-vital-values {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.wh40k-vital-values input {
+  width: 42px;
+  text-align: center;
+  background: transparent;
+  border: 1px solid var(--wh-border);
+  color: var(--wh-text);
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  padding: 1px 3px;
+}
+
+.wh40k-vital-values span { color: var(--wh-text-dim); }
+
+.wh40k-fate-row { display: flex; gap: 3px; }
+
+.wh40k-fate-row button {
+  font-family: 'Cinzel', serif;
+  font-size: 0.5rem;
+  padding: 2px 5px;
+  border: 1px solid var(--wh-gold-dim);
+  background: rgba(201,168,76,0.06);
+  color: var(--wh-gold);
+  cursor: pointer;
+  flex: 1;
+  letter-spacing: 0.05em;
+}
+.wh40k-fate-row button:hover { background: rgba(201,168,76,0.15); }
+
+.wh40k-vital-box input[type="number"] {
+  background: transparent;
+  border: 1px solid var(--wh-border);
+  color: var(--wh-text);
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  padding: 1px 3px;
+}
+
+/* ── TABS ── */
+.wh40k-tabs {
+  display: flex;
+  background: rgba(0,0,0,0.3);
+  border-bottom: 1px solid var(--wh-border);
+  padding: 0 8px;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.wh40k-tab {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  color: var(--wh-text-dim);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.wh40k-tab:hover { color: var(--wh-text); }
+.wh40k-tab.active {
+  color: var(--wh-gold);
+  border-color: var(--wh-gold-dim);
+  background: var(--wh-panel2);
+  border-bottom-color: var(--wh-panel2);
+}
+
+/* ── TAB CONTENT ── */
+.wh40k-tab-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wh40k-tab-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── LAYOUT ── */
+.wh40k-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* ── CARDS ── */
+.wh40k-card {
+  background: rgba(201,168,76,0.02);
+  border: 1px solid var(--wh-border);
+  padding: 8px 10px;
+  position: relative;
+}
+
+.wh40k-card::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(201,168,76,0.04);
+  pointer-events: none;
+}
+
+.wh40k-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--wh-gold-dim);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.wh40k-card-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--wh-border), transparent);
+}
+
+.wh40k-card-full { grid-column: 1 / -1; }
+
+/* ── CHARACTERISTIC TABLE ── */
+.wh40k-char-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+}
+
+.wh40k-char-table th {
+  color: var(--wh-gold-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 5px;
+  border-bottom: 1px solid var(--wh-border);
+  text-align: left;
+  font-size: 0.55rem;
+}
+
+.wh40k-char-table td {
+  padding: 3px 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.wh40k-char-table input {
+  width: 50px;
+  background: rgba(201,168,76,0.05);
+  border: 1px solid var(--wh-border);
+  color: var(--wh-text);
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  text-align: center;
+  padding: 2px 3px;
+}
+
+.wh40k-char-name { color: var(--wh-text); font-size: 0.7rem; }
+.wh40k-char-total { color: var(--wh-gold); font-size: 0.8rem; font-weight: 700; text-align: center; }
+.wh40k-char-bonus { color: var(--wh-text-dim); font-size: 0.7rem; text-align: center; }
+
+/* ── BUTTONS ── */
+.wh40k-roll-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  padding: 2px 7px;
+  border: 1px solid var(--wh-gold-dim);
+  background: rgba(201,168,76,0.06);
+  color: var(--wh-gold);
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  transition: all 0.15s;
+}
+.wh40k-roll-btn:hover { background: rgba(201,168,76,0.18); }
+
+.wh40k-del-btn {
+  font-size: 0.7rem;
+  padding: 2px 5px;
+  border: 1px solid #3a1515;
+  background: transparent;
+  color: #774444;
+  cursor: pointer;
+}
+.wh40k-del-btn:hover { background: rgba(139,26,26,0.2); color: var(--wh-crimson-bright); }
+
+.wh40k-add-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 0.52rem;
+  padding: 2px 7px;
+  border: 1px solid var(--wh-gold-dim);
+  background: rgba(201,168,76,0.05);
+  color: var(--wh-gold);
+  cursor: pointer;
+  letter-spacing: 0.06em;
+}
+.wh40k-add-btn:hover { background: rgba(201,168,76,0.14); }
+
+/* ── ITEMS ── */
+.wh40k-item-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+}
+.wh40k-item-table th {
+  color: var(--wh-gold-dim);
+  padding: 3px 5px;
+  border-bottom: 1px solid var(--wh-border);
+  text-align: left;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.wh40k-item-table td {
+  padding: 4px 5px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.wh40k-item-controls { display: flex; gap: 3px; }
+
+.wh40k-item-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  transition: background 0.1s;
+}
+.wh40k-item-row:hover { background: rgba(201,168,76,0.03); }
+
+.wh40k-item-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  color: var(--wh-text);
+  cursor: pointer;
+  flex: 1;
+}
+.wh40k-item-name:hover { color: var(--wh-gold); }
+
+.wh40k-item-detail { font-size: 0.7rem; color: var(--wh-text-dim); font-style: italic; }
+.wh40k-item-tier { font-family: 'Cinzel', serif; font-size: 0.55rem; color: var(--wh-gold-dim); margin-left: 6px; }
+
+.wh40k-empty {
+  font-style: italic;
+  color: var(--wh-text-dim);
+  text-align: center;
+  padding: 12px;
+  font-size: 0.8rem;
+}
+
+/* ── MOVEMENT / GRIDS ── */
+.wh40k-movement-grid,
+.wh40k-exp-grid,
+.wh40k-psy-row { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.wh40k-move-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: rgba(201,168,76,0.04);
+  border: 1px solid rgba(201,168,76,0.1);
+  padding: 5px 8px;
+  min-width: 55px;
+}
+.wh40k-move-box span { font-family: 'Cinzel', serif; font-size: 0.52rem; color: var(--wh-text-dim); text-transform: uppercase; }
+.wh40k-move-box input {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1rem;
+  color: var(--wh-gold);
+  background: transparent;
+  border: none;
+  width: 45px;
+  text-align: center;
+  padding: 0;
+}
+
+.wh40k-armour-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+.wh40k-armour-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: rgba(201,168,76,0.04);
+  border: 1px solid rgba(201,168,76,0.1);
+  padding: 4px;
+}
+.wh40k-armour-box span { font-family: 'Cinzel', serif; font-size: 0.5rem; color: var(--wh-text-dim); }
+.wh40k-armour-box input {
+  width: 36px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--wh-border);
+  color: var(--wh-text);
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+}
+
+.wh40k-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+/* ── STAT BARS ── */
+.wh40k-stat-block { margin-bottom: 8px; }
+.wh40k-stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  color: var(--wh-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.wh40k-bar-track {
+  height: 5px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.wh40k-bar-fill { height: 100%; transition: width 0.3s ease; }
+.wh40k-bar-wounds  { background: linear-gradient(90deg, #5a1a1a, #cc2222); }
+.wh40k-bar-shield  { background: linear-gradient(90deg, #1a3a6a, #4488cc); }
+
+/* ── TEXTAREA ── */
+.wh40k-textarea {
+  width: 100%;
+  min-height: 80px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--wh-border);
+  color: var(--wh-text);
+  font-family: 'Crimson Text', serif;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  padding: 7px;
+  resize: vertical;
+}
+.wh40k-textarea:focus { outline: none; border-color: var(--wh-gold-dim); }
+.wh40k-textarea-tall { min-height: 180px; }
+
+.wh40k-skills-notice {
+  font-style: italic;
+  color: var(--wh-text-dim);
+  font-size: 0.78rem;
+  margin-bottom: 6px;
+}
+
+/* ── SCROLLBARS ── */
+.wh40k-tab-content::-webkit-scrollbar { width: 4px; }
+.wh40k-tab-content::-webkit-scrollbar-thumb { background: var(--wh-gold-dim); }
+
+/* ── CHAT ROLL CARDS ── */
+.wh40k-roll-card {
+  font-family: 'Crimson Text', serif;
+  border: 1px solid var(--wh-gold-dim);
+  background: rgba(20,16,8,0.95);
+  overflow: hidden;
+}
+
+.wh40k-roll-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background: rgba(201,168,76,0.08);
+  border-bottom: 1px solid var(--wh-gold-dim);
+}
+
+.wh40k-roll-actor {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--wh-gold);
+  letter-spacing: 0.08em;
+}
+
+.wh40k-roll-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  color: var(--wh-text-dim);
+  letter-spacing: 0.06em;
+}
+
+.wh40k-roll-body {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+}
+
+.wh40k-roll-dice {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2rem;
+  color: var(--wh-gold-bright);
+  text-shadow: 0 0 15px rgba(240,192,96,0.4);
+  min-width: 52px;
+  text-align: center;
+}
+
+.wh40k-roll-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.85rem;
+  color: #d4c49a;
+}
+
+.wh40k-success { color: #44aa44; font-weight: 600; }
+.wh40k-failure { color: #cc4444; font-weight: 600; }
+.wh40k-critical { color: #ffcc00; font-weight: 700; }
+.wh40k-fumble  { color: #ff4444; font-weight: 700; }
+
+/* ═══════════════════════════════════════════════════════
+   VOID SHIP SHEET SPECIFIC STYLES
+════════════════════════════════════════════════════════ */
+
+.wh40k-bar-hull   { background: linear-gradient(90deg, #1a5a1a, #44aa44); }
+.wh40k-bar-crew   { background: linear-gradient(90deg, #6a3a1a, #cc8844); }
+.wh40k-bar-morale { background: linear-gradient(90deg, #5a1a5a, #aa44aa); }
+
+/* Profile stat cells */
+.vs-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.vs-stat-cell {
+  background: rgba(201,168,76,0.04);
+  border: 1px solid rgba(201,168,76,0.1);
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vs-stat-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  color: var(--wh-text-dim);
+  text-transform: uppercase;
+}
+
+.vs-stat-cell input {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.1rem;
+  color: var(--wh-gold);
+  background: transparent;
+  border: none;
+  width: 70px;
+  padding: 0;
+}
+.vs-stat-cell input:focus { outline: none; }
+
+.vs-stat-unit {
+  font-size: 0.58rem;
+  color: var(--wh-text-dim);
+  font-family: 'Cinzel', serif;
+}
+
+/* Weapon table status */
+.vs-weapon-row.vs-status-damaged td { background: rgba(200,136,0,0.07); }
+.vs-weapon-row.vs-status-destroyed td { background: rgba(139,26,26,0.1); opacity: 0.55; }
+
+.vs-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+.vs-dot-ok        { background: #44aa44; box-shadow: 0 0 4px #44aa44; }
+.vs-dot-damaged   { background: #cc8800; box-shadow: 0 0 4px #cc8800; }
+.vs-dot-destroyed { background: #cc2222; box-shadow: 0 0 4px #cc2222; }
+
+/* Component list */
+.vs-component-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.vs-comp-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 5px;
+  border: 1px solid transparent;
+  transition: all 0.12s;
+}
+.vs-comp-row:hover { border-color: rgba(201,168,76,0.15); background: rgba(201,168,76,0.02); }
+
+.vs-comp-name {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  color: var(--wh-text);
+  font-family: 'Crimson Text', serif;
+  font-size: 0.85rem;
+  padding: 1px 3px;
+  min-width: 0;
+}
+.vs-comp-bonus {
+  width: 110px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+  color: var(--wh-gold-dim);
+  font-family: 'Crimson Text', serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  padding: 1px 3px;
+}
+.vs-comp-status-sel {
+  background: rgba(201,168,76,0.05);
+  border: 1px solid var(--wh-border);
+  color: var(--wh-text-dim);
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  padding: 1px 3px;
+  width: 80px;
+}
+
+/* Combat action buttons */
+.vs-action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.vs-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  padding: 7px 9px;
+  border: 1px solid var(--wh-border);
+  background: rgba(201,168,76,0.03);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+}
+
+.vs-action-btn:hover { background: rgba(201,168,76,0.09); border-color: var(--wh-gold-dim); }
+
+.vs-action-primary { border-color: rgba(201,168,76,0.2); }
+.vs-action-danger  { border-color: rgba(139,26,26,0.4); }
+.vs-action-danger:hover { background: rgba(139,26,26,0.12); border-color: var(--wh-crimson-bright); }
+.vs-action-neutral { border-color: var(--wh-border); }
+
+.vs-action-icon { font-size: 1rem; }
+.vs-action-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  color: var(--wh-text);
+  text-transform: uppercase;
+}
+.vs-action-desc {
+  font-family: 'Crimson Text', serif;
+  font-size: 0.72rem;
+  color: var(--wh-text-dim);
+  font-style: italic;
+}
+
+/* Status checkboxes */
+.vs-status-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border: 1px solid var(--wh-border);
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  color: var(--wh-text-dim);
+  letter-spacing: 0.06em;
+  transition: all 0.12s;
+}
+.vs-status-check:hover { border-color: var(--wh-gold-dim); color: var(--wh-text); }
+.vs-status-check input[type="checkbox"] { accent-color: var(--wh-gold); }
