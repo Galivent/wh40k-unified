@@ -80,7 +80,7 @@
   <div class="wh40k-tab-content">
 
     <!-- ── CHARACTERISTICS TAB ── -->
-    <div data-tab="core" class="wh40k-tab-panel">
+    <div data-tab="core" class="wh40k-tab-panel tab">
       <div class="wh40k-two-col">
 
         <!-- Characteristics -->
@@ -210,7 +210,7 @@
     </div>
 
     <!-- ── SKILLS TAB ── -->
-    <div data-tab="skills" class="wh40k-tab-panel" style="display:none;">
+    <div data-tab="skills" class="wh40k-tab-panel tab">
       <div class="wh40k-card wh40k-card-full">
         <div class="wh40k-card-title">Skills <button type="button" data-action="add-skill" class="wh40k-add-btn">+ Add Skill</button></div>
         <div class="wh40k-skills-notice">Skills are tracked as advances on characteristics. Use the Characteristics tab to roll. Custom skills can be added below.</div>
@@ -219,7 +219,7 @@
     </div>
 
     <!-- ── COMBAT TAB ── -->
-    <div data-tab="combat" class="wh40k-tab-panel" style="display:none;">
+    <div data-tab="combat" class="wh40k-tab-panel tab">
       <div class="wh40k-card wh40k-card-full">
         <div class="wh40k-card-title">Weapons <button type="button" data-action="add-item" data-type="weapon" class="wh40k-add-btn">+ Add Weapon</button></div>
         {{#if weapons.length}}
@@ -263,7 +263,7 @@
     </div>
 
     <!-- ── TALENTS TAB ── -->
-    <div data-tab="talents" class="wh40k-tab-panel" style="display:none;">
+    <div data-tab="talents" class="wh40k-tab-panel tab">
       <div class="wh40k-two-col">
         <div class="wh40k-card">
           <div class="wh40k-card-title">Talents <button type="button" data-action="add-item" data-type="talent" class="wh40k-add-btn">+ Add</button></div>
@@ -300,7 +300,7 @@
     </div>
 
     <!-- ── GEAR TAB ── -->
-    <div data-tab="gear" class="wh40k-tab-panel" style="display:none;">
+    <div data-tab="gear" class="wh40k-tab-panel tab">
       <div class="wh40k-card wh40k-card-full">
         <div class="wh40k-card-title">Gear & Equipment <button type="button" data-action="add-item" data-type="gear" class="wh40k-add-btn">+ Add Gear</button></div>
         {{#each gear as |g|}}
@@ -314,7 +314,7 @@
     </div>
 
     <!-- ── NOTES TAB ── -->
-    <div data-tab="notes" class="wh40k-tab-panel" style="display:none;">
+    <div data-tab="notes" class="wh40k-tab-panel tab">
       <div class="wh40k-two-col">
         <div class="wh40k-card">
           <div class="wh40k-card-title">Background</div>
