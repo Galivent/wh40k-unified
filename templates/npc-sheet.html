@@ -34,7 +34,7 @@
     <a class="wh40k-tab item" data-tab="notes">📜 Notes</a>
   </nav>
   <div class="wh40k-tab-content">
-    <div data-tab="core" class="wh40k-tab-panel">
+    <div data-tab="core" class="wh40k-tab-panel tab">
       <div class="wh40k-card wh40k-card-full">
         <div class="wh40k-card-title">Characteristics</div>
         <table class="wh40k-char-table">
@@ -58,7 +58,7 @@
         <textarea name="system.traits" class="wh40k-textarea" placeholder="List NPC traits here...">{{system.traits}}</textarea>
       </div>
     </div>
-    <div data-tab="combat" class="wh40k-tab-panel" style="display:none;">
+    <div data-tab="combat" class="wh40k-tab-panel tab">
       <div class="wh40k-card wh40k-card-full">
         <div class="wh40k-card-title">Weapons <button type="button" data-action="add-item" data-type="weapon" class="wh40k-add-btn">+ Add</button></div>
         {{#each weapons as |w|}}
@@ -72,7 +72,7 @@
         {{/each}}
       </div>
     </div>
-    <div data-tab="notes" class="wh40k-tab-panel" style="display:none;">
+    <div data-tab="notes" class="wh40k-tab-panel tab">
       <div class="wh40k-card wh40k-card-full">
         <div class="wh40k-card-title">Notes</div>
         <textarea name="system.notes" class="wh40k-textarea wh40k-textarea-tall" placeholder="NPC description, tactics, roleplaying notes...">{{system.notes}}</textarea>
