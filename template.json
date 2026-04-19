@@ -6,7 +6,9 @@
       "voidship",
       "vehicle",
       "knight",
-      "fighter"
+      "fighter",
+      "colony",
+      "regiment"
     ],
     "templates": {
       "characteristics": {
@@ -230,7 +232,76 @@
       },
       "crew_positions": {},
       "history": "",
-      "specialRules": ""
+      "specialRules": "",
+      "vehicleTraits": "",
+      "carryingCapacity": "",
+      "notes": "",
+      "crewCommander": "",
+      "crewCommanderSkill": 40,
+      "crewDriver": "",
+      "crewDriverSkill": 40,
+      "crewGunner": "",
+      "crewGunnerSkill": 40,
+      "crewLoader": "",
+      "crewLoaderSkill": 30,
+      "crewTech": "",
+      "crewTechSkill": 35,
+      "statusImmobilised": false,
+      "statusOnFire": false,
+      "statusMainGunDestroyed": false,
+      "statusTrackDamaged": false,
+      "critDamage": {
+        "c1": {
+          "num": 1,
+          "name": "Crew Shaken",
+          "taken": false
+        },
+        "c2": {
+          "num": 2,
+          "name": "Crew Stunned",
+          "taken": false
+        },
+        "c3": {
+          "num": 3,
+          "name": "Track/Drive Damaged",
+          "taken": false
+        },
+        "c4": {
+          "num": 4,
+          "name": "Weapon Destroyed",
+          "taken": false
+        },
+        "c5": {
+          "num": 5,
+          "name": "Immobilised",
+          "taken": false
+        },
+        "c6": {
+          "num": 6,
+          "name": "Crew Casualties",
+          "taken": false
+        },
+        "c7": {
+          "num": 7,
+          "name": "Fire!",
+          "taken": false
+        },
+        "c8": {
+          "num": 8,
+          "name": "Ammunition Explosion",
+          "taken": false
+        },
+        "c9": {
+          "num": 9,
+          "name": "Catastrophic Damage",
+          "taken": false
+        },
+        "c10": {
+          "num": 10,
+          "name": "DESTROYED",
+          "taken": false
+        }
+      }
     },
     "knight": {
       "hull": {
@@ -270,6 +341,158 @@
       "altitude": "low",
       "history": "",
       "specialRules": ""
+    },
+    "colony": {
+      "name": "",
+      "planetType": "civilised",
+      "sector": "",
+      "system": "",
+      "coordinates": "",
+      "foundedYear": "",
+      "ruler": "",
+      "population": "Unknown",
+      "allegiance": "imperium",
+      "infrastructure": {
+        "value": 20,
+        "max": 100
+      },
+      "military": {
+        "value": 20,
+        "max": 100
+      },
+      "morale": {
+        "value": 50,
+        "max": 100
+      },
+      "trade": {
+        "value": 10,
+        "max": 100
+      },
+      "loyalty": {
+        "value": 50,
+        "max": 100
+      },
+      "security": {
+        "value": 20,
+        "max": 100
+      },
+      "profitFactor": {
+        "value": 0,
+        "max": 100
+      },
+      "food": {
+        "value": 0,
+        "max": 10
+      },
+      "materials": {
+        "value": 0,
+        "max": 10
+      },
+      "wealth": {
+        "value": 0,
+        "max": 10
+      },
+      "influence": {
+        "value": 0,
+        "max": 10
+      },
+      "medicae": {
+        "value": 0,
+        "max": 10
+      },
+      "personnel": {
+        "value": 0,
+        "max": 10
+      },
+      "upkeepFood": 0,
+      "upkeepMaterials": 0,
+      "upkeepWealth": 0,
+      "upkeepPersonnel": 0,
+      "buildings": {},
+      "activeEvents": {},
+      "factions": {
+        "f1": {
+          "name": "Adeptus Mechanicus",
+          "standing": "neutral",
+          "value": 0
+        },
+        "f2": {
+          "name": "Adeptus Ministorum",
+          "standing": "neutral",
+          "value": 0
+        },
+        "f3": {
+          "name": "Imperial Guard",
+          "standing": "neutral",
+          "value": 0
+        },
+        "f4": {
+          "name": "Local Population",
+          "standing": "neutral",
+          "value": 0
+        },
+        "f5": {
+          "name": "Rogue Trader Fleet",
+          "standing": "neutral",
+          "value": 0
+        }
+      },
+      "expeditionLog": "",
+      "colonyHistory": "",
+      "notes": "",
+      "statusUnderAttack": false,
+      "statusFamine": false,
+      "statusPestilence": false,
+      "statusCivilUnrest": false,
+      "statusHeresy": false,
+      "statusXenosThreat": false
+    },
+    "regiment": {
+      "unitName": "",
+      "unitType": "medium_infantry",
+      "faction": "imperium",
+      "homeworld": "",
+      "designation": "",
+      "commander": "",
+      "commanderSkill": 40,
+      "scale": "company",
+      "strength": {
+        "value": 100,
+        "max": 100
+      },
+      "morale": {
+        "value": 100,
+        "max": 100
+      },
+      "quality": "trained",
+      "ballisticSkill": 35,
+      "weaponSkill": 35,
+      "toughness": 30,
+      "armour": 4,
+      "speed": 6,
+      "equipment": "",
+      "specialRules": "",
+      "doctrines": [],
+      "supplyLevel": {
+        "value": 3,
+        "max": 5
+      },
+      "ammunition": {
+        "value": 3,
+        "max": 3
+      },
+      "reinforcements": 0,
+      "statusPinned": false,
+      "statusRouting": false,
+      "statusEntrenched": false,
+      "statusAdvancing": false,
+      "statusBrokenGround": false,
+      "mapX": 0.5,
+      "mapY": 0.5,
+      "mapHeading": 0,
+      "history": "",
+      "battleHonours": "",
+      "notes": ""
     }
   },
   "Item": {
