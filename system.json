@@ -2,7 +2,7 @@
   "id": "wh40k-unified",
   "title": "Warhammer 40,000 Unified \u2014 Dark Heresy, Rogue Trader, Only War",
   "description": "A unified game system for all WH40K TTRPG lines. Supports Dark Heresy 2e, Rogue Trader, and Only War characters, vehicles, void ships, dogfighting, and Imperial Knights.",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "compatibility": {
     "minimum": "13",
     "verified": "14"
