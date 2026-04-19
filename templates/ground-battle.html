@@ -1,0 +1,66 @@
+<div class="vb-app gb-app">
+  <div class="vb-header">
+    <div class="vb-title">⚔ GROUND CONFLICT — TACTICAL DISPLAY</div>
+    <div class="vb-header-center">
+      <span class="vb-round-label">Round</span>
+      <span class="vb-round-num" id="gb-round">1</span>
+      <button class="vb-btn vb-btn-gold" id="gb-next-round">Next Round ▶</button>
+      <span class="vb-initiative" id="gb-phase-label">Phase: Command</span>
+    </div>
+    <button class="vb-btn vb-btn-danger" id="gb-close">✕ Close</button>
+  </div>
+
+  <div class="vb-body">
+
+    <!-- LEFT: Unit selector + actions -->
+    <div class="vb-left">
+      <div class="vb-section-title">Active Unit</div>
+      <select class="vb-ship-select" id="gb-unit-select">
+        <option value="">— Select Unit —</option>
+      </select>
+
+      <div class="vb-stat-block" id="gb-stat-block">
+        <div class="vb-stat-empty">Select a unit to view its status.</div>
+      </div>
+
+      <div class="vb-section-title">Actions</div>
+      <div class="vb-actions">
+        <button class="vb-action vb-action-primary" data-action="rgt-attack">⚔ Attack</button>
+        <button class="vb-action vb-action-primary" data-action="rgt-assault">💥 Assault</button>
+        <button class="vb-action vb-action-primary" data-action="rgt-feint">🎭 Feint</button>
+        <button class="vb-action vb-action-primary" data-action="rgt-entrench">🛡 Entrench</button>
+        <button class="vb-action vb-action-primary" data-action="rgt-reinforce">🔄 Reinforce</button>
+        <button class="vb-action vb-action-danger" data-action="rgt-morale-check">💀 Morale Check</button>
+        <button class="vb-action vb-action-neutral" data-action="rgt-withdraw">↩ Withdraw</button>
+      </div>
+
+      <div class="vb-section-title">Dice</div>
+      <div class="vb-dice-row">
+        <button class="vb-die" data-sides="10">d10</button>
+        <button class="vb-die" data-sides="100">d%</button>
+        <button class="vb-die" data-sides="6">d6</button>
+      </div>
+      <div class="vb-dice-result" id="gb-dice-result">—</div>
+    </div>
+
+    <!-- CENTER: Battle Map -->
+    <div class="vb-map-wrap" id="gb-map-wrap">
+      <canvas id="gb-canvas"></canvas>
+      <div class="vb-map-legend">
+        <span style="color:#aad4ff;">■ Imperium</span>
+        <span style="color:#ffaaaa;">■ Chaos/Enemy</span>
+        <span style="color:#aaffaa;">■ Neutral</span>
+        <span style="color:#b0b0b0;">1 square = 1km</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: Log -->
+    <div class="vb-right">
+      <div class="vb-section-title">Battle Log</div>
+      <div class="vb-log" id="gb-log">
+        <div class="vb-log-entry">Ground engagement initiated. All units to battle stations.</div>
+      </div>
+    </div>
+
+  </div>
+</div>

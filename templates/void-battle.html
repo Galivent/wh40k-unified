@@ -1,0 +1,74 @@
+<div class="vb-app">
+
+  <!-- HEADER -->
+  <div class="vb-header">
+    <div class="vb-title">⚔ VOID CONFLICT — TACTICAL DISPLAY</div>
+    <div class="vb-header-center">
+      <span class="vb-round-label">Round</span>
+      <span class="vb-round-num" id="vb-round">1</span>
+      <button class="vb-btn vb-btn-gold" id="vb-next-round">Next Round ▶</button>
+      <span class="vb-initiative" id="vb-initiative-label">Initiative: —</span>
+    </div>
+    <button class="vb-btn vb-btn-danger" id="vb-close">✕ Close</button>
+  </div>
+
+  <div class="vb-body">
+
+    <!-- LEFT PANEL: Ship selector + actions -->
+    <div class="vb-left">
+
+      <div class="vb-section-title">Active Vessel</div>
+      <select class="vb-ship-select" id="vb-ship-select">
+        <option value="">— Select Ship —</option>
+      </select>
+
+      <div class="vb-stat-block" id="vb-stat-block">
+        <div class="vb-stat-empty">Select a vessel to view its status.</div>
+      </div>
+
+      <div class="vb-section-title">Combat Actions</div>
+      <div class="vb-actions">
+        <button class="vb-action vb-action-primary"  data-action="lock-on">🎯 Lock On</button>
+        <button class="vb-action vb-action-primary"  data-action="evasive">💨 Evasive</button>
+        <button class="vb-action vb-action-primary"  data-action="new-course">🧭 New Course</button>
+        <button class="vb-action vb-action-primary"  data-action="brace">🛡 Brace</button>
+        <button class="vb-action vb-action-primary"  data-action="repair">🔧 Repair</button>
+        <button class="vb-action vb-action-primary"  data-action="silent-running">🔕 Silent Running</button>
+        <button class="vb-action vb-action-danger"   data-action="fire-all">🔥 Fire All!</button>
+        <button class="vb-action vb-action-danger"   data-action="torpedo-salvo">🚀 Torpedoes</button>
+        <button class="vb-action vb-action-danger"   data-action="ram">⚡ Ram</button>
+        <button class="vb-action vb-action-neutral"  data-action="withdraw">🏳 Withdraw</button>
+      </div>
+
+      <div class="vb-section-title">Quick Dice</div>
+      <div class="vb-dice-row">
+        <button class="vb-die" data-sides="10">d10</button>
+        <button class="vb-die" data-sides="100">d%</button>
+        <button class="vb-die" data-sides="5">d5</button>
+      </div>
+      <div class="vb-dice-result" id="vb-dice-result">—</div>
+
+    </div>
+
+    <!-- CENTER: Battle Map Canvas -->
+    <div class="vb-map-wrap" id="vb-map-wrap">
+      <canvas id="vb-canvas"></canvas>
+      <div class="vb-map-legend">
+        <span style="color:#aad4ff;">■ Imperium</span>
+        <span style="color:#ffaaaa;">■ Chaos</span>
+        <span style="color:#aaffaa;">■ Eldar</span>
+        <span style="color:#c9a84c;">■ Neutral</span>
+        <span style="color:#b0b0b0;">1 square = 1 VU</span>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL: Combat log -->
+    <div class="vb-right">
+      <div class="vb-section-title">Strategium Log</div>
+      <div class="vb-log" id="vb-log">
+        <div class="vb-log-entry">Void battle stations! All hands to combat positions.</div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="vct-app">
+  <div class="vct-header">
+    <div class="vct-title">Void Ship Critical Damage Table</div>
+    <button type="button" id="vct-roll" class="vct-roll-btn">🎲 Roll d15</button>
+  </div>
+
+  <div id="vct-result-block" class="vct-result" style="display:none;">
+    <div class="vct-result-roll">Critical <span id="vct-result-roll">—</span></div>
+    <div class="vct-result-name" id="vct-result-name">—</div>
+    <div class="vct-result-effect" id="vct-result-effect">—</div>
+  </div>
+
+  <div class="vct-table">
+    {{#each entries as |e|}}
+    <div class="vct-row {{#if (wh40k_eq e.roll 15)}}vct-row-catastrophic{{/if}}"
+         data-roll="{{e.roll}}">
+      <span class="vct-num">{{e.roll}}</span>
+      <div class="vct-entry">
+        <span class="vct-entry-name">{{e.name}}</span>
+        <span class="vct-entry-effect">{{e.effect}}</span>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

@@ -1,0 +1,324 @@
+<form class="wh40k-sheet wh40k-regiment" autocomplete="off">
+
+  <header class="wh40k-header">
+    <img class="wh40k-portrait" src="{{img}}" data-edit="img" title="Change unit emblem"/>
+    <div class="wh40k-header-main">
+      <input class="wh40k-name-input" type="text" name="name" value="{{name}}" placeholder="Unit Name..."/>
+      <div class="wh40k-header-fields">
+        <div class="wh40k-field-group">
+          <label>Unit Type</label>
+          <select name="system.unitType">
+            <option value="light_infantry"    {{wh40k_selected system.unitType "light_infantry"}}>Light Infantry</option>
+            <option value="medium_infantry"   {{wh40k_selected system.unitType "medium_infantry"}}>Medium Infantry</option>
+            <option value="heavy_infantry"    {{wh40k_selected system.unitType "heavy_infantry"}}>Heavy Infantry</option>
+            <option value="light_armour"      {{wh40k_selected system.unitType "light_armour"}}>Light Armour</option>
+            <option value="medium_armour"     {{wh40k_selected system.unitType "medium_armour"}}>Medium Armour</option>
+            <option value="heavy_armour"      {{wh40k_selected system.unitType "heavy_armour"}}>Heavy Armour</option>
+            <option value="super_heavy"       {{wh40k_selected system.unitType "super_heavy"}}>Super-Heavy Armour</option>
+            <option value="light_artillery"   {{wh40k_selected system.unitType "light_artillery"}}>Light Artillery</option>
+            <option value="medium_artillery"  {{wh40k_selected system.unitType "medium_artillery"}}>Medium Artillery</option>
+            <option value="heavy_artillery"   {{wh40k_selected system.unitType "heavy_artillery"}}>Heavy Artillery</option>
+            <option value="air_defence"       {{wh40k_selected system.unitType "air_defence"}}>Air Defence</option>
+            <option value="aircraft"          {{wh40k_selected system.unitType "aircraft"}}>Aircraft</option>
+            <option value="mechanised"        {{wh40k_selected system.unitType "mechanised"}}>Mechanised Infantry</option>
+            <option value="special_forces"    {{wh40k_selected system.unitType "special_forces"}}>Special Forces</option>
+            <option value="xenos"             {{wh40k_selected system.unitType "xenos"}}>Xenos Forces</option>
+          </select>
+        </div>
+        <div class="wh40k-field-group">
+          <label>Scale</label>
+          <select name="system.scale">
+            <option value="squad"    {{wh40k_selected system.scale "squad"}}>Squad (~10)</option>
+            <option value="platoon"  {{wh40k_selected system.scale "platoon"}}>Platoon (~30)</option>
+            <option value="company"  {{wh40k_selected system.scale "company"}}>Company (~100)</option>
+            <option value="regiment" {{wh40k_selected system.scale "regiment"}}>Regiment (~1,000)</option>
+            <option value="division" {{wh40k_selected system.scale "division"}}>Division (~10,000)</option>
+            <option value="army"     {{wh40k_selected system.scale "army"}}>Army (~100,000+)</option>
+          </select>
+        </div>
+        <div class="wh40k-field-group">
+          <label>Faction</label>
+          <select name="system.faction">
+            <option value="imperium" {{wh40k_selected system.faction "imperium"}}>Imperium</option>
+            <option value="chaos"    {{wh40k_selected system.faction "chaos"}}>Chaos</option>
+            <option value="ork"      {{wh40k_selected system.faction "ork"}}>Ork</option>
+            <option value="eldar"    {{wh40k_selected system.faction "eldar"}}>Eldar</option>
+            <option value="tau"      {{wh40k_selected system.faction "tau"}}>Tau</option>
+            <option value="tyranid"  {{wh40k_selected system.faction "tyranid"}}>Tyranid</option>
+            <option value="necron"   {{wh40k_selected system.faction "necron"}}>Necron</option>
+            <option value="neutral"  {{wh40k_selected system.faction "neutral"}}>Mercenary/Neutral</option>
+          </select>
+        </div>
+        <div class="wh40k-field-group">
+          <label>Quality</label>
+          <select name="system.quality">
+            <option value="conscript"  {{wh40k_selected system.quality "conscript"}}>Conscript</option>
+            <option value="trained"    {{wh40k_selected system.quality "trained"}}>Trained</option>
+            <option value="veteran"    {{wh40k_selected system.quality "veteran"}}>Veteran</option>
+            <option value="elite"      {{wh40k_selected system.quality "elite"}}>Elite</option>
+            <option value="legendary"  {{wh40k_selected system.quality "legendary"}}>Legendary</option>
+          </select>
+        </div>
+        <div class="wh40k-field-group">
+          <label>Homeworld</label>
+          <input type="text" name="system.homeworld" value="{{system.homeworld}}" placeholder="e.g. Cadia, Catachan"/>
+        </div>
+        <div class="wh40k-field-group">
+          <label>Designation</label>
+          <input type="text" name="system.designation" value="{{system.designation}}" placeholder="e.g. 8th Cadian"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vital stats in header -->
+    <div class="wh40k-header-vitals">
+      <div class="wh40k-vital-box">
+        <span class="wh40k-vital-label">Strength</span>
+        <div class="wh40k-vital-values">
+          <input type="number" name="system.strength.value" value="{{system.strength.value}}" min="0"/>
+          <span>/</span>
+          <input type="number" name="system.strength.max" value="{{system.strength.max}}" min="1"/>
+        </div>
+        <div class="wh40k-bar-track"><div class="wh40k-bar-fill rgt-bar-strength" style="width:{{strengthPct}}%"></div></div>
+      </div>
+      <div class="wh40k-vital-box">
+        <span class="wh40k-vital-label">Morale</span>
+        <div class="wh40k-vital-values">
+          <input type="number" name="system.morale.value" value="{{system.morale.value}}" min="0"/>
+          <span>/</span>
+          <input type="number" name="system.morale.max" value="{{system.morale.max}}" min="1"/>
+        </div>
+        <div class="wh40k-bar-track"><div class="wh40k-bar-fill rgt-bar-morale" style="width:{{moralePct}}%"></div></div>
+      </div>
+      <div class="wh40k-vital-box">
+        <span class="wh40k-vital-label">Supply</span>
+        <div class="wh40k-vital-values">
+          <input type="number" name="system.supplyLevel.value" value="{{system.supplyLevel.value}}" min="0" max="5"/>
+          <span>/5</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wh40k-tabs">
+    <a class="wh40k-tab item" data-tab="stats">⚙ Stats</a>
+    <a class="wh40k-tab item" data-tab="combat">⚔ Combat</a>
+    <a class="wh40k-tab item" data-tab="notes">📜 Notes</a>
+  </nav>
+
+  <div class="wh40k-tab-content">
+
+    <!-- STATS TAB -->
+    <div data-tab="stats" class="wh40k-tab-panel tab">
+      <div class="wh40k-two-col">
+
+        <div class="wh40k-card">
+          <div class="wh40k-card-title">Unit Profile — Battlefleet Koronus</div>
+          <table class="wh40k-char-table">
+            <thead><tr><th>Characteristic</th><th>Value</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="wh40k-char-name">Ballistic Skill</td>
+                <td><input type="number" name="system.ballisticSkill" value="{{system.ballisticSkill}}" min="0" max="100"/></td>
+                <td style="color:#c0a060;font-size:0.62rem;font-style:italic;">Ranged attacks</td>
+              </tr>
+              <tr>
+                <td class="wh40k-char-name">Weapon Skill</td>
+                <td><input type="number" name="system.weaponSkill" value="{{system.weaponSkill}}" min="0" max="100"/></td>
+                <td style="color:#c0a060;font-size:0.62rem;font-style:italic;">Melee / assault</td>
+              </tr>
+              <tr>
+                <td class="wh40k-char-name">Toughness</td>
+                <td><input type="number" name="system.toughness" value="{{system.toughness}}" min="0" max="100"/></td>
+                <td style="color:#c0a060;font-size:0.62rem;font-style:italic;">Damage resistance</td>
+              </tr>
+              <tr>
+                <td class="wh40k-char-name">Armour</td>
+                <td><input type="number" name="system.armour" value="{{system.armour}}" min="0" max="20"/></td>
+                <td style="color:#c0a060;font-size:0.62rem;font-style:italic;">AP reduction</td>
+              </tr>
+              <tr>
+                <td class="wh40k-char-name">Speed</td>
+                <td><input type="number" name="system.speed" value="{{system.speed}}" min="1" max="30"/></td>
+                <td style="color:#c0a060;font-size:0.62rem;font-style:italic;">km/hour</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="wh40k-card-title" style="margin-top:12px;">Quality Reference</div>
+          <table class="wh40k-char-table" style="font-size:0.58rem;">
+            <thead><tr><th>Quality</th><th>BS</th><th>WS</th><th>T</th><th>Armour</th></tr></thead>
+            <tbody>
+              <tr style="{{#if (wh40k_eq system.quality 'conscript')}}background:rgba(212,168,64,0.1);{{/if}}">
+                <td>Conscript</td><td>20</td><td>20</td><td>25</td><td>2</td>
+              </tr>
+              <tr style="{{#if (wh40k_eq system.quality 'trained')}}background:rgba(212,168,64,0.1);{{/if}}">
+                <td>Trained</td><td>35</td><td>35</td><td>30</td><td>4</td>
+              </tr>
+              <tr style="{{#if (wh40k_eq system.quality 'veteran')}}background:rgba(212,168,64,0.1);{{/if}}">
+                <td>Veteran</td><td>45</td><td>45</td><td>35</td><td>5</td>
+              </tr>
+              <tr style="{{#if (wh40k_eq system.quality 'elite')}}background:rgba(212,168,64,0.1);{{/if}}">
+                <td>Elite</td><td>55</td><td>55</td><td>40</td><td>6</td>
+              </tr>
+              <tr style="{{#if (wh40k_eq system.quality 'legendary')}}background:rgba(212,168,64,0.1);{{/if}}">
+                <td>Legendary</td><td>70</td><td>70</td><td>45</td><td>8</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="wh40k-card">
+          <div class="wh40k-card-title">Equipment & Doctrines</div>
+          <div class="wh40k-field-group" style="margin-bottom:10px;">
+            <label>Commander</label>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <input type="text" name="system.commander" value="{{system.commander}}" placeholder="Commander name" style="flex:1;"/>
+              <div class="wh40k-field-group">
+                <label style="font-size:0.5rem;">Command Skill</label>
+                <input type="number" name="system.commanderSkill" value="{{system.commanderSkill}}" style="width:50px;"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="wh40k-field-group" style="margin-bottom:10px;">
+            <label>Equipment</label>
+            <textarea name="system.equipment" class="wh40k-textarea" style="min-height:70px;" placeholder="Lasguns, flak armour, vox-casters, grenades, heavy weapon teams...">{{system.equipment}}</textarea>
+          </div>
+
+          <div class="wh40k-field-group">
+            <label>Special Rules & Doctrines</label>
+            <textarea name="system.specialRules" class="wh40k-textarea" style="min-height:70px;" placeholder="e.g. Death World Veterans: +10 WS in jungle terrain&#10;Armour: Double Strength when attacking&#10;Artillery: Cannot move and fire in same turn">{{system.specialRules}}</textarea>
+          </div>
+
+          <div class="wh40k-card-title" style="margin-top:12px;">Logistics</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div class="wh40k-field-group">
+              <label>Supply Level (0-5)</label>
+              <input type="number" name="system.supplyLevel.value" value="{{system.supplyLevel.value}}" min="0" max="5"/>
+            </div>
+            <div class="wh40k-field-group">
+              <label>Ammunition</label>
+              <div style="display:flex;align-items:center;gap:4px;">
+                <input type="number" name="system.ammunition.value" value="{{system.ammunition.value}}" min="0" style="width:45px;"/>
+                <span style="color:#7a6a4a;">/</span>
+                <input type="number" name="system.ammunition.max" value="{{system.ammunition.max}}" min="0" style="width:45px;"/>
+              </div>
+            </div>
+            <div class="wh40k-field-group">
+              <label>Reinforcements Available</label>
+              <input type="number" name="system.reinforcements" value="{{system.reinforcements}}" min="0"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- COMBAT TAB -->
+    <div data-tab="combat" class="wh40k-tab-panel tab" style="display:none;">
+      <div class="wh40k-two-col">
+
+        <div class="wh40k-card">
+          <div class="wh40k-card-title">Combat Actions — BFK Ground Combat</div>
+          <div class="vs-action-grid">
+
+            <button type="button" class="vs-action-btn vs-action-primary" data-action="rgt-attack">
+              <span class="vs-action-icon">⚔</span>
+              <span class="vs-action-name">Attack</span>
+              <span class="vs-action-desc">BS/WS test vs enemy Strength</span>
+            </button>
+
+            <button type="button" class="vs-action-btn vs-action-primary" data-action="rgt-assault">
+              <span class="vs-action-icon">💥</span>
+              <span class="vs-action-name">Assault</span>
+              <span class="vs-action-desc">Charge into melee combat</span>
+            </button>
+
+            <button type="button" class="vs-action-btn vs-action-primary" data-action="rgt-feint">
+              <span class="vs-action-icon">🎭</span>
+              <span class="vs-action-name">Feint</span>
+              <span class="vs-action-desc">Command test, misdirect enemy</span>
+            </button>
+
+            <button type="button" class="vs-action-btn vs-action-primary" data-action="rgt-entrench">
+              <span class="vs-action-icon">🛡</span>
+              <span class="vs-action-name">Entrench</span>
+              <span class="vs-action-desc">Dig in: +20 defence next round</span>
+            </button>
+
+            <button type="button" class="vs-action-btn vs-action-primary" data-action="rgt-reinforce">
+              <span class="vs-action-icon">🔄</span>
+              <span class="vs-action-name">Reinforce</span>
+              <span class="vs-action-desc">Add reinforcements to Strength</span>
+            </button>
+
+            <button type="button" class="vs-action-btn vs-action-primary" data-action="rgt-withdraw">
+              <span class="vs-action-icon">↩</span>
+              <span class="vs-action-name">Strategic Withdrawal</span>
+              <span class="vs-action-desc">Command test to disengage</span>
+            </button>
+
+            <button type="button" class="vs-action-btn vs-action-danger" data-action="rgt-morale-check">
+              <span class="vs-action-icon">💀</span>
+              <span class="vs-action-name">Morale Check</span>
+              <span class="vs-action-desc">Roll vs current Morale</span>
+            </button>
+
+            <button type="button" class="vs-action-btn vs-action-primary" data-action="rgt-open-battle">
+              <span class="vs-action-icon">🗺</span>
+              <span class="vs-action-name">Open Battle Map</span>
+              <span class="vs-action-desc">Ground combat overlay</span>
+            </button>
+
+          </div>
+        </div>
+
+        <div class="wh40k-card">
+          <div class="wh40k-card-title">Combat Status</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;">
+            <label class="vs-status-check">
+              <input type="checkbox" name="system.statusPinned" {{wh40k_checked system.statusPinned}}/>
+              <span>📌 Pinned</span>
+            </label>
+            <label class="vs-status-check">
+              <input type="checkbox" name="system.statusRouting" {{wh40k_checked system.statusRouting}}/>
+              <span>🏃 Routing</span>
+            </label>
+            <label class="vs-status-check">
+              <input type="checkbox" name="system.statusEntrenched" {{wh40k_checked system.statusEntrenched}}/>
+              <span>🛡 Entrenched</span>
+            </label>
+            <label class="vs-status-check">
+              <input type="checkbox" name="system.statusAdvancing" {{wh40k_checked system.statusAdvancing}}/>
+              <span>⚔ Advancing</span>
+            </label>
+          </div>
+
+          <div class="wh40k-card-title">NATO Symbol Preview</div>
+          <div class="rgt-nato-preview" id="rgt-nato-canvas-wrap">
+            <canvas id="rgt-nato-canvas" width="200" height="120"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- NOTES TAB -->
+    <div data-tab="notes" class="wh40k-tab-panel tab" style="display:none;">
+      <div class="wh40k-two-col">
+        <div class="wh40k-card">
+          <div class="wh40k-card-title">Unit History</div>
+          <textarea name="system.history" class="wh40k-textarea wh40k-textarea-tall" placeholder="The regiment's history, campaigns fought, worlds defended...">{{system.history}}</textarea>
+        </div>
+        <div class="wh40k-card">
+          <div class="wh40k-card-title">Battle Honours & Notes</div>
+          <textarea name="system.battleHonours" class="wh40k-textarea" placeholder="Battle honours, campaign medals, notable victories...">{{system.battleHonours}}</textarea>
+          <div class="wh40k-card-title" style="margin-top:10px;">GM Notes</div>
+          <textarea name="system.notes" class="wh40k-textarea" placeholder="GM notes...">{{system.notes}}</textarea>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</form>
