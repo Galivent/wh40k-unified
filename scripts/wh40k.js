@@ -560,7 +560,7 @@ class WH40KVehicleSheet extends WH40KBaseSheet {
       const weapons = this.actor.items.filter(i => i.type === "vehiclecomponent");
       if (!weapons.length) { ui.notifications.warn("No weapons configured!"); return; }
       const sk = this.actor.system.crewGunnerSkill ?? 40;
-      weapons.forEach(w => WH40KRoll.characteristic(this.actor, \`⚔ \${w.name}\`, sk));
+      weapons.forEach(w => WH40KRoll.characteristic(this.actor, "⚔ " + w.name, sk));
     });
 
     html.find("[data-action='veh-repair']").click(async () => {
@@ -580,7 +580,7 @@ class WH40KVehicleSheet extends WH40KBaseSheet {
       const weapon = this.actor.items.get(id);
       if (!weapon) return;
       const sk = this.actor.system.crewGunnerSkill ?? 40;
-      WH40KRoll.characteristic(this.actor, \`⚔ \${weapon.name}\`, sk);
+      WH40KRoll.characteristic(this.actor, "⚔ " + weapon.name, sk);
     });
   }
 }
