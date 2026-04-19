@@ -3,67 +3,6 @@
 //  Foundry VTT Game System
 // ═══════════════════════════════════════════════════════════════
 
-// ── INIT ────────────────────────────────────────────────────────
-
-Hooks.once("init", () => {
-  console.log("WH40K Unified | Initialising the Imperium's finest systems...");
-
-  // Register all sheets
-  Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("wh40k-unified", WH40KCharacterSheet, {
-    types: ["character"], makeDefault: true, label: "Character Sheet"
-  });
-  Actors.registerSheet("wh40k-unified", WH40KNPCSheet, {
-    types: ["npc"], makeDefault: true, label: "NPC Sheet"
-  });
-  Actors.registerSheet("wh40k-unified", WH40KVoidShipSheet, {
-    types: ["voidship"], makeDefault: true, label: "Void Ship Sheet"
-  });
-  Actors.registerSheet("wh40k-unified", WH40KVehicleSheet, {
-    types: ["vehicle"], makeDefault: true, label: "Vehicle Sheet"
-  });
-  Actors.registerSheet("wh40k-unified", WH40KKnightSheet, {
-    types: ["knight"], makeDefault: true, label: "Imperial Knight Sheet"
-  });
-  Actors.registerSheet("wh40k-unified", WH40KFighterSheet, {
-    types: ["fighter"], makeDefault: true, label: "Fighter Sheet"
-  });
-  Actors.registerSheet("wh40k-unified", WH40KColonySheet, {
-    types: ["colony"], makeDefault: true, label: "Colony Sheet"
-  });
-  Actors.registerSheet("wh40k-unified", WH40KRegimentSheet, {
-    types: ["regiment"], makeDefault: true, label: "Regiment Sheet"
-  });
-
-  Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("wh40k-unified", WH40KItemSheet, {
-    makeDefault: true, label: "Item Sheet"
-  });
-
-  // Handlebars helpers
-  Handlebars.registerHelper("wh40k_charVal", (char) => {
-    if (!char) return 0;
-    return (char.base || 0) + (char.advance || 0);
-  });
-  Handlebars.registerHelper("wh40k_pct", (v, m) => {
-    if (!m || m <= 0) return 0;
-    return Math.max(0, Math.min(100, Math.round((v / m) * 100)));
-  });
-  Handlebars.registerHelper("wh40k_selected", (a, b) => a === b ? "selected" : "");
-  Handlebars.registerHelper("wh40k_checked", (v) => v ? "checked" : "");
-  Handlebars.registerHelper("wh40k_keys", (obj) => obj ? Object.keys(obj) : []);
-  Handlebars.registerHelper("wh40k_eq", (a, b) => a === b);
-  Handlebars.registerHelper("wh40k_or", (a, b) => a || b);
-
-  console.log("WH40K Unified | Sheets and helpers registered.");
-});
-
-Hooks.once("ready", () => {
-  console.log("WH40K Unified | Ready. For the Emperor!");
-  // Make the roll helper globally available for macros
-  window.WH40K = { roll: WH40KRoll.characteristic };
-});
-
 // ── CORE ROLL ENGINE ────────────────────────────────────────────
 
 class WH40KRoll {
@@ -2220,4 +2159,65 @@ Hooks.once("ready", () => {
   window.WH40K = window.WH40K || {};
   window.WH40K.openGroundBattle = () => new WH40KGroundBattleApp().render(true);
   window.WH40K.drawPlanet       = PlanetVis.draw.bind(PlanetVis);
+});
+
+// ── INIT ────────────────────────────────────────────────────────
+
+Hooks.once("init", () => {
+  console.log("WH40K Unified | Initialising the Imperium's finest systems...");
+
+  // Register all sheets
+  Actors.unregisterSheet("core", ActorSheet);
+  Actors.registerSheet("wh40k-unified", WH40KCharacterSheet, {
+    types: ["character"], makeDefault: true, label: "Character Sheet"
+  });
+  Actors.registerSheet("wh40k-unified", WH40KNPCSheet, {
+    types: ["npc"], makeDefault: true, label: "NPC Sheet"
+  });
+  Actors.registerSheet("wh40k-unified", WH40KVoidShipSheet, {
+    types: ["voidship"], makeDefault: true, label: "Void Ship Sheet"
+  });
+  Actors.registerSheet("wh40k-unified", WH40KVehicleSheet, {
+    types: ["vehicle"], makeDefault: true, label: "Vehicle Sheet"
+  });
+  Actors.registerSheet("wh40k-unified", WH40KKnightSheet, {
+    types: ["knight"], makeDefault: true, label: "Imperial Knight Sheet"
+  });
+  Actors.registerSheet("wh40k-unified", WH40KFighterSheet, {
+    types: ["fighter"], makeDefault: true, label: "Fighter Sheet"
+  });
+  Actors.registerSheet("wh40k-unified", WH40KColonySheet, {
+    types: ["colony"], makeDefault: true, label: "Colony Sheet"
+  });
+  Actors.registerSheet("wh40k-unified", WH40KRegimentSheet, {
+    types: ["regiment"], makeDefault: true, label: "Regiment Sheet"
+  });
+
+  Items.unregisterSheet("core", ItemSheet);
+  Items.registerSheet("wh40k-unified", WH40KItemSheet, {
+    makeDefault: true, label: "Item Sheet"
+  });
+
+  // Handlebars helpers
+  Handlebars.registerHelper("wh40k_charVal", (char) => {
+    if (!char) return 0;
+    return (char.base || 0) + (char.advance || 0);
+  });
+  Handlebars.registerHelper("wh40k_pct", (v, m) => {
+    if (!m || m <= 0) return 0;
+    return Math.max(0, Math.min(100, Math.round((v / m) * 100)));
+  });
+  Handlebars.registerHelper("wh40k_selected", (a, b) => a === b ? "selected" : "");
+  Handlebars.registerHelper("wh40k_checked", (v) => v ? "checked" : "");
+  Handlebars.registerHelper("wh40k_keys", (obj) => obj ? Object.keys(obj) : []);
+  Handlebars.registerHelper("wh40k_eq", (a, b) => a === b);
+  Handlebars.registerHelper("wh40k_or", (a, b) => a || b);
+
+  console.log("WH40K Unified | Sheets and helpers registered.");
+});
+
+Hooks.once("ready", () => {
+  console.log("WH40K Unified | Ready. For the Emperor!");
+  // Make the roll helper globally available for macros
+  window.WH40K = { roll: WH40KRoll.characteristic };
 });
