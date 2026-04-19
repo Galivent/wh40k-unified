@@ -11,7 +11,7 @@
     <a class="wh40k-tab item" data-tab="notes">Notes</a>
   </nav>
   <div class="wh40k-tab-content">
-    <div data-tab="profile" class="wh40k-tab-panel">
+    <div data-tab="profile" class="wh40k-tab-panel tab">
       <div class="wh40k-card wh40k-card-full">
         <div class="wh40k-card-title">Fighter — Full sheet coming next iteration</div>
         <p style="font-family:'Crimson Text',serif;color:#d4c49a;padding:8px;">Data is stored. Full fields coming soon.</p>
@@ -25,7 +25,7 @@
         {{/if}}
       </div>
     </div>
-    <div data-tab="weapons" class="wh40k-tab-panel" style="display:none;">
+    <div data-tab="weapons" class="wh40k-tab-panel tab">
       <div class="wh40k-card wh40k-card-full">
         <div class="wh40k-card-title">Weapons <button type="button" data-action="add-item" data-type="weapon" class="wh40k-add-btn">+ Add</button></div>
         {{#each weapons as |w|}}
@@ -36,7 +36,7 @@
         {{/each}}
       </div>
     </div>
-    <div data-tab="notes" class="wh40k-tab-panel" style="display:none;">
+    <div data-tab="notes" class="wh40k-tab-panel tab">
       <div class="wh40k-card wh40k-card-full">
         <textarea name="system.history" class="wh40k-textarea wh40k-textarea-tall" placeholder="History and notes...">{{system.history}}</textarea>
       </div>
