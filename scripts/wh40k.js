@@ -178,6 +178,19 @@ class WH40KBaseSheet extends ActorSheet {
     super.activateListeners(html);
     if (!this.isEditable) return;
 
+    // Manual tab handling — works in all Foundry versions
+    html.find(".wh40k-tab").click(ev => {
+      ev.preventDefault();
+      const tab = ev.currentTarget.dataset.tab;
+      html.find(".wh40k-tab").removeClass("active");
+      ev.currentTarget.classList.add("active");
+      html.find(".wh40k-tab-panel").hide();
+      html.find(`.wh40k-tab-panel[data-tab="${tab}"]`).show();
+    });
+    html.find(".wh40k-tab-panel").hide();
+    html.find(".wh40k-tab-panel").first().show();
+    html.find(".wh40k-tab").first().addClass("active");
+
     // Inline item editing — click item name to open sheet
     html.find(".wh40k-item-name").click(ev => {
       const id   = ev.currentTarget.closest("[data-item-id]").dataset.itemId;
@@ -282,6 +295,19 @@ class WH40KCharacterSheet extends WH40KBaseSheet {
     super.activateListeners(html);
     if (!this.isEditable) return;
 
+    // Manual tab handling — works in all Foundry versions
+    html.find(".wh40k-tab").click(ev => {
+      ev.preventDefault();
+      const tab = ev.currentTarget.dataset.tab;
+      html.find(".wh40k-tab").removeClass("active");
+      ev.currentTarget.classList.add("active");
+      html.find(".wh40k-tab-panel").hide();
+      html.find(`.wh40k-tab-panel[data-tab="${tab}"]`).show();
+    });
+    html.find(".wh40k-tab-panel").hide();
+    html.find(".wh40k-tab-panel").first().show();
+    html.find(".wh40k-tab").first().addClass("active");
+
     // Fate point burn
     html.find("[data-action='burn-fate']").click(() => {
       const fate = this.actor.system.fate;
@@ -367,8 +393,8 @@ class WH40KVoidShipSheet extends WH40KBaseSheet {
   activateListeners(html) {
     super.activateListeners(html);
     if (!this.isEditable) return;
-    
-    // Manual tab handling
+
+    // Manual tab handling — works in all Foundry versions
     html.find(".wh40k-tab").click(ev => {
       ev.preventDefault();
       const tab = ev.currentTarget.dataset.tab;
@@ -380,6 +406,7 @@ class WH40KVoidShipSheet extends WH40KBaseSheet {
     html.find(".wh40k-tab-panel").hide();
     html.find(".wh40k-tab-panel").first().show();
     html.find(".wh40k-tab").first().addClass("active");
+
     // Skill rolls on Profile tab
     html.find(".vs-skill-roll").click(ev => {
       const skill = ev.currentTarget.dataset.skill;
@@ -559,6 +586,19 @@ class WH40KVehicleSheet extends WH40KBaseSheet {
   activateListeners(html) {
     super.activateListeners(html);
     if (!this.isEditable) return;
+
+    // Manual tab handling — works in all Foundry versions
+    html.find(".wh40k-tab").click(ev => {
+      ev.preventDefault();
+      const tab = ev.currentTarget.dataset.tab;
+      html.find(".wh40k-tab").removeClass("active");
+      ev.currentTarget.classList.add("active");
+      html.find(".wh40k-tab-panel").hide();
+      html.find(`.wh40k-tab-panel[data-tab="${tab}"]`).show();
+    });
+    html.find(".wh40k-tab-panel").hide();
+    html.find(".wh40k-tab-panel").first().show();
+    html.find(".wh40k-tab").first().addClass("active");
 
     html.find("[data-action='veh-move']").click(() => {
       const sk = this.actor.system.crewDriverSkill ?? 40;
@@ -1837,6 +1877,19 @@ class WH40KRegimentSheet extends WH40KBaseSheet {
   activateListeners(html) {
     super.activateListeners(html);
     if (!this.isEditable) return;
+
+    // Manual tab handling — works in all Foundry versions
+    html.find(".wh40k-tab").click(ev => {
+      ev.preventDefault();
+      const tab = ev.currentTarget.dataset.tab;
+      html.find(".wh40k-tab").removeClass("active");
+      ev.currentTarget.classList.add("active");
+      html.find(".wh40k-tab-panel").hide();
+      html.find(`.wh40k-tab-panel[data-tab="${tab}"]`).show();
+    });
+    html.find(".wh40k-tab-panel").hide();
+    html.find(".wh40k-tab-panel").first().show();
+    html.find(".wh40k-tab").first().addClass("active");
 
     // Auto-fill stats when quality changes
     html.find('[name="system.quality"]').change(ev => {
