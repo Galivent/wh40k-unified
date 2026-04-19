@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
-  --wh-gold: #c9a84c;
-  --wh-gold-bright: #f0c060;
-  --wh-gold-dim: #7a5f2a;
+  --wh-gold: #d4a840;
+  --wh-gold-bright: #f5c842;
+  --wh-gold-dim: #a07830;
   --wh-crimson: #8b1a1a;
-  --wh-crimson-bright: #cc2222;
-  --wh-panel: #141008;
-  --wh-panel2: #1e1a12;
-  --wh-border: #2a2015;
-  --wh-text: #f0e0b0;
-  --wh-text-dim: #b09060;
+  --wh-crimson-bright: #dd3333;
+  --wh-panel: #1c1710;
+  --wh-panel2: #28221a;
+  --wh-border: #3a3020;
+  --wh-text: #f2e4c0;
+  --wh-text-dim: #c0a060;
   --wh-blue: #4488cc;
   --wh-green: #44aa44;
 }
@@ -73,9 +73,9 @@
 
 .wh40k-field-group label {
   font-family: 'Cinzel', serif;
-  font-size: 0.52rem;
+  font-size: 0.55rem;
   letter-spacing: 0.12em;
-  color: var(--wh-text-dim);
+  color: #c8a855;
   text-transform: uppercase;
 }
 
@@ -286,7 +286,7 @@
   padding: 2px 3px;
 }
 
-.wh40k-char-name { color: var(--wh-text); font-size: 0.7rem; }
+.wh40k-char-name { color: #f2e4c0; font-size: 0.72rem; font-weight: 600; }
 .wh40k-char-total { color: var(--wh-gold); font-size: 0.8rem; font-weight: 700; text-align: center; }
 .wh40k-char-bonus { color: var(--wh-text-dim); font-size: 0.7rem; text-align: center; }
 
