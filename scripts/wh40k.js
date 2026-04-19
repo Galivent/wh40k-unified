@@ -171,7 +171,20 @@ class WH40KBaseSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
     if (!this.isEditable) return;
-
+    
+    // Manual tab handling — reliable across all Foundry versions
+    html.find(".wh40k-tab").click(ev => {
+      ev.preventDefault();
+      const tab = ev.currentTarget.dataset.tab;
+      html.find(".wh40k-tab").removeClass("active");
+      ev.currentTarget.classList.add("active");
+      html.find(".wh40k-tab-panel").hide();
+      html.find(`.wh40k-tab-panel[data-tab="${tab}"]`).show();
+    });
+    // Show first tab on open
+    html.find(".wh40k-tab-panel").hide();
+    html.find(".wh40k-tab-panel").first().show();
+    html.find(".wh40k-tab").first().addClass("active");
     // Inline item editing — click item name to open sheet
     html.find(".wh40k-item-name").click(ev => {
       const id   = ev.currentTarget.closest("[data-item-id]").dataset.itemId;
