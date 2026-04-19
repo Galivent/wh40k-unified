@@ -1022,6 +1022,23 @@ class WH40KVoidBattleApp extends Application {
 }
 
 // Register the battle app globally for macros
+Hooks.once("setup", () => {
+  // Stop the Dark Heresy system trying to process voidship actors as characters
+  const docClass = CONFIG.Actor.documentClass;
+  if (docClass && docClass.prototype.prepareData) {
+    const _original = docClass.prototype.prepareData;
+    docClass.prototype.prepareData = function() {
+      if (this.type === "voidship") return;
+      if (this.type === "vehicle")  return;
+      if (this.type === "colony")   return;
+      if (this.type === "regiment") return;
+      if (this.type === "knight")   return;
+      if (this.type === "fighter")  return;
+      return _original.call(this);
+    };
+  }
+});
+
 Hooks.once("ready", () => {
   window.WH40K = window.WH40K || {};
   window.WH40K.openVoidBattle = () => new WH40KVoidBattleApp().render(true);
