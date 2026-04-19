@@ -5,7 +5,7 @@ A unified game system for all WH40K TTRPG lines: **Dark Heresy 2e**, **Rogue Tra
 ## Installation
 Paste this URL into Foundry Setup → Game Systems → Install System → Manifest URL:
 ```
-https://raw.githubusercontent.com/Galivent/wh40k-unified/main/system.json
+https://raw.githubusercontent.com/YOURUSERNAME/wh40k-unified/main/system.json
 ```
 
 ## Actor Types

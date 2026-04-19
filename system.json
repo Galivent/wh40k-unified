@@ -2,14 +2,14 @@
   "id": "wh40k-unified",
   "title": "Warhammer 40,000 Unified \u2014 Dark Heresy, Rogue Trader, Only War",
   "description": "A unified game system for all WH40K TTRPG lines. Supports Dark Heresy 2e, Rogue Trader, and Only War characters, vehicles, void ships, dogfighting, and Imperial Knights.",
-  "version": "1.0.0",
+  "version": "0.5.1",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
   },
   "authors": [
     {
-      "name": "Galivent"
+      "name": "Your Name Here"
     }
   ],
   "esmodules": [
@@ -79,9 +79,9 @@
       }
     }
   },
-  "url": "https://github.com/Galivent/wh40k-unified",
-  "manifest": "https://raw.githubusercontent.com/Galivent/wh40k-unified/main/system.json",
-  "download": "https://github.com/Galivent/wh40k-unified/archive/refs/heads/main.zip",
+  "url": "https://github.com/YOURUSERNAME/wh40k-unified",
+  "manifest": "https://raw.githubusercontent.com/YOURUSERNAME/wh40k-unified/main/system.json",
+  "download": "https://github.com/YOURUSERNAME/wh40k-unified/archive/refs/heads/main.zip",
   "packs": [
     {
       "name": "void-ships",
