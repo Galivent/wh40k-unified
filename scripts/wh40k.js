@@ -367,7 +367,19 @@ class WH40KVoidShipSheet extends WH40KBaseSheet {
   activateListeners(html) {
     super.activateListeners(html);
     if (!this.isEditable) return;
-
+    
+    // Manual tab handling
+    html.find(".wh40k-tab").click(ev => {
+      ev.preventDefault();
+      const tab = ev.currentTarget.dataset.tab;
+      html.find(".wh40k-tab").removeClass("active");
+      ev.currentTarget.classList.add("active");
+      html.find(".wh40k-tab-panel").hide();
+      html.find(`.wh40k-tab-panel[data-tab="${tab}"]`).show();
+    });
+    html.find(".wh40k-tab-panel").hide();
+    html.find(".wh40k-tab-panel").first().show();
+    html.find(".wh40k-tab").first().addClass("active");
     // Skill rolls on Profile tab
     html.find(".vs-skill-roll").click(ev => {
       const skill = ev.currentTarget.dataset.skill;
