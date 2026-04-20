@@ -1,0 +1,20 @@
+{
+  "_id": "kw009",
+  "name": "Thunderstrike Gauntlet",
+  "type": "vehiclecomponent",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "componentType": "Melee / Questoris",
+    "facing": "Melee",
+    "power": 0,
+    "space": 0,
+    "damage": "4d10+30 E",
+    "penetration": 20,
+    "rof": "Melee",
+    "clip": "\u2014",
+    "range": 0,
+    "qualities": "Unwieldy, Power Field, Hurl, Felling[10], Destroyer[4]",
+    "status": "ok",
+    "description": "A crackling power fist that can crush tanks and hurl destroyed vehicles at nearby enemies. Destroyer[4], Hurl special rule."
+  }
+}

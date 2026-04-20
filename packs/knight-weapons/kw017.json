@@ -1,0 +1,20 @@
+{
+  "_id": "kw017",
+  "name": "Acheron Pattern Flame Cannon",
+  "type": "vehiclecomponent",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "componentType": "Main Arm / Cerastus Acheron",
+    "facing": "Front/Swivel",
+    "power": 0,
+    "space": 0,
+    "damage": "3d10+8 E",
+    "penetration": 8,
+    "rof": "S/-/-",
+    "clip": "48",
+    "range": 60,
+    "qualities": "Flame, Spray, Ignores Cover",
+    "status": "ok",
+    "description": "A massive flame cannon that scours entire areas. Ignores Cover \u2014 targets in any cover gain no benefit."
+  }
+}

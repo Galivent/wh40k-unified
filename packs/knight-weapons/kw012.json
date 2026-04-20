@@ -1,0 +1,20 @@
+{
+  "_id": "kw012",
+  "name": "Icarus Autocannon",
+  "type": "vehiclecomponent",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "componentType": "Carapace / Questoris",
+    "facing": "Carapace (360\u00b0)",
+    "power": 0,
+    "space": 0,
+    "damage": "3d10+8 I",
+    "penetration": 6,
+    "rof": "-/2/-",
+    "clip": "600",
+    "range": 300,
+    "qualities": "Skyfire, Twin-linked, Carapace \u2014 Questoris only",
+    "status": "ok",
+    "description": "Anti-air autocannon. Skyfire \u2014 fires at normal BS against airborne targets. Twin-linked for reliability."
+  }
+}

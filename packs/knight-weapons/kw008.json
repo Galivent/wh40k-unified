@@ -1,0 +1,20 @@
+{
+  "_id": "kw008",
+  "name": "Reaper Chainsword",
+  "type": "vehiclecomponent",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "componentType": "Melee / Questoris",
+    "facing": "Melee",
+    "power": 0,
+    "space": 0,
+    "damage": "3d10+30 R",
+    "penetration": 20,
+    "rof": "Melee",
+    "clip": "\u2014",
+    "range": 0,
+    "qualities": "Tearing, Razor-sharp, Unbalanced, Felling[10], Destroyer[3]",
+    "status": "ok",
+    "description": "A massive chainsaw blade. Can rip apart super-heavy tanks and monster creatures. Destroyer[3] \u2014 every 2 DoS adds 1d10 damage (max +3d10). RF on 9-10."
+  }
+}

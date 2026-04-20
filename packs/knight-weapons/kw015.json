@@ -1,0 +1,20 @@
+{
+  "_id": "kw015",
+  "name": "Castigator Pattern Bolt Cannon",
+  "type": "vehiclecomponent",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "componentType": "Main Arm / Cerastus Castigator",
+    "facing": "Front/Swivel",
+    "power": 0,
+    "space": 0,
+    "damage": "3d10+6 X",
+    "penetration": 8,
+    "rof": "-/-/8",
+    "clip": "1200",
+    "range": 120,
+    "qualities": "Tearing, Twin-linked",
+    "status": "ok",
+    "description": "A massive bolt cannon that obliterates infantry formations and light vehicles. Twin-linked for reliability."
+  }
+}

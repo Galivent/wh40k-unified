@@ -1,0 +1,20 @@
+{
+  "_id": "kw010",
+  "name": "Ironstorm Missile Pod",
+  "type": "vehiclecomponent",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "componentType": "Carapace / Questoris",
+    "facing": "Carapace (360\u00b0)",
+    "power": 0,
+    "space": 0,
+    "damage": "2d10+6 X",
+    "penetration": 6,
+    "rof": "S/-/-",
+    "clip": "6",
+    "range": 300,
+    "qualities": "Blast[10], Carapace \u2014 Questoris only",
+    "status": "ok",
+    "description": "Carapace-mounted missile pod. Blasts infantry and light vehicles across wide areas."
+  }
+}

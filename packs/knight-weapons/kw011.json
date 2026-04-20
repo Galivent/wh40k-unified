@@ -1,0 +1,20 @@
+{
+  "_id": "kw011",
+  "name": "Stormspear Rocket Pod",
+  "type": "vehiclecomponent",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "componentType": "Carapace / Questoris",
+    "facing": "Carapace (360\u00b0)",
+    "power": 0,
+    "space": 0,
+    "damage": "3d10+10 X",
+    "penetration": 8,
+    "rof": "-/3/-",
+    "clip": "18",
+    "range": 600,
+    "qualities": "Carapace \u2014 Questoris only",
+    "status": "ok",
+    "description": "Carapace-mounted rocket salvo. Devastating against armoured targets at range."
+  }
+}

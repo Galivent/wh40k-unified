@@ -1,0 +1,20 @@
+{
+  "_id": "kw019",
+  "name": "Inbuilt Twin-linked Heavy Bolters",
+  "type": "vehiclecomponent",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "componentType": "Built-in / Cerastus Acheron",
+    "facing": "Front",
+    "power": 0,
+    "space": 0,
+    "damage": "2d10+2 X",
+    "penetration": 5,
+    "rof": "-/-/6",
+    "clip": "600",
+    "range": 150,
+    "qualities": "Tearing, Twin-linked",
+    "status": "ok",
+    "description": "Built into the Reaper Chainfist of the Acheron Knight. Provides anti-infantry fire support at close range."
+  }
+}
