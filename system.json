@@ -1,15 +1,15 @@
 {
   "id": "wh40k-unified",
-  "title": "Warhammer 40,000 Unified \u2014 Dark Heresy, Rogue Trader, Only War",
+  "title": "Warhammer 40,000 Unified — Dark Heresy, Rogue Trader, Only War",
   "description": "A unified game system for all WH40K TTRPG lines. Supports Dark Heresy 2e, Rogue Trader, and Only War characters, vehicles, void ships, dogfighting, and Imperial Knights.",
   "version": "0.6.0",
   "compatibility": {
-    "minimum": "13",
-    "verified": "14"
+    "minimum": "12",
+    "verified": "13"
   },
   "authors": [
     {
-      "name": "Galivent"
+      "name": "Your Name Here"
     }
   ],
   "esmodules": [
@@ -79,13 +79,13 @@
       }
     }
   },
-  "url": "https://github.com/Galivent/wh40k-unified",
-  "manifest": "https://raw.githubusercontent.com/Galivent/wh40k-unified/main/system.json",
-  "download": "https://github.com/Galivent/wh40k-unified/archive/refs/heads/main.zip",
+  "url": "https://github.com/YOURUSERNAME/wh40k-unified",
+  "manifest": "https://raw.githubusercontent.com/YOURUSERNAME/wh40k-unified/main/system.json",
+  "download": "https://github.com/YOURUSERNAME/wh40k-unified/archive/refs/heads/main.zip",
   "packs": [
     {
       "name": "void-ships",
-      "label": "Void Ships \u2014 Pre-built Vessels",
+      "label": "Void Ships — Pre-built Vessels",
       "path": "packs/void-ships",
       "type": "Actor",
       "system": "wh40k-unified"
@@ -106,30 +106,51 @@
     },
     {
       "name": "dh2e-skills",
-      "label": "DH2e \u2014 Skills",
+      "label": "DH2e — Skills",
       "path": "packs/dh2e-skills",
       "type": "Item",
       "system": "wh40k-unified"
     },
     {
       "name": "dh2e-talents",
-      "label": "DH2e \u2014 Talents",
+      "label": "DH2e — Talents",
       "path": "packs/dh2e-talents",
       "type": "Item",
       "system": "wh40k-unified"
     },
     {
       "name": "dh2e-traits",
-      "label": "DH2e \u2014 Traits",
+      "label": "DH2e — Traits",
       "path": "packs/dh2e-traits",
       "type": "Item",
       "system": "wh40k-unified"
     },
     {
       "name": "dh2e-backgrounds",
-      "label": "DH2e \u2014 Backgrounds, Homeworlds & Roles",
+      "label": "DH2e — Backgrounds, Homeworlds & Roles",
       "path": "packs/dh2e-backgrounds",
       "type": "Item",
+      "system": "wh40k-unified"
+    },
+    {
+      "name": "knights",
+      "label": "Imperial Knights — Weapons, Marks & Enemies",
+      "path": "packs/knights",
+      "type": "Item",
+      "system": "wh40k-unified"
+    },
+    {
+      "name": "knights-weapons",
+      "label": "Imperial Knights — Weapons",
+      "path": "packs/knights/knight-weapons.json",
+      "type": "Item",
+      "system": "wh40k-unified"
+    },
+    {
+      "name": "knights-actors",
+      "label": "Imperial Knights — Pre-built Knights",
+      "path": "packs/knights/knight-actors.json",
+      "type": "Actor",
       "system": "wh40k-unified"
     }
   ]
