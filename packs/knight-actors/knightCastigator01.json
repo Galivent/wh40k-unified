@@ -1,0 +1,68 @@
+{
+  "_id": "knightCastigator01",
+  "name": "Knight Castigator (Cerastus)",
+  "type": "knight",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "knightMark": "castigator",
+    "chassis": "cerastus",
+    "house": "Imperial Knight House",
+    "pilot": "",
+    "faction": "imperium",
+    "houseType": "imperium",
+    "hull": {
+      "value": 70,
+      "max": 70
+    },
+    "shields": {
+      "value": 1,
+      "max": 1
+    },
+    "armour": {
+      "front": 40,
+      "side": 35,
+      "rear": 35
+    },
+    "ionShieldPR": 50,
+    "shieldFacing": "front",
+    "size": "Monumental",
+    "fearRating": 3,
+    "speed": 70,
+    "manoeuvrability": 0,
+    "movement": {
+      "half": 20,
+      "full": 40,
+      "charge": 60,
+      "run": 120
+    },
+    "vehicleTraits": "Enclosed, Environmentally Sealed, Enhanced Auspex Arrays, Fear (3), Reinforced Armour, Walker, Super-heavy, Ion Shield (PR 50), Strikedown, Armour and War-Machine",
+    "pilotWS": 45,
+    "pilotBS": 50,
+    "pilotAg": 45,
+    "pilotWP": 45,
+    "pilotFel": 35,
+    "pilotWounds": {
+      "value": 9,
+      "max": 9
+    },
+    "pilotTalents": "Lightning Reflexes, Weapon Training (Low-tech, SP, Las), Sure Strike, Called Shot, Rite of Becoming, Air of Authority, Peer (Nobility)",
+    "throneImprint": "grim",
+    "throneStatus": "content",
+    "animusType": "godmachine",
+    "statusShieldDown": false,
+    "statusPinned": false,
+    "statusOnFire": false,
+    "statusMalfunctioning": false,
+    "crit1": false,
+    "crit2": false,
+    "crit3": false,
+    "crit4": false,
+    "crit5": false,
+    "crit6": false,
+    "history": "The Knight Castigator bears the fearsome bolt cannon and elegant Tempest Warblade. Favoured by veteran Scions who form the core of Household Arbalester orders.",
+    "specialRules": "Cerastus chassis. Tempest Attack with Warblade \u2014 at Initiative 2, one automatic hit on ALL combatants in melee range. Deflagrate: each wounding hit spawns extra automatic hit."
+  },
+  "items": [],
+  "folder": null,
+  "flags": {}
+}

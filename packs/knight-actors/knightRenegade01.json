@@ -1,0 +1,68 @@
+{
+  "_id": "knightRenegade01",
+  "name": "Renegade Knight",
+  "type": "knight",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "knightMark": "renegade",
+    "chassis": "questoris",
+    "house": "Renegade / No House",
+    "pilot": "",
+    "faction": "renegade",
+    "houseType": "renegade",
+    "hull": {
+      "value": 70,
+      "max": 70
+    },
+    "shields": {
+      "value": 1,
+      "max": 1
+    },
+    "armour": {
+      "front": 40,
+      "side": 35,
+      "rear": 35
+    },
+    "ionShieldPR": 50,
+    "shieldFacing": "front",
+    "size": "Monumental",
+    "fearRating": 3,
+    "speed": 60,
+    "manoeuvrability": 0,
+    "movement": {
+      "half": 15,
+      "full": 30,
+      "charge": 45,
+      "run": 90
+    },
+    "vehicleTraits": "Enclosed, Environmentally Sealed, Enhanced Auspex Arrays, Fear (3), Reinforced Armour, Walker, Super-heavy, Ion Shield (PR 50), Strikedown, Armour and War-Machine",
+    "pilotWS": 45,
+    "pilotBS": 45,
+    "pilotAg": 35,
+    "pilotWP": 45,
+    "pilotFel": 35,
+    "pilotWounds": {
+      "value": 9,
+      "max": 9
+    },
+    "pilotTalents": "Lightning Reflexes, Sure Strike, Called Shot, Rite of Becoming",
+    "throneImprint": "sinister",
+    "throneStatus": "content",
+    "animusType": "destroyer",
+    "statusShieldDown": false,
+    "statusPinned": false,
+    "statusOnFire": false,
+    "statusMalfunctioning": false,
+    "crit1": false,
+    "crit2": false,
+    "crit3": false,
+    "crit4": false,
+    "crit5": false,
+    "crit6": false,
+    "history": "A Knight who has turned from the Emperor's light. Equipment often in poor repair, ammunition supplies exhausted, joints rusted and vulnerable. But still utterly deadly.",
+    "specialRules": "Renegade: -10 to requisition rolls for ammunition and repairs. May have random equipment malfunctions at GM's discretion (vehicle with poorly maintained weapons)."
+  },
+  "items": [],
+  "folder": null,
+  "flags": {}
+}

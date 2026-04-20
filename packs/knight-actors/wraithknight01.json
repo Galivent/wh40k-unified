@@ -1,0 +1,68 @@
+{
+  "_id": "wraithknight01",
+  "name": "Eldar Wraithknight",
+  "type": "knight",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "knightMark": "wraithknight",
+    "chassis": "other",
+    "house": "Eldar Craftworld",
+    "pilot": "Wraithbone construct (no pilot)",
+    "faction": "eldar",
+    "houseType": "renegade",
+    "hull": {
+      "value": 100,
+      "max": 100
+    },
+    "shields": {
+      "value": 1,
+      "max": 1
+    },
+    "armour": {
+      "front": 20,
+      "side": 20,
+      "rear": 20
+    },
+    "ionShieldPR": 40,
+    "shieldFacing": "front",
+    "size": "Monumental",
+    "fearRating": 4,
+    "speed": 72,
+    "manoeuvrability": 0,
+    "movement": {
+      "half": 12,
+      "full": 24,
+      "charge": 36,
+      "run": 72
+    },
+    "vehicleTraits": "From Beyond (immune to Fear/Pinning/Insanity), Auto-stabilised, Unnatural Strength[12], Unnatural Toughness[12], Unnatural Agility[2], Fear(4), Size[Monumental]",
+    "pilotWS": 55,
+    "pilotBS": 45,
+    "pilotAg": 75,
+    "pilotWP": 50,
+    "pilotFel": 26,
+    "pilotWounds": {
+      "value": 100,
+      "max": 100
+    },
+    "pilotTalents": "Ambidextrous, Assassin Strike, Blademaster, Catfall, Crushing Blow, Hard Target, True Grit, Preternatural Speed, Sprint",
+    "throneImprint": "ancient",
+    "throneStatus": "content",
+    "animusType": "none",
+    "statusShieldDown": false,
+    "statusPinned": false,
+    "statusOnFire": false,
+    "statusMalfunctioning": false,
+    "crit1": false,
+    "crit2": false,
+    "crit3": false,
+    "crit4": false,
+    "crit5": false,
+    "crit6": false,
+    "history": "A massive Eldar wraithbone construct animated by the spirit stone of a dead warrior. Virtually immune to psychological effects and phenomenally agile for its size.",
+    "specialRules": "Wounds: 100 (use Wounds, not Structural Integrity).\nShimmershield: PR 40 Force Field, overloads on 1-5.\nGhostflight: counts as Jump Pack.\nArmour: Wraithbone 20 all facings.\nFrom Beyond: immune to Fear, Pinning, and Insanity."
+  },
+  "items": [],
+  "folder": null,
+  "flags": {}
+}

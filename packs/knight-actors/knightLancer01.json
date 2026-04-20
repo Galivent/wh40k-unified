@@ -1,0 +1,68 @@
+{
+  "_id": "knightLancer01",
+  "name": "Knight Lancer (Cerastus)",
+  "type": "knight",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "knightMark": "lancer",
+    "chassis": "cerastus",
+    "house": "Imperial Knight House",
+    "pilot": "",
+    "faction": "imperium",
+    "houseType": "imperium",
+    "hull": {
+      "value": 70,
+      "max": 70
+    },
+    "shields": {
+      "value": 1,
+      "max": 1
+    },
+    "armour": {
+      "front": 40,
+      "side": 35,
+      "rear": 35
+    },
+    "ionShieldPR": 50,
+    "shieldFacing": "front",
+    "size": "Monumental",
+    "fearRating": 3,
+    "speed": 70,
+    "manoeuvrability": 0,
+    "movement": {
+      "half": 20,
+      "full": 40,
+      "charge": 60,
+      "run": 120
+    },
+    "vehicleTraits": "Enclosed, Environmentally Sealed, Enhanced Auspex Arrays, Fear (3), Reinforced Armour, Walker, Super-heavy, Ion Shield (PR 50), Strikedown, Armour and War-Machine",
+    "pilotWS": 50,
+    "pilotBS": 45,
+    "pilotAg": 45,
+    "pilotWP": 45,
+    "pilotFel": 35,
+    "pilotWounds": {
+      "value": 9,
+      "max": 9
+    },
+    "pilotTalents": "Lightning Reflexes, Weapon Training (Low-tech, SP, Las), Sure Strike, Called Shot, Rite of Becoming, Air of Authority, Peer (Nobility)",
+    "throneImprint": "bold",
+    "throneStatus": "content",
+    "animusType": "hunt",
+    "statusShieldDown": false,
+    "statusPinned": false,
+    "statusOnFire": false,
+    "statusMalfunctioning": false,
+    "crit1": false,
+    "crit2": false,
+    "crit3": false,
+    "crit4": false,
+    "crit5": false,
+    "crit6": false,
+    "history": "The Knight Lancer is the fastest Knight variant, designed for devastating charge attacks. Favoured by impetuous Scions who follow the Uhlan tradition.",
+    "specialRules": "Cerastus chassis: superior speed (70kph, 20/40/60/120 tactical). No Carapace mounting. Ion Gauntlet Shield replaces standard Ion Shield. Shock lance usable at range AND in melee."
+  },
+  "items": [],
+  "folder": null,
+  "flags": {}
+}

@@ -1,0 +1,68 @@
+{
+  "_id": "knightWarden01",
+  "name": "Knight Warden (Questoris)",
+  "type": "knight",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "knightMark": "warden",
+    "chassis": "questoris",
+    "house": "Imperial Knight House",
+    "pilot": "",
+    "faction": "imperium",
+    "houseType": "imperium",
+    "hull": {
+      "value": 70,
+      "max": 70
+    },
+    "shields": {
+      "value": 1,
+      "max": 1
+    },
+    "armour": {
+      "front": 40,
+      "side": 35,
+      "rear": 35
+    },
+    "ionShieldPR": 50,
+    "shieldFacing": "front",
+    "size": "Monumental",
+    "fearRating": 3,
+    "speed": 60,
+    "manoeuvrability": 0,
+    "movement": {
+      "half": 15,
+      "full": 30,
+      "charge": 45,
+      "run": 90
+    },
+    "vehicleTraits": "Enclosed, Environmentally Sealed, Enhanced Auspex Arrays, Fear (3), Reinforced Armour, Walker, Super-heavy, Ion Shield (PR 50), Strikedown, Armour and War-Machine",
+    "pilotWS": 45,
+    "pilotBS": 45,
+    "pilotAg": 40,
+    "pilotWP": 45,
+    "pilotFel": 35,
+    "pilotWounds": {
+      "value": 9,
+      "max": 9
+    },
+    "pilotTalents": "Lightning Reflexes, Weapon Training (Low-tech, SP, Las), Sure Strike, Called Shot, Rite of Becoming, Air of Authority, Peer (Nobility)",
+    "throneImprint": "bellicose",
+    "throneStatus": "content",
+    "animusType": "hymn",
+    "statusShieldDown": false,
+    "statusPinned": false,
+    "statusOnFire": false,
+    "statusMalfunctioning": false,
+    "crit1": false,
+    "crit2": false,
+    "crit3": false,
+    "crit4": false,
+    "crit5": false,
+    "crit6": false,
+    "history": "The Knight Warden's Avenger Gatling Cannon tears apart infantry formations while the co-axial heavy flamer ensures nothing in cover survives.",
+    "specialRules": "Carapace Mounting available. Excels at clearing infantry and storming fortifications."
+  },
+  "items": [],
+  "folder": null,
+  "flags": {}
+}

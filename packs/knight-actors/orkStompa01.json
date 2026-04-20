@@ -1,0 +1,68 @@
+{
+  "_id": "orkStompa01",
+  "name": "Ork Stompa",
+  "type": "knight",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "knightMark": "stompa",
+    "chassis": "stompa",
+    "house": "Ork Waaagh",
+    "pilot": "1 Mek + Grots",
+    "faction": "ork",
+    "houseType": "renegade",
+    "hull": {
+      "value": 200,
+      "max": 200
+    },
+    "shields": {
+      "value": 0,
+      "max": 0
+    },
+    "armour": {
+      "front": 35,
+      "side": 30,
+      "rear": 20
+    },
+    "ionShieldPR": 0,
+    "shieldFacing": "none",
+    "size": "Titanic",
+    "fearRating": 4,
+    "speed": 30,
+    "manoeuvrability": -30,
+    "movement": {
+      "half": 5,
+      "full": 10,
+      "charge": 15,
+      "run": 20
+    },
+    "vehicleTraits": "Enclosed, Environmentally Sealed, Reinforced Armour, Walker, Super-heavy, Strikedown, Damage Control, Effigy (Orks within 30m count as Fearless)",
+    "pilotWS": 48,
+    "pilotBS": 28,
+    "pilotAg": 20,
+    "pilotWP": 55,
+    "pilotFel": 30,
+    "pilotWounds": {
+      "value": 9,
+      "max": 9
+    },
+    "pilotTalents": "None of particular note",
+    "throneImprint": "bellicose",
+    "throneStatus": "content",
+    "animusType": "none",
+    "statusShieldDown": false,
+    "statusPinned": false,
+    "statusOnFire": false,
+    "statusMalfunctioning": false,
+    "crit1": false,
+    "crit2": false,
+    "crit3": false,
+    "crit4": false,
+    "crit5": false,
+    "crit6": false,
+    "history": "A massive Ork war machine of crude but devastating construction. The largest commonly encountered Ork walker, dwarfed only by Gargants.",
+    "specialRules": "Effigy: Orks within 30m count as Fearless.\nTitanic size: +40 to be hit in melee and ranged.\nCarrying Capacity: 20 Orks.\nNo Ion Shield \u2014 Orks don't do that sort of thing."
+  },
+  "items": [],
+  "folder": null,
+  "flags": {}
+}
