@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
-
+ 
 :root {
   --wh-gold: #c9a84c;
   --wh-gold-bright: #f0c060;
@@ -14,7 +14,7 @@
   --wh-blue: #4488cc;
   --wh-green: #44aa44;
 }
-
+ 
 /* ── SHEET WINDOW ── */
 .wh40k-sheet {
   font-family: 'Crimson Text', serif;
@@ -25,12 +25,12 @@
   height: 100%;
   overflow: hidden;
 }
-
+ 
 .app.sheet .window-content {
   background: var(--wh-panel);
   padding: 0;
 }
-
+ 
 /* ── HEADER ── */
 .wh40k-header {
   display: flex;
@@ -41,7 +41,7 @@
   border-bottom: 2px solid var(--wh-gold-dim);
   flex-shrink: 0;
 }
-
+ 
 .wh40k-portrait {
   width: 80px;
   height: 80px;
@@ -51,9 +51,9 @@
   flex-shrink: 0;
 }
 .wh40k-portrait:hover { border-color: var(--wh-gold); }
-
+ 
 .wh40k-header-main { flex: 1; display: flex; flex-direction: column; gap: 6px; }
-
+ 
 .wh40k-name-input {
   font-family: 'Cinzel Decorative', serif;
   font-size: 1.2rem;
@@ -66,11 +66,11 @@
   text-shadow: 0 0 12px rgba(201,168,76,0.25);
 }
 .wh40k-name-input:focus { outline: none; border-bottom-color: var(--wh-gold); }
-
+ 
 .wh40k-header-fields { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; }
-
+ 
 .wh40k-field-group { display: flex; flex-direction: column; gap: 2px; }
-
+ 
 .wh40k-field-group label {
   font-family: 'Cinzel', serif;
   font-size: 0.52rem;
@@ -78,7 +78,7 @@
   color: var(--wh-text-dim);
   text-transform: uppercase;
 }
-
+ 
 .wh40k-field-group input,
 .wh40k-field-group select {
   background: rgba(201,168,76,0.05);
@@ -88,9 +88,9 @@
   font-size: 0.7rem;
   padding: 3px 5px;
 }
-
+ 
 .wh40k-field-group select { cursor: pointer; }
-
+ 
 /* ── HEADER VITALS ── */
 .wh40k-header-vitals {
   display: flex;
@@ -99,13 +99,13 @@
   flex-shrink: 0;
   min-width: 140px;
 }
-
+ 
 .wh40k-vital-box {
   background: rgba(201,168,76,0.04);
   border: 1px solid var(--wh-border);
   padding: 5px 8px;
 }
-
+ 
 .wh40k-vital-label {
   font-family: 'Cinzel', serif;
   font-size: 0.52rem;
@@ -115,14 +115,14 @@
   display: block;
   margin-bottom: 3px;
 }
-
+ 
 .wh40k-vital-values {
   display: flex;
   align-items: center;
   gap: 4px;
   margin-bottom: 4px;
 }
-
+ 
 .wh40k-vital-values input {
   width: 42px;
   text-align: center;
@@ -133,11 +133,11 @@
   font-size: 0.85rem;
   padding: 1px 3px;
 }
-
+ 
 .wh40k-vital-values span { color: var(--wh-text-dim); }
-
+ 
 .wh40k-fate-row { display: flex; gap: 3px; }
-
+ 
 .wh40k-fate-row button {
   font-family: 'Cinzel', serif;
   font-size: 0.5rem;
@@ -150,7 +150,7 @@
   letter-spacing: 0.05em;
 }
 .wh40k-fate-row button:hover { background: rgba(201,168,76,0.15); }
-
+ 
 .wh40k-vital-box input[type="number"] {
   background: transparent;
   border: 1px solid var(--wh-border);
@@ -159,7 +159,7 @@
   font-size: 0.85rem;
   padding: 1px 3px;
 }
-
+ 
 /* ── TABS ── */
 .wh40k-tabs {
   display: flex;
@@ -169,7 +169,7 @@
   gap: 2px;
   flex-shrink: 0;
 }
-
+ 
 .wh40k-tab {
   font-family: 'Cinzel', serif;
   font-size: 0.62rem;
@@ -191,7 +191,7 @@
   background: var(--wh-panel2);
   border-bottom-color: var(--wh-panel2);
 }
-
+ 
 /* ── TAB CONTENT ── */
 .wh40k-tab-content {
   flex: 1;
@@ -201,20 +201,20 @@
   flex-direction: column;
   gap: 8px;
 }
-
+ 
 .wh40k-tab-panel {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
+ 
 /* ── LAYOUT ── */
 .wh40k-two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
-
+ 
 /* ── CARDS ── */
 .wh40k-card {
   background: rgba(201,168,76,0.02);
@@ -222,7 +222,7 @@
   padding: 8px 10px;
   position: relative;
 }
-
+ 
 .wh40k-card::before {
   content: '';
   position: absolute;
@@ -230,7 +230,7 @@
   border: 1px solid rgba(201,168,76,0.04);
   pointer-events: none;
 }
-
+ 
 .wh40k-card-title {
   font-family: 'Cinzel', serif;
   font-size: 0.6rem;
@@ -249,9 +249,9 @@
   height: 1px;
   background: linear-gradient(90deg, var(--wh-border), transparent);
 }
-
+ 
 .wh40k-card-full { grid-column: 1 / -1; }
-
+ 
 /* ── CHARACTERISTIC TABLE ── */
 .wh40k-char-table {
   width: 100%;
@@ -259,7 +259,7 @@
   font-family: 'Cinzel', serif;
   font-size: 0.65rem;
 }
-
+ 
 .wh40k-char-table th {
   color: var(--wh-gold-dim);
   letter-spacing: 0.1em;
@@ -269,12 +269,12 @@
   text-align: left;
   font-size: 0.55rem;
 }
-
+ 
 .wh40k-char-table td {
   padding: 3px 4px;
   border-bottom: 1px solid rgba(255,255,255,0.03);
 }
-
+ 
 .wh40k-char-table input {
   width: 50px;
   background: rgba(201,168,76,0.05);
@@ -285,11 +285,11 @@
   text-align: center;
   padding: 2px 3px;
 }
-
+ 
 .wh40k-char-name { color: var(--wh-text); font-size: 0.7rem; }
 .wh40k-char-total { color: var(--wh-gold); font-size: 0.8rem; font-weight: 700; text-align: center; }
 .wh40k-char-bonus { color: var(--wh-text-dim); font-size: 0.7rem; text-align: center; }
-
+ 
 /* ── BUTTONS ── */
 .wh40k-roll-btn {
   font-family: 'Cinzel', serif;
@@ -303,7 +303,7 @@
   transition: all 0.15s;
 }
 .wh40k-roll-btn:hover { background: rgba(201,168,76,0.18); }
-
+ 
 .wh40k-del-btn {
   font-size: 0.7rem;
   padding: 2px 5px;
@@ -313,7 +313,7 @@
   cursor: pointer;
 }
 .wh40k-del-btn:hover { background: rgba(139,26,26,0.2); color: var(--wh-crimson-bright); }
-
+ 
 .wh40k-add-btn {
   font-family: 'Cinzel', serif;
   font-size: 0.52rem;
@@ -325,7 +325,7 @@
   letter-spacing: 0.06em;
 }
 .wh40k-add-btn:hover { background: rgba(201,168,76,0.14); }
-
+ 
 /* ── ITEMS ── */
 .wh40k-item-table {
   width: 100%;
@@ -347,7 +347,7 @@
   border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 .wh40k-item-controls { display: flex; gap: 3px; }
-
+ 
 .wh40k-item-row {
   display: flex;
   align-items: center;
@@ -357,7 +357,7 @@
   transition: background 0.1s;
 }
 .wh40k-item-row:hover { background: rgba(201,168,76,0.03); }
-
+ 
 .wh40k-item-name {
   font-family: 'Cinzel', serif;
   font-size: 0.68rem;
@@ -366,10 +366,10 @@
   flex: 1;
 }
 .wh40k-item-name:hover { color: var(--wh-gold); }
-
+ 
 .wh40k-item-detail { font-size: 0.7rem; color: var(--wh-text-dim); font-style: italic; }
 .wh40k-item-tier { font-family: 'Cinzel', serif; font-size: 0.55rem; color: var(--wh-gold-dim); margin-left: 6px; }
-
+ 
 .wh40k-empty {
   font-style: italic;
   color: var(--wh-text-dim);
@@ -377,12 +377,12 @@
   padding: 12px;
   font-size: 0.8rem;
 }
-
+ 
 /* ── MOVEMENT / GRIDS ── */
 .wh40k-movement-grid,
 .wh40k-exp-grid,
 .wh40k-psy-row { display: flex; gap: 6px; flex-wrap: wrap; }
-
+ 
 .wh40k-move-box {
   display: flex;
   flex-direction: column;
@@ -404,7 +404,7 @@
   text-align: center;
   padding: 0;
 }
-
+ 
 .wh40k-armour-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -430,13 +430,13 @@
   font-family: 'Cinzel', serif;
   font-size: 0.8rem;
 }
-
+ 
 .wh40k-skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 6px;
 }
-
+ 
 /* ── STAT BARS ── */
 .wh40k-stat-block { margin-bottom: 8px; }
 .wh40k-stat-header {
@@ -459,7 +459,7 @@
 .wh40k-bar-fill { height: 100%; transition: width 0.3s ease; }
 .wh40k-bar-wounds  { background: linear-gradient(90deg, #5a1a1a, #cc2222); }
 .wh40k-bar-shield  { background: linear-gradient(90deg, #1a3a6a, #4488cc); }
-
+ 
 /* ── TEXTAREA ── */
 .wh40k-textarea {
   width: 100%;
@@ -475,18 +475,18 @@
 }
 .wh40k-textarea:focus { outline: none; border-color: var(--wh-gold-dim); }
 .wh40k-textarea-tall { min-height: 180px; }
-
+ 
 .wh40k-skills-notice {
   font-style: italic;
   color: var(--wh-text-dim);
   font-size: 0.78rem;
   margin-bottom: 6px;
 }
-
+ 
 /* ── SCROLLBARS ── */
 .wh40k-tab-content::-webkit-scrollbar { width: 4px; }
 .wh40k-tab-content::-webkit-scrollbar-thumb { background: var(--wh-gold-dim); }
-
+ 
 /* ── CHAT ROLL CARDS ── */
 .wh40k-roll-card {
   font-family: 'Crimson Text', serif;
@@ -494,7 +494,7 @@
   background: rgba(20,16,8,0.95);
   overflow: hidden;
 }
-
+ 
 .wh40k-roll-header {
   display: flex;
   justify-content: space-between;
@@ -503,28 +503,28 @@
   background: rgba(201,168,76,0.08);
   border-bottom: 1px solid var(--wh-gold-dim);
 }
-
+ 
 .wh40k-roll-actor {
   font-family: 'Cinzel', serif;
   font-size: 0.72rem;
   color: var(--wh-gold);
   letter-spacing: 0.08em;
 }
-
+ 
 .wh40k-roll-label {
   font-family: 'Cinzel', serif;
   font-size: 0.65rem;
   color: var(--wh-text-dim);
   letter-spacing: 0.06em;
 }
-
+ 
 .wh40k-roll-body {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 10px 12px;
 }
-
+ 
 .wh40k-roll-dice {
   font-family: 'Cinzel Decorative', serif;
   font-size: 2rem;
@@ -533,7 +533,7 @@
   min-width: 52px;
   text-align: center;
 }
-
+ 
 .wh40k-roll-details {
   display: flex;
   flex-direction: column;
@@ -541,27 +541,27 @@
   font-size: 0.85rem;
   color: #d4c49a;
 }
-
+ 
 .wh40k-success { color: #44aa44; font-weight: 600; }
 .wh40k-failure { color: #cc4444; font-weight: 600; }
 .wh40k-critical { color: #ffcc00; font-weight: 700; }
 .wh40k-fumble  { color: #ff4444; font-weight: 700; }
-
+ 
 /* ═══════════════════════════════════════════════════════
    VOID SHIP SHEET SPECIFIC STYLES
 ════════════════════════════════════════════════════════ */
-
+ 
 .wh40k-bar-hull   { background: linear-gradient(90deg, #1a5a1a, #44aa44); }
 .wh40k-bar-crew   { background: linear-gradient(90deg, #6a3a1a, #cc8844); }
 .wh40k-bar-morale { background: linear-gradient(90deg, #5a1a5a, #aa44aa); }
-
+ 
 /* Profile stat cells */
 .vs-profile-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6px;
 }
-
+ 
 .vs-stat-cell {
   background: rgba(201,168,76,0.04);
   border: 1px solid rgba(201,168,76,0.1);
@@ -570,7 +570,7 @@
   flex-direction: column;
   gap: 2px;
 }
-
+ 
 .vs-stat-label {
   font-family: 'Cinzel', serif;
   font-size: 0.52rem;
@@ -578,7 +578,7 @@
   color: var(--wh-text-dim);
   text-transform: uppercase;
 }
-
+ 
 .vs-stat-cell input {
   font-family: 'Cinzel Decorative', serif;
   font-size: 1.1rem;
@@ -589,17 +589,17 @@
   padding: 0;
 }
 .vs-stat-cell input:focus { outline: none; }
-
+ 
 .vs-stat-unit {
   font-size: 0.58rem;
   color: var(--wh-text-dim);
   font-family: 'Cinzel', serif;
 }
-
+ 
 /* Weapon table status */
 .vs-weapon-row.vs-status-damaged td { background: rgba(200,136,0,0.07); }
 .vs-weapon-row.vs-status-destroyed td { background: rgba(139,26,26,0.1); opacity: 0.55; }
-
+ 
 .vs-status-dot {
   width: 8px;
   height: 8px;
@@ -611,7 +611,7 @@
 .vs-dot-ok        { background: #44aa44; box-shadow: 0 0 4px #44aa44; }
 .vs-dot-damaged   { background: #cc8800; box-shadow: 0 0 4px #cc8800; }
 .vs-dot-destroyed { background: #cc2222; box-shadow: 0 0 4px #cc2222; }
-
+ 
 /* Component list */
 .vs-component-list {
   display: flex;
@@ -620,7 +620,7 @@
   max-height: 260px;
   overflow-y: auto;
 }
-
+ 
 .vs-comp-row {
   display: flex;
   align-items: center;
@@ -630,7 +630,7 @@
   transition: all 0.12s;
 }
 .vs-comp-row:hover { border-color: rgba(201,168,76,0.15); background: rgba(201,168,76,0.02); }
-
+ 
 .vs-comp-name {
   flex: 1;
   background: transparent;
@@ -662,14 +662,14 @@
   padding: 1px 3px;
   width: 80px;
 }
-
+ 
 /* Combat action buttons */
 .vs-action-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6px;
 }
-
+ 
 .vs-action-btn {
   display: flex;
   flex-direction: column;
@@ -682,14 +682,14 @@
   transition: all 0.15s;
   text-align: left;
 }
-
+ 
 .vs-action-btn:hover { background: rgba(201,168,76,0.09); border-color: var(--wh-gold-dim); }
-
+ 
 .vs-action-primary { border-color: rgba(201,168,76,0.2); }
 .vs-action-danger  { border-color: rgba(139,26,26,0.4); }
 .vs-action-danger:hover { background: rgba(139,26,26,0.12); border-color: var(--wh-crimson-bright); }
 .vs-action-neutral { border-color: var(--wh-border); }
-
+ 
 .vs-action-icon { font-size: 1rem; }
 .vs-action-name {
   font-family: 'Cinzel', serif;
@@ -704,7 +704,7 @@
   color: var(--wh-text-dim);
   font-style: italic;
 }
-
+ 
 /* Status checkboxes */
 .vs-status-check {
   display: flex;
@@ -721,11 +721,11 @@
 }
 .vs-status-check:hover { border-color: var(--wh-gold-dim); color: var(--wh-text); }
 .vs-status-check input[type="checkbox"] { accent-color: var(--wh-gold); }
-
+ 
 /* ═══════════════════════════════════════════════════════
    VOID BATTLE MAP
 ════════════════════════════════════════════════════════ */
-
+ 
 .vb-app {
   display: flex;
   flex-direction: column;
@@ -734,10 +734,10 @@
   color: #f2e4c0;
   font-family: 'Crimson Text', serif;
 }
-
+ 
 #void-battle-app.app { background: #050408 !important; }
 #void-battle-app .window-content { background: transparent !important; padding: 0 !important; }
-
+ 
 .vb-header {
   display: flex;
   align-items: center;
@@ -747,7 +747,7 @@
   border-bottom: 1px solid #7a5f2a;
   flex-shrink: 0;
 }
-
+ 
 .vb-title {
   font-family: 'Cinzel Decorative', serif;
   font-size: 0.85rem;
@@ -756,7 +756,7 @@
   text-shadow: 0 0 12px rgba(212,168,64,0.3);
   white-space: nowrap;
 }
-
+ 
 .vb-header-center {
   display: flex;
   align-items: center;
@@ -764,7 +764,7 @@
   flex: 1;
   justify-content: center;
 }
-
+ 
 .vb-round-label {
   font-family: 'Cinzel', serif;
   font-size: 0.65rem;
@@ -772,7 +772,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-
+ 
 .vb-round-num {
   font-family: 'Cinzel Decorative', serif;
   font-size: 1.2rem;
@@ -780,14 +780,14 @@
   min-width: 30px;
   text-align: center;
 }
-
+ 
 .vb-initiative {
   font-family: 'Cinzel', serif;
   font-size: 0.65rem;
   color: #c0a060;
   letter-spacing: 0.08em;
 }
-
+ 
 .vb-btn {
   font-family: 'Cinzel', serif;
   font-size: 0.6rem;
@@ -798,19 +798,19 @@
   cursor: pointer;
   transition: all 0.15s;
 }
-
+ 
 .vb-btn-gold {
   border-color: #7a5f2a;
   color: #d4a840;
 }
 .vb-btn-gold:hover { background: rgba(212,168,64,0.15); }
-
+ 
 .vb-btn-danger {
   border-color: #5a1a1a;
   color: #cc4444;
 }
 .vb-btn-danger:hover { background: rgba(139,26,26,0.2); color: #dd3333; }
-
+ 
 /* Body layout */
 .vb-body {
   display: grid;
@@ -818,7 +818,7 @@
   flex: 1;
   overflow: hidden;
 }
-
+ 
 /* Left panel */
 .vb-left {
   border-right: 1px solid #2a2015;
@@ -829,7 +829,7 @@
   overflow-y: auto;
   background: rgba(0,0,0,0.3);
 }
-
+ 
 .vb-section-title {
   font-family: 'Cinzel', serif;
   font-size: 0.58rem;
@@ -840,7 +840,7 @@
   padding-bottom: 3px;
   margin-top: 4px;
 }
-
+ 
 .vb-ship-select {
   width: 100%;
   background: rgba(212,168,64,0.06);
@@ -850,7 +850,7 @@
   font-size: 0.62rem;
   padding: 4px 6px;
 }
-
+ 
 .vb-stat-block {
   background: rgba(212,168,64,0.03);
   border: 1px solid #2a2015;
@@ -858,11 +858,11 @@
   font-size: 0.75rem;
   min-height: 80px;
 }
-
+ 
 .vb-stat-empty { color: #7a6a4a; font-style: italic; font-size: 0.72rem; }
-
+ 
 .vb-actions { display: flex; flex-direction: column; gap: 3px; }
-
+ 
 .vb-action {
   font-family: 'Cinzel', serif;
   font-size: 0.58rem;
@@ -876,15 +876,15 @@
   text-align: left;
   transition: all 0.12s;
 }
-
+ 
 .vb-action:hover { background: rgba(212,168,64,0.1); color: #d4a840; border-color: #7a5f2a; }
 .vb-action-primary { border-left: 2px solid #7a5f2a; }
 .vb-action-danger { border-left: 2px solid #8b1a1a; color: #cc6666; }
 .vb-action-danger:hover { background: rgba(139,26,26,0.15); color: #dd3333; border-color: #8b1a1a; }
 .vb-action-neutral { border-left: 2px solid #2a2015; color: #7a6a4a; }
-
+ 
 .vb-dice-row { display: flex; gap: 5px; }
-
+ 
 .vb-die {
   flex: 1;
   font-family: 'Cinzel', serif;
@@ -898,7 +898,7 @@
   transition: all 0.15s;
 }
 .vb-die:hover { background: rgba(212,168,64,0.18); }
-
+ 
 .vb-dice-result {
   font-family: 'Cinzel Decorative', serif;
   font-size: 1.8rem;
@@ -908,21 +908,21 @@
   min-height: 2.2rem;
   padding: 4px 0;
 }
-
+ 
 /* Map */
 .vb-map-wrap {
   position: relative;
   overflow: hidden;
   background: #050408;
 }
-
+ 
 #vb-canvas {
   width: 100%;
   height: 100%;
   display: block;
   cursor: crosshair;
 }
-
+ 
 .vb-map-legend {
   position: absolute;
   bottom: 8px;
@@ -938,7 +938,7 @@
   padding: 4px 12px;
   border: 1px solid #2a2015;
 }
-
+ 
 /* Right panel */
 .vb-right {
   border-left: 1px solid #2a2015;
@@ -948,7 +948,7 @@
   gap: 6px;
   background: rgba(0,0,0,0.3);
 }
-
+ 
 .vb-log {
   flex: 1;
   overflow-y: auto;
@@ -956,7 +956,7 @@
   flex-direction: column;
   gap: 4px;
 }
-
+ 
 .vb-log-entry {
   font-size: 0.75rem;
   line-height: 1.5;
@@ -965,20 +965,20 @@
   color: #c0a060;
   font-style: italic;
 }
-
+ 
 .vb-log-entry b { color: #d4a840; font-style: normal; }
 .vb-log-entry .vb-hit { color: #dd3333; font-weight: 700; }
 .vb-log-entry .vb-success { color: #44aa44; }
-
+ 
 .vb-log::-webkit-scrollbar { width: 3px; }
 .vb-log::-webkit-scrollbar-thumb { background: #7a5f2a; }
 .vb-left::-webkit-scrollbar { width: 3px; }
 .vb-left::-webkit-scrollbar-thumb { background: #7a5f2a; }
-
+ 
 /* ═══════════════════════════════════════════════════════
    CRITICAL DAMAGE TABLE
 ════════════════════════════════════════════════════════ */
-
+ 
 .vct-app {
   display: flex;
   flex-direction: column;
@@ -987,10 +987,10 @@
   color: #f2e4c0;
   font-family: 'Crimson Text', serif;
 }
-
+ 
 #void-crit-table.app { background: #141008 !important; }
 #void-crit-table .window-content { background: transparent !important; padding: 0 !important; }
-
+ 
 .vct-header {
   display: flex;
   align-items: center;
@@ -1000,14 +1000,14 @@
   background: linear-gradient(180deg, #1a1308 0%, transparent 100%);
   flex-shrink: 0;
 }
-
+ 
 .vct-title {
   font-family: 'Cinzel Decorative', serif;
   font-size: 0.85rem;
   color: #d4a840;
   letter-spacing: 0.1em;
 }
-
+ 
 .vct-roll-btn {
   font-family: 'Cinzel', serif;
   font-size: 0.65rem;
@@ -1020,14 +1020,14 @@
   transition: all 0.15s;
 }
 .vct-roll-btn:hover { background: rgba(212,168,64,0.25); }
-
+ 
 .vct-result {
   padding: 10px 14px;
   background: rgba(212,168,64,0.06);
   border-bottom: 2px solid #d4a840;
   flex-shrink: 0;
 }
-
+ 
 .vct-result-roll {
   font-family: 'Cinzel', serif;
   font-size: 0.65rem;
@@ -1036,26 +1036,26 @@
   text-transform: uppercase;
   margin-bottom: 2px;
 }
-
+ 
 .vct-result-name {
   font-family: 'Cinzel Decorative', serif;
   font-size: 1rem;
   color: #d4a840;
   margin-bottom: 4px;
 }
-
+ 
 .vct-result-effect {
   font-size: 0.88rem;
   color: #f2e4c0;
   line-height: 1.5;
 }
-
+ 
 .vct-table {
   flex: 1;
   overflow-y: auto;
   padding: 6px 0;
 }
-
+ 
 .vct-row {
   display: flex;
   align-items: flex-start;
@@ -1065,15 +1065,15 @@
   cursor: pointer;
   transition: background 0.12s;
 }
-
+ 
 .vct-row:hover { background: rgba(212,168,64,0.06); }
-
+ 
 .vct-row-active { background: rgba(212,168,64,0.1) !important; border-left: 2px solid #d4a840; }
-
+ 
 .vct-row-catastrophic { background: rgba(139,26,26,0.08); }
 .vct-row-catastrophic:hover { background: rgba(139,26,26,0.15); }
 .vct-row-catastrophic .vct-entry-name { color: #dd3333 !important; }
-
+ 
 .vct-num {
   font-family: 'Cinzel Decorative', serif;
   font-size: 1rem;
@@ -1083,9 +1083,9 @@
   flex-shrink: 0;
   line-height: 1.4;
 }
-
+ 
 .vct-entry { display: flex; flex-direction: column; gap: 1px; }
-
+ 
 .vct-entry-name {
   font-family: 'Cinzel', serif;
   font-size: 0.65rem;
@@ -1093,21 +1093,21 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-
+ 
 .vct-entry-effect {
   font-size: 0.78rem;
   color: #c0a060;
   line-height: 1.4;
   font-style: italic;
 }
-
+ 
 .vct-table::-webkit-scrollbar { width: 4px; }
 .vct-table::-webkit-scrollbar-thumb { background: #7a5f2a; }
-
+ 
 /* ═══════════════════════════════════════════════════════
    VEHICLE SHEET
 ════════════════════════════════════════════════════════ */
-
+ 
 /* Armour facing layout */
 .veh-armour-layout {
   display: flex;
@@ -1116,15 +1116,15 @@
   gap: 4px;
   padding: 8px;
 }
-
+ 
 .veh-facing-top, .veh-facing-bot { display: flex; justify-content: center; }
-
+ 
 .veh-facing-mid {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-
+ 
 .veh-facing-box {
   display: flex;
   flex-direction: column;
@@ -1135,7 +1135,7 @@
   padding: 8px 12px;
   min-width: 60px;
 }
-
+ 
 .veh-facing-box span {
   font-family: 'Cinzel', serif;
   font-size: 0.55rem;
@@ -1143,7 +1143,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
-
+ 
 .veh-facing-box input {
   font-family: 'Cinzel Decorative', serif;
   font-size: 1.3rem;
@@ -1153,19 +1153,19 @@
   width: 50px;
   text-align: center;
 }
-
+ 
 .veh-body-icon {
   font-size: 2rem;
   filter: grayscale(100%) brightness(0.6);
 }
-
+ 
 /* Crit track */
 .veh-crit-track {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 5px;
 }
-
+ 
 .veh-crit-box {
   display: flex;
   flex-direction: column;
@@ -1177,20 +1177,20 @@
   cursor: pointer;
   transition: all 0.12s;
 }
-
+ 
 .veh-crit-box:hover { border-color: #7a5f2a; }
-
+ 
 .veh-crit-taken {
   background: rgba(139,26,26,0.15) !important;
   border-color: #8b1a1a !important;
 }
-
+ 
 .veh-crit-num {
   font-family: 'Cinzel Decorative', serif;
   font-size: 1rem;
   color: #d4a840;
 }
-
+ 
 .veh-crit-name {
   font-family: 'Cinzel', serif;
   font-size: 0.48rem;
@@ -1200,9 +1200,9 @@
   text-align: center;
   line-height: 1.3;
 }
-
+ 
 .veh-crit-taken .veh-crit-name { color: #dd3333; }
-
+ 
 /* Battle buttons on void ship combat tab */
 .vs-battle-buttons {
   display: flex;
@@ -1210,7 +1210,7 @@
   margin-top: 8px;
   grid-column: 1 / -1;
 }
-
+ 
 .vs-battle-open-btn {
   flex: 1;
   font-family: 'Cinzel', serif;
@@ -1224,29 +1224,29 @@
   cursor: pointer;
   transition: all 0.15s;
 }
-
+ 
 .vs-battle-open-btn:hover { background: rgba(68,136,204,0.2); }
-
+ 
 .vs-crit-btn {
   border-color: #8b1a1a;
   color: #dd3333;
   background: rgba(139,26,26,0.06);
 }
-
+ 
 .vs-crit-btn:hover { background: rgba(139,26,26,0.18); }
-
+ 
 /* ═══════════════════════════════════════════════════════
    COLONY SHEET
 ════════════════════════════════════════════════════════ */
-
+ 
 .wh40k-colony .col-header { align-items: flex-start; }
-
+ 
 .col-portrait {
   width: 90px;
   height: 90px;
   flex-shrink: 0;
 }
-
+ 
 /* Status flags in header */
 .col-status-flags {
   display: flex;
@@ -1255,7 +1255,7 @@
   min-width: 140px;
   flex-shrink: 0;
 }
-
+ 
 .col-flag-title {
   font-family: 'Cinzel', serif;
   font-size: 0.55rem;
@@ -1266,7 +1266,7 @@
   border-bottom: 1px solid #2a2015;
   padding-bottom: 3px;
 }
-
+ 
 .col-flag {
   display: flex;
   align-items: center;
@@ -1280,30 +1280,30 @@
   cursor: pointer;
   transition: all 0.12s;
 }
-
+ 
 .col-flag:hover { border-color: #3a3020; }
-
+ 
 .col-flag-active {
   color: #dd3333;
   border-color: #5a1a1a !important;
   background: rgba(139,26,26,0.1);
 }
-
+ 
 .col-flag input[type="checkbox"] { accent-color: #dd3333; }
-
+ 
 /* Development Tracks */
 .col-track-list { display: flex; flex-direction: column; gap: 10px; }
-
+ 
 .col-track { display: flex; flex-direction: column; gap: 3px; }
-
+ 
 .col-track-header {
   display: flex;
   align-items: center;
   gap: 6px;
 }
-
+ 
 .col-track-icon { font-size: 0.9rem; flex-shrink: 0; }
-
+ 
 .col-track-name {
   font-family: 'Cinzel', serif;
   font-size: 0.65rem;
@@ -1312,7 +1312,7 @@
   text-transform: uppercase;
   flex: 1;
 }
-
+ 
 .col-track-values {
   display: flex;
   align-items: center;
@@ -1321,7 +1321,7 @@
   font-size: 0.65rem;
   color: #c0a060;
 }
-
+ 
 .col-track-values input {
   width: 42px;
   text-align: center;
@@ -1332,7 +1332,7 @@
   font-size: 0.75rem;
   padding: 1px 3px;
 }
-
+ 
 .col-track-bar {
   height: 8px;
   background: rgba(255,255,255,0.04);
@@ -1340,26 +1340,26 @@
   overflow: hidden;
   position: relative;
 }
-
+ 
 .col-track-fill {
   height: 100%;
   transition: width 0.4s ease;
 }
-
+ 
 .col-fill-infrastructure { background: linear-gradient(90deg, #1a3a6a, #4488cc); }
 .col-fill-military        { background: linear-gradient(90deg, #5a1a1a, #cc3333); }
 .col-fill-morale          { background: linear-gradient(90deg, #3a1a5a, #8844cc); }
 .col-fill-trade           { background: linear-gradient(90deg, #3a3010, #ccaa22); }
 .col-fill-security        { background: linear-gradient(90deg, #1a3a1a, #33aa33); }
 .col-fill-loyalty         { background: linear-gradient(90deg, #3a2010, #cc8822); }
-
+ 
 .col-track-desc {
   font-size: 0.72rem;
   color: #7a6a4a;
   font-style: italic;
   padding-left: 22px;
 }
-
+ 
 /* Profit Factor */
 .col-pf-display {
   display: flex;
@@ -1367,7 +1367,7 @@
   gap: 12px;
   padding: 6px 0;
 }
-
+ 
 .col-pf-value input {
   font-family: 'Cinzel Decorative', serif;
   font-size: 2rem;
@@ -1378,9 +1378,9 @@
   width: 70px;
   text-align: center;
 }
-
+ 
 .col-pf-bar-wrap { flex: 1; }
-
+ 
 .col-pf-bar {
   height: 10px;
   background: rgba(255,255,255,0.04);
@@ -1388,13 +1388,13 @@
   overflow: hidden;
   margin-bottom: 3px;
 }
-
+ 
 .col-pf-fill {
   height: 100%;
   background: linear-gradient(90deg, #7a5f2a, #d4a840, #f5c842);
   transition: width 0.4s;
 }
-
+ 
 .col-pf-labels {
   display: flex;
   justify-content: space-between;
@@ -1402,14 +1402,14 @@
   font-size: 0.5rem;
   color: #7a6a4a;
 }
-
+ 
 /* Resources */
 .col-resource-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
-
+ 
 .col-resource-box {
   background: rgba(212,168,64,0.04);
   border: 1px solid #2a2015;
@@ -1418,9 +1418,9 @@
   flex-direction: column;
   gap: 4px;
 }
-
+ 
 .col-res-icon { font-size: 1.1rem; }
-
+ 
 .col-res-name {
   font-family: 'Cinzel', serif;
   font-size: 0.58rem;
@@ -1428,7 +1428,7 @@
   color: #c0a060;
   text-transform: uppercase;
 }
-
+ 
 .col-res-values {
   display: flex;
   align-items: center;
@@ -1437,7 +1437,7 @@
   font-size: 0.75rem;
   color: #7a6a4a;
 }
-
+ 
 .col-res-values input {
   width: 40px;
   text-align: center;
@@ -1448,17 +1448,17 @@
   font-size: 0.85rem;
   padding: 1px 3px;
 }
-
+ 
 .col-bar-food       { background: linear-gradient(90deg, #2a4a10, #66bb33); }
 .col-bar-materials  { background: linear-gradient(90deg, #2a2a10, #aaaa33); }
 .col-bar-wealth     { background: linear-gradient(90deg, #3a2a00, #ddaa00); }
 .col-bar-influence  { background: linear-gradient(90deg, #2a1a3a, #8855cc); }
 .col-bar-medicae    { background: linear-gradient(90deg, #001a2a, #0088cc); }
 .col-bar-personnel  { background: linear-gradient(90deg, #2a1a10, #cc7744); }
-
+ 
 /* Upkeep */
 .col-upkeep-grid { display: flex; flex-direction: column; gap: 6px; }
-
+ 
 .col-upkeep-row {
   display: flex;
   align-items: center;
@@ -1469,7 +1469,7 @@
   padding: 4px 0;
   border-bottom: 1px solid rgba(255,255,255,0.04);
 }
-
+ 
 .col-upkeep-row input {
   width: 45px;
   text-align: center;
@@ -1481,7 +1481,7 @@
   padding: 2px;
   margin-left: auto;
 }
-
+ 
 /* Buildings */
 .col-building-grid {
   display: grid;
@@ -1489,7 +1489,7 @@
   gap: 8px;
   padding: 4px 0;
 }
-
+ 
 .col-building-card {
   background: rgba(212,168,64,0.04);
   border: 1px solid #2a2015;
@@ -1499,24 +1499,24 @@
   gap: 5px;
   transition: border-color 0.12s;
 }
-
+ 
 .col-building-card:hover { border-color: #7a5f2a; }
-
+ 
 .col-building-active      { border-left: 3px solid #44aa44; }
 .col-building-damaged     { border-left: 3px solid #cc8800; background: rgba(200,136,0,0.05); }
 .col-building-destroyed   { border-left: 3px solid #cc2222; opacity: 0.6; }
 .col-building-constructing{ border-left: 3px solid #4488cc; }
-
+ 
 .col-building-top {
   display: flex;
   align-items: flex-start;
   gap: 6px;
 }
-
+ 
 .col-building-icon { font-size: 1.2rem; flex-shrink: 0; }
-
+ 
 .col-building-info { flex: 1; display: flex; flex-direction: column; gap: 3px; }
-
+ 
 .col-building-name-input {
   background: transparent;
   border: none;
@@ -1527,7 +1527,7 @@
   width: 100%;
   letter-spacing: 0.06em;
 }
-
+ 
 .col-building-type, .col-building-status-sel {
   background: rgba(212,168,64,0.05);
   border: 1px solid #2a2015;
@@ -1536,7 +1536,7 @@
   font-size: 0.52rem;
   padding: 1px 3px;
 }
-
+ 
 .col-building-bonus input,
 .col-building-desc input {
   background: transparent;
@@ -1548,7 +1548,7 @@
   font-style: italic;
   width: 100%;
 }
-
+ 
 /* Quick preset buttons */
 .col-preset-grid {
   display: grid;
@@ -1556,7 +1556,7 @@
   gap: 5px;
   padding: 4px 0;
 }
-
+ 
 .col-preset-btn {
   font-family: 'Cinzel', serif;
   font-size: 0.58rem;
@@ -1569,16 +1569,16 @@
   transition: all 0.12s;
   text-align: center;
 }
-
+ 
 .col-preset-btn:hover {
   background: rgba(212,168,64,0.12);
   color: #d4a840;
   border-color: #7a5f2a;
 }
-
+ 
 /* Factions */
 .col-faction-list { display: flex; flex-direction: column; gap: 5px; }
-
+ 
 .col-faction-row {
   display: flex;
   align-items: center;
@@ -1587,23 +1587,23 @@
   border: 1px solid transparent;
   transition: all 0.12s;
 }
-
+ 
 .col-faction-row:hover { border-color: #3a3020; background: rgba(212,168,64,0.02); }
-
+ 
 .col-faction-standing-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   flex-shrink: 0;
 }
-
+ 
 .col-standing-allied    { background: #4488ff; box-shadow: 0 0 5px #4488ff; }
 .col-standing-friendly  { background: #44aa44; box-shadow: 0 0 5px #44aa44; }
 .col-standing-neutral   { background: #888888; }
 .col-standing-unfriendly{ background: #cc8800; box-shadow: 0 0 5px #cc8800; }
 .col-standing-hostile   { background: #cc2222; box-shadow: 0 0 5px #cc2222; }
 .col-standing-at_war    { background: #ff0000; box-shadow: 0 0 8px #ff0000; }
-
+ 
 .col-faction-name {
   flex: 1;
   background: transparent;
@@ -1615,7 +1615,7 @@
   letter-spacing: 0.06em;
   min-width: 0;
 }
-
+ 
 .col-faction-standing-sel {
   background: rgba(212,168,64,0.05);
   border: 1px solid #2a2015;
@@ -1625,9 +1625,9 @@
   padding: 2px 4px;
   width: 100px;
 }
-
+ 
 .col-faction-val-wrap { display: flex; align-items: center; gap: 6px; }
-
+ 
 .col-faction-val {
   width: 45px;
   text-align: center;
@@ -1638,15 +1638,15 @@
   font-size: 0.7rem;
   padding: 1px 3px;
 }
-
+ 
 .col-faction-bar-wrap { width: 80px; }
-
+ 
 .col-faction-bar {
   height: 4px;
   background: rgba(255,255,255,0.05);
   overflow: hidden;
 }
-
+ 
 .col-faction-fill { height: 100%; transition: width 0.3s; }
 .col-standing-fill-allied     { background: #4488ff; }
 .col-standing-fill-friendly   { background: #44aa44; }
@@ -1654,7 +1654,7 @@
 .col-standing-fill-unfriendly { background: #cc8800; }
 .col-standing-fill-hostile    { background: #cc2222; }
 .col-standing-fill-at_war     { background: #ff0000; }
-
+ 
 .col-faction-notes {
   flex: 1;
   background: transparent;
@@ -1666,10 +1666,10 @@
   font-style: italic;
   min-width: 0;
 }
-
+ 
 /* Events */
 .col-event-list { display: flex; flex-direction: column; gap: 8px; max-height: 400px; overflow-y: auto; }
-
+ 
 .col-event-card {
   border: 1px solid #2a2015;
   padding: 8px 10px;
@@ -1677,17 +1677,17 @@
   flex-direction: column;
   gap: 5px;
 }
-
+ 
 .col-event-minor    { border-left: 3px solid #888888; }
 .col-event-major    { border-left: 3px solid #cc8800; background: rgba(200,136,0,0.04); }
 .col-event-critical { border-left: 3px solid #cc2222; background: rgba(139,26,26,0.06); }
-
+ 
 .col-event-header {
   display: flex;
   align-items: center;
   gap: 6px;
 }
-
+ 
 .col-event-name {
   flex: 1;
   background: transparent;
@@ -1698,7 +1698,7 @@
   font-size: 0.65rem;
   letter-spacing: 0.06em;
 }
-
+ 
 .col-event-footer {
   display: flex;
   align-items: center;
@@ -1706,7 +1706,7 @@
   font-family: 'Cinzel', serif;
   font-size: 0.55rem;
 }
-
+ 
 .col-event-footer input {
   background: transparent;
   border: 1px solid #3a3020;
@@ -1715,10 +1715,10 @@
   font-size: 0.6rem;
   padding: 2px 4px;
 }
-
+ 
 /* Event table */
 .col-event-table { display: flex; flex-direction: column; gap: 1px; font-size: 0.72rem; }
-
+ 
 .col-et-row {
   display: flex;
   gap: 8px;
@@ -1726,7 +1726,7 @@
   border-bottom: 1px solid rgba(255,255,255,0.03);
   align-items: baseline;
 }
-
+ 
 .col-et-num {
   font-family: 'Cinzel', serif;
   font-size: 0.58rem;
@@ -1734,7 +1734,7 @@
   min-width: 38px;
   flex-shrink: 0;
 }
-
+ 
 .col-et-name {
   font-family: 'Cinzel', serif;
   font-size: 0.6rem;
@@ -1742,18 +1742,18 @@
   min-width: 130px;
   flex-shrink: 0;
 }
-
+ 
 .col-et-effect { color: #c0a060; font-style: italic; }
-
+ 
 .col-et-bad     { background: rgba(200,100,0,0.05); }
 .col-et-bad .col-et-name { color: #cc8844; }
 .col-et-crisis  { background: rgba(139,26,26,0.08); }
 .col-et-crisis .col-et-name { color: #dd3333; }
-
+ 
 /* ═══════════════════════════════════════════════════════
    PLANET VISUALISATION
 ════════════════════════════════════════════════════════ */
-
+ 
 .col-planet-wrap {
   display: flex;
   justify-content: center;
@@ -1762,19 +1762,19 @@
   background: #05040a;
   border: 1px solid #2a2015;
 }
-
+ 
 #col-planet-canvas {
   display: block;
   max-width: 100%;
 }
-
+ 
 /* ═══════════════════════════════════════════════════════
    REGIMENT SHEET
 ════════════════════════════════════════════════════════ */
-
+ 
 .rgt-bar-strength { background: linear-gradient(90deg, #1a5a1a, #44aa44); }
 .rgt-bar-morale   { background: linear-gradient(90deg, #3a1a5a, #8844cc); }
-
+ 
 .rgt-nato-preview {
   background: #141008;
   border: 1px solid #2a2015;
@@ -1783,5 +1783,165 @@
   align-items: center;
   padding: 8px;
 }
-
+ 
 #rgt-nato-canvas { display: block; }
+ 
+/* ═══════════════════════════════════════════════════════
+   KNIGHT SHEET
+════════════════════════════════════════════════════════ */
+ 
+.kn-shield-facing {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  color: #c0a060;
+  margin-top: 3px;
+}
+ 
+.kn-facing-sel {
+  background: rgba(212,168,64,0.08);
+  border: 1px solid #3a3020;
+  color: #d4a840;
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  padding: 1px 4px;
+}
+ 
+.kn-stat-note {
+  font-size: 0.62rem;
+  color: #7a6a4a;
+  font-style: italic;
+}
+ 
+.kn-traits-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+ 
+.kn-trait-ref {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 0;
+}
+ 
+.kn-trait-item {
+  font-size: 0.75rem;
+  color: #c0a060;
+  line-height: 1.5;
+  padding: 3px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+ 
+.kn-trait-item b { color: #f2e4c0; }
+ 
+/* Weapon reference table */
+.kn-ref-table { font-size: 0.58rem !important; }
+.kn-ref-table td { padding: 2px 5px !important; }
+ 
+/* Machine Spirit */
+.kn-spirit-display {
+  min-height: 30px;
+  padding: 4px 0;
+}
+ 
+.kn-spirit-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  color: #d4a840;
+  margin-bottom: 3px;
+}
+ 
+.kn-spirit-effect {
+  font-size: 0.75rem;
+  color: #c0a060;
+  font-style: italic;
+}
+ 
+.kn-spirit-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+ 
+.kn-st-row {
+  display: flex;
+  gap: 10px;
+  padding: 4px 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  align-items: baseline;
+}
+ 
+.kn-st-num {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.9rem;
+  color: #d4a840;
+  min-width: 18px;
+  flex-shrink: 0;
+}
+ 
+.kn-st-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  color: #f2e4c0;
+  min-width: 160px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+ 
+.kn-st-effect {
+  font-size: 0.72rem;
+  color: #c0a060;
+  font-style: italic;
+  line-height: 1.4;
+}
+ 
+/* ═══════════════════════════════════════════════════════
+   IMPERIAL KNIGHT SHEET
+════════════════════════════════════════════════════════ */
+ 
+.knight-rules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 4px 0;
+}
+ 
+.knight-rule-box {
+  background: rgba(212,168,64,0.03);
+  border: 1px solid #2a2015;
+  border-left: 3px solid #7a5f2a;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+ 
+.knight-rule-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  color: #d4a840;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+ 
+.knight-rule-text {
+  font-family: 'Crimson Text', serif;
+  font-size: 0.78rem;
+  color: #c0a060;
+  line-height: 1.4;
+}
+ 
+.knight-spirit-box {
+  background: rgba(212,168,64,0.04);
+  border: 1px solid #3a3020;
+  padding: 8px 10px;
+  font-family: 'Crimson Text', serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-top: 6px;
+}
