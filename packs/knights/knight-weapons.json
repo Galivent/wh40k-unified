@@ -1,0 +1,382 @@
+[
+  {
+    "_id": "kw001",
+    "name": "RF Battlecannon",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Main Arm / Questoris",
+      "facing": "Front/Swivel",
+      "power": 0,
+      "space": 0,
+      "damage": "3d10+10 X",
+      "penetration": 8,
+      "rof": "S/2/-",
+      "clip": "48",
+      "range": 750,
+      "qualities": "Blast[10], Concussive[3], Reliable",
+      "status": "ok",
+      "description": "The Knight Paladin's primary weapon. Rapid-fire battle cannon equally effective vs infantry, vehicles, and artillery at long range."
+    }
+  },
+  {
+    "_id": "kw002",
+    "name": "Thermal Cannon",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Main Arm / Questoris",
+      "facing": "Front/Swivel",
+      "power": 0,
+      "space": 0,
+      "damage": "3d10+20 E",
+      "penetration": 15,
+      "rof": "S/-/-",
+      "clip": "48",
+      "range": 100,
+      "qualities": "Melta, Blast[8]",
+      "status": "ok",
+      "description": "The Knight Errant's signature weapon. At half range counts as Melta. Melts tanks and bunkers with contemptuous ease."
+    }
+  },
+  {
+    "_id": "kw003",
+    "name": "Avenger Gatling Cannon",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Main Arm / Questoris",
+      "facing": "Front/Swivel",
+      "power": 0,
+      "space": 0,
+      "damage": "2d10+8 R",
+      "penetration": 8,
+      "rof": "-/-/12",
+      "clip": "1200",
+      "range": 225,
+      "qualities": "Razor Sharp",
+      "status": "ok",
+      "description": "The Knight Warden's gatling cannon. Spits out a wall of large-calibre shells at terrifying rate of fire."
+    }
+  },
+  {
+    "_id": "kw004",
+    "name": "Co-axial Heavy Stubber",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Co-axial / Questoris",
+      "facing": "Co-axial with main weapon",
+      "power": 0,
+      "space": 0,
+      "damage": "1d10+4 I",
+      "penetration": 3,
+      "rof": "-/-/8",
+      "clip": "600",
+      "range": 150,
+      "qualities": "Reliable",
+      "status": "ok",
+      "description": "Mounted co-axially with the main arm weapon. Provides anti-infantry fire while main cannon engages armour."
+    }
+  },
+  {
+    "_id": "kw005",
+    "name": "Co-axial Heavy Flamer",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Co-axial / Questoris",
+      "facing": "Co-axial with main weapon",
+      "power": 0,
+      "space": 0,
+      "damage": "1d10+4 E",
+      "penetration": 4,
+      "rof": "S/-/-",
+      "clip": "N/A",
+      "range": 30,
+      "qualities": "Flame, Spray, Ignores Cover",
+      "status": "ok",
+      "description": "Mounted co-axially with the Avenger Gatling Cannon. Ensures infantry in cover cannot escape the Knight Warden's fury."
+    }
+  },
+  {
+    "_id": "kw006",
+    "name": "Torso Heavy Stubber",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Torso Mount / Questoris",
+      "facing": "Torso (wide arc)",
+      "power": 0,
+      "space": 0,
+      "damage": "1d10+4 I",
+      "penetration": 3,
+      "rof": "-/-/8",
+      "clip": "600",
+      "range": 150,
+      "qualities": "Reliable",
+      "status": "ok",
+      "description": "Torso-mounted stubber for cutting down infantry approaching the Knight."
+    }
+  },
+  {
+    "_id": "kw007",
+    "name": "Torso Meltagun",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Torso Mount / Questoris",
+      "facing": "Torso (wide arc)",
+      "power": 0,
+      "space": 0,
+      "damage": "2d10+4 E",
+      "penetration": 12,
+      "rof": "S/-/-",
+      "clip": "N/A",
+      "range": 30,
+      "qualities": "Melta",
+      "status": "ok",
+      "description": "Torso-mounted meltagun. At half range gains Melta. Devastating against anything that gets too close."
+    }
+  },
+  {
+    "_id": "kw008",
+    "name": "Reaper Chainsword",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Melee / Questoris",
+      "facing": "Melee",
+      "power": 0,
+      "space": 0,
+      "damage": "3d10+30 R",
+      "penetration": 20,
+      "rof": "Melee",
+      "clip": "—",
+      "range": 0,
+      "qualities": "Tearing, Razor-sharp, Unbalanced, Felling[10], Destroyer[3]",
+      "status": "ok",
+      "description": "A massive chainsaw blade. Can rip apart super-heavy tanks and monster creatures. Destroyer[3] — every 2 DoS adds 1d10 damage (max +3d10). RF on 9-10."
+    }
+  },
+  {
+    "_id": "kw009",
+    "name": "Thunderstrike Gauntlet",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Melee / Questoris",
+      "facing": "Melee",
+      "power": 0,
+      "space": 0,
+      "damage": "4d10+30 E",
+      "penetration": 20,
+      "rof": "Melee",
+      "clip": "—",
+      "range": 0,
+      "qualities": "Unwieldy, Power Field, Hurl, Felling[10], Destroyer[4]",
+      "status": "ok",
+      "description": "A crackling power fist that can crush tanks and hurl destroyed vehicles at nearby enemies. Destroyer[4], Hurl special rule."
+    }
+  },
+  {
+    "_id": "kw010",
+    "name": "Ironstorm Missile Pod",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Carapace / Questoris",
+      "facing": "Carapace (360°)",
+      "power": 0,
+      "space": 0,
+      "damage": "2d10+6 X",
+      "penetration": 6,
+      "rof": "S/-/-",
+      "clip": "6",
+      "range": 300,
+      "qualities": "Blast[10], Carapace — Questoris only",
+      "status": "ok",
+      "description": "Carapace-mounted missile pod. Blasts infantry and light vehicles across wide areas."
+    }
+  },
+  {
+    "_id": "kw011",
+    "name": "Stormspear Rocket Pod",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Carapace / Questoris",
+      "facing": "Carapace (360°)",
+      "power": 0,
+      "space": 0,
+      "damage": "3d10+10 X",
+      "penetration": 8,
+      "rof": "-/3/-",
+      "clip": "18",
+      "range": 600,
+      "qualities": "Carapace — Questoris only",
+      "status": "ok",
+      "description": "Carapace-mounted rocket salvo. Devastating against armoured targets at range."
+    }
+  },
+  {
+    "_id": "kw012",
+    "name": "Icarus Autocannon",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Carapace / Questoris",
+      "facing": "Carapace (360°)",
+      "power": 0,
+      "space": 0,
+      "damage": "3d10+8 I",
+      "penetration": 6,
+      "rof": "-/2/-",
+      "clip": "600",
+      "range": 300,
+      "qualities": "Skyfire, Twin-linked, Carapace — Questoris only",
+      "status": "ok",
+      "description": "Anti-air autocannon. Skyfire — fires at normal BS against airborne targets. Twin-linked for reliability."
+    }
+  },
+  {
+    "_id": "kw013",
+    "name": "Cerastus Shock Lance",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Main / Cerastus Lancer",
+      "facing": "Front/Swivel",
+      "power": 0,
+      "space": 0,
+      "damage": "3d10+8 E",
+      "penetration": 10,
+      "rof": "S/3/6",
+      "clip": "—",
+      "range": 60,
+      "qualities": "Shocking — also usable as melee: 3d10+30 E Pen 20, Power Field, Shocking, Felling[10], Destroyer[3]",
+      "status": "ok",
+      "description": "The Lancer's signature weapon — a crackling energy lance usable at range or in close combat."
+    }
+  },
+  {
+    "_id": "kw014",
+    "name": "Ion Gauntlet Shield",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Shield / Cerastus Lancer",
+      "facing": "Front/Left/Right (not Rear)",
+      "power": 0,
+      "space": 0,
+      "damage": "1d10 E",
+      "penetration": 6,
+      "rof": "Melee",
+      "clip": "—",
+      "range": 0,
+      "qualities": "Defensive, Power Field, Gauntlet Field (PR 35 vs melee, -10 WS to enemy super-heavies in melee)",
+      "status": "ok",
+      "description": "The Lancer's shield-gauntlet. PR 35 force field in melee that cannot overload normally. Cannot be used alongside a standard Ion Shield."
+    }
+  },
+  {
+    "_id": "kw015",
+    "name": "Castigator Pattern Bolt Cannon",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Main Arm / Cerastus Castigator",
+      "facing": "Front/Swivel",
+      "power": 0,
+      "space": 0,
+      "damage": "3d10+6 X",
+      "penetration": 8,
+      "rof": "-/-/8",
+      "clip": "1200",
+      "range": 120,
+      "qualities": "Tearing, Twin-linked",
+      "status": "ok",
+      "description": "A massive bolt cannon that obliterates infantry formations and light vehicles. Twin-linked for reliability."
+    }
+  },
+  {
+    "_id": "kw016",
+    "name": "Cerastus Tempest Warblade",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Melee / Cerastus Castigator",
+      "facing": "Melee",
+      "power": 0,
+      "space": 0,
+      "damage": "4d10+10 E",
+      "penetration": 15,
+      "rof": "Melee",
+      "clip": "—",
+      "range": 0,
+      "qualities": "Balanced, Power Field, Deflagrate, Tempest Attack",
+      "status": "ok",
+      "description": "An elegant power warblade. Tempest Attack: at Initiative 2, auto-hits ALL melee targets. Deflagrate: each wounding hit causes one extra automatic hit."
+    }
+  },
+  {
+    "_id": "kw017",
+    "name": "Acheron Pattern Flame Cannon",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Main Arm / Cerastus Acheron",
+      "facing": "Front/Swivel",
+      "power": 0,
+      "space": 0,
+      "damage": "3d10+8 E",
+      "penetration": 8,
+      "rof": "S/-/-",
+      "clip": "48",
+      "range": 60,
+      "qualities": "Flame, Spray, Ignores Cover",
+      "status": "ok",
+      "description": "A massive flame cannon that scours entire areas. Ignores Cover — targets in any cover gain no benefit."
+    }
+  },
+  {
+    "_id": "kw018",
+    "name": "Reaper Chainfist",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Melee / Cerastus Acheron",
+      "facing": "Melee",
+      "power": 0,
+      "space": 0,
+      "damage": "4d10+30 R",
+      "penetration": 20,
+      "rof": "Melee",
+      "clip": "—",
+      "range": 0,
+      "qualities": "Unwieldy, Tearing, Destroyer[5], Razor Sharp, Felling[10], Machine Destroyer",
+      "status": "ok",
+      "description": "A titanic chainsaw fist of exceptional destructive power. Destroyer[5] — the most powerful melee weapon available to Knights. Machine Destroyer: Proven[5] vs vehicles."
+    }
+  },
+  {
+    "_id": "kw019",
+    "name": "Inbuilt Twin-linked Heavy Bolters",
+    "type": "vehiclecomponent",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "componentType": "Built-in / Cerastus Acheron",
+      "facing": "Front",
+      "power": 0,
+      "space": 0,
+      "damage": "2d10+2 X",
+      "penetration": 5,
+      "rof": "-/-/6",
+      "clip": "600",
+      "range": 150,
+      "qualities": "Tearing, Twin-linked",
+      "status": "ok",
+      "description": "Built into the Reaper Chainfist of the Acheron Knight. Provides anti-infantry fire support at close range."
+    }
+  }
+]
