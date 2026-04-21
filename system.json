@@ -2,10 +2,10 @@
   "id": "wh40k-unified",
   "title": "Warhammer 40,000 Unified — Dark Heresy, Rogue Trader, Only War",
   "description": "A unified game system for all WH40K TTRPG lines. Supports Dark Heresy 2e, Rogue Trader, and Only War characters, vehicles, void ships, dogfighting, and Imperial Knights.",
-  "version": "0.7.0",
+  "version": "0.6.2",
   "compatibility": {
-    "minimum": "13",
-    "verified": "14"
+    "minimum": "12",
+    "verified": "13"
   },
   "authors": [
     {
@@ -140,16 +140,16 @@
       "system": "wh40k-unified"
     },
     {
-      "name": "knights-weapons",
+      "name": "knight-weapons",
       "label": "Imperial Knights — Weapons",
-      "path": "packs/knights/knight-weapons.json",
+      "path": "packs/knight-weapons",
       "type": "Item",
       "system": "wh40k-unified"
     },
     {
-      "name": "knights-actors",
+      "name": "knight-actors",
       "label": "Imperial Knights — Pre-built Knights",
-      "path": "packs/knights/knight-actors.json",
+      "path": "packs/knight-actors",
       "type": "Actor",
       "system": "wh40k-unified"
     }
