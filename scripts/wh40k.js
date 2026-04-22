@@ -1,3 +1,9 @@
+// WH40K Unified — Foundry v13/v14 compatibility aliases
+const ActorSheet  = foundry?.appv1?.sheets?.ActorSheet  ?? globalThis.ActorSheet;
+const ItemSheet   = foundry?.appv1?.sheets?.ItemSheet   ?? globalThis.ItemSheet;
+const ActorSheets = foundry?.documents?.collections?.Actors ?? globalThis.Actors;
+const ItemSheets  = foundry?.documents?.collections?.Items  ?? globalThis.Items;
+ 
 // WH40K Unified — all classes defined first, init hook at bottom
  
 class WH40KRoll {
@@ -2327,41 +2333,35 @@ Hooks.once("ready", () => {
 Hooks.once("init", () => {
   console.log("WH40K Unified | Initialising the Imperium's finest systems...");
  
-  // v13 compatibility
-  const _Actors = foundry?.documents?.collections?.Actors ?? Actors;
-  const _Items  = foundry?.documents?.collections?.Items  ?? Items;
-  const _ActorSheet = foundry?.appv1?.sheets?.ActorSheet ?? ActorSheet;
-  const _ItemSheet  = foundry?.appv1?.sheets?.ItemSheet  ?? ItemSheet;
- 
-  // Register all sheets
-  _Actors.unregisterSheet("core", _ActorSheet);
-  _Actors.registerSheet("wh40k-unified", WH40KCharacterSheet, {
+  // Register all sheets (using top-level compat aliases)
+  ActorSheets.unregisterSheet("core", ActorSheet);
+  ActorSheets.registerSheet("wh40k-unified", WH40KCharacterSheet, {
     types: ["character"], makeDefault: true, label: "Character Sheet"
   });
-  _Actors.registerSheet("wh40k-unified", WH40KNPCSheet, {
+  ActorSheets.registerSheet("wh40k-unified", WH40KNPCSheet, {
     types: ["npc"], makeDefault: true, label: "NPC Sheet"
   });
-  _Actors.registerSheet("wh40k-unified", WH40KVoidShipSheet, {
+  ActorSheets.registerSheet("wh40k-unified", WH40KVoidShipSheet, {
     types: ["voidship"], makeDefault: true, label: "Void Ship Sheet"
   });
-  _Actors.registerSheet("wh40k-unified", WH40KVehicleSheet, {
+  ActorSheets.registerSheet("wh40k-unified", WH40KVehicleSheet, {
     types: ["vehicle"], makeDefault: true, label: "Vehicle Sheet"
   });
-  _Actors.registerSheet("wh40k-unified", WH40KKnightSheet, {
+  ActorSheets.registerSheet("wh40k-unified", WH40KKnightSheet, {
     types: ["knight"], makeDefault: true, label: "Imperial Knight Sheet"
   });
-  _Actors.registerSheet("wh40k-unified", WH40KFighterSheet, {
+  ActorSheets.registerSheet("wh40k-unified", WH40KFighterSheet, {
     types: ["fighter"], makeDefault: true, label: "Fighter Sheet"
   });
-  _Actors.registerSheet("wh40k-unified", WH40KColonySheet, {
+  ActorSheets.registerSheet("wh40k-unified", WH40KColonySheet, {
     types: ["colony"], makeDefault: true, label: "Colony Sheet"
   });
-  _Actors.registerSheet("wh40k-unified", WH40KRegimentSheet, {
+  ActorSheets.registerSheet("wh40k-unified", WH40KRegimentSheet, {
     types: ["regiment"], makeDefault: true, label: "Regiment Sheet"
   });
  
-  _Items.unregisterSheet("core", _ItemSheet);
-  _Items.registerSheet("wh40k-unified", WH40KItemSheet, {
+  ItemSheets.unregisterSheet("core", ItemSheet);
+  ItemSheets.registerSheet("wh40k-unified", WH40KItemSheet, {
     makeDefault: true, label: "Item Sheet"
   });
  
