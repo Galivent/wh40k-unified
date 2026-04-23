@@ -84,62 +84,6 @@
   "download": "https://github.com/Galivent/wh40k-unified/archive/refs/heads/main.zip",
   "packs": [
     {
-      "name": "void-ships",
-      "label": "Void Ships — Pre-built Vessels",
-      "path": "packs/void-ships",
-      "type": "Actor",
-      "system": "wh40k-unified"
-    },
-    {
-      "name": "ship-weapons",
-      "label": "Ship Weapons",
-      "path": "packs/ship-weapons",
-      "type": "Item",
-      "system": "wh40k-unified"
-    },
-    {
-      "name": "ship-components",
-      "label": "Ship Components",
-      "path": "packs/ship-components",
-      "type": "Item",
-      "system": "wh40k-unified"
-    },
-    {
-      "name": "dh2e-skills",
-      "label": "DH2e — Skills",
-      "path": "packs/dh2e-skills",
-      "type": "Item",
-      "system": "wh40k-unified"
-    },
-    {
-      "name": "dh2e-talents",
-      "label": "DH2e — Talents",
-      "path": "packs/dh2e-talents",
-      "type": "Item",
-      "system": "wh40k-unified"
-    },
-    {
-      "name": "dh2e-traits",
-      "label": "DH2e — Traits",
-      "path": "packs/dh2e-traits",
-      "type": "Item",
-      "system": "wh40k-unified"
-    },
-    {
-      "name": "dh2e-backgrounds",
-      "label": "DH2e — Backgrounds, Homeworlds & Roles",
-      "path": "packs/dh2e-backgrounds",
-      "type": "Item",
-      "system": "wh40k-unified"
-    },
-    {
-      "name": "knights",
-      "label": "Imperial Knights — Weapons, Marks & Enemies",
-      "path": "packs/knights",
-      "type": "Item",
-      "system": "wh40k-unified"
-    },
-    {
       "name": "knight-weapons",
       "label": "Imperial Knights — Weapons",
       "path": "packs/knight-weapons",
