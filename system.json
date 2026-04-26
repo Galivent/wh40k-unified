@@ -1,0 +1,164 @@
+{
+  "id": "wh40k-unified",
+  "title": "Warhammer 40,000 Unified \u2014 Dark Heresy, Rogue Trader, Only War",
+  "description": "A unified game system for all WH40K TTRPG lines.",
+  "version": "0.8.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "Galivent"
+    }
+  ],
+  "esmodules": [
+    "scripts/wh40k.js"
+  ],
+  "styles": [
+    "styles/wh40k.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": {
+        "label": "Character"
+      },
+      "npc": {
+        "label": "NPC"
+      },
+      "voidship": {
+        "label": "Void Ship"
+      },
+      "vehicle": {
+        "label": "Vehicle"
+      },
+      "knight": {
+        "label": "Imperial Knight"
+      },
+      "fighter": {
+        "label": "Fighter / Bomber"
+      },
+      "colony": {
+        "label": "Colony"
+      },
+      "regiment": {
+        "label": "Regiment / Military Unit"
+      }
+    },
+    "Item": {
+      "weapon": {
+        "label": "Weapon"
+      },
+      "armour": {
+        "label": "Armour"
+      },
+      "gear": {
+        "label": "Gear"
+      },
+      "talent": {
+        "label": "Talent"
+      },
+      "trait": {
+        "label": "Trait"
+      },
+      "psychicpower": {
+        "label": "Psychic Power"
+      },
+      "shipcomponent": {
+        "label": "Ship Component"
+      },
+      "vehiclecomponent": {
+        "label": "Vehicle Component"
+      }
+    }
+  },
+  "packs": [
+    {
+      "name": "knight-weapons",
+      "label": "Knights \u2014 Weapons",
+      "path": "packs/knight-weapons.db",
+      "type": "Item",
+      "system": "wh40k-unified"
+    },
+    {
+      "name": "knight-actors",
+      "label": "Knights \u2014 Pre-built Knights",
+      "path": "packs/knight-actors.db",
+      "type": "Actor",
+      "system": "wh40k-unified"
+    },
+    {
+      "name": "void-ships",
+      "label": "Void Ships \u2014 Pre-built Vessels",
+      "path": "packs/void-ships.db",
+      "type": "Actor",
+      "system": "wh40k-unified"
+    },
+    {
+      "name": "dh2e-skills",
+      "label": "DH2e \u2014 Skills",
+      "path": "packs/dh2e-skills.db",
+      "type": "Item",
+      "system": "wh40k-unified"
+    },
+    {
+      "name": "dh2e-talents",
+      "label": "DH2e \u2014 Talents",
+      "path": "packs/dh2e-talents.db",
+      "type": "Item",
+      "system": "wh40k-unified"
+    },
+    {
+      "name": "dh2e-traits",
+      "label": "DH2e \u2014 Traits",
+      "path": "packs/dh2e-traits.db",
+      "type": "Item",
+      "system": "wh40k-unified"
+    },
+    {
+      "name": "dh2e-backgrounds",
+      "label": "DH2e \u2014 Backgrounds, Homeworlds, Roles",
+      "path": "packs/dh2e-backgrounds.db",
+      "type": "Item",
+      "system": "wh40k-unified"
+    },
+    {
+      "name": "only-war-backgrounds",
+      "label": "Only War \u2014 Regiments & Specialisations",
+      "path": "packs/only-war-backgrounds.db",
+      "type": "Item",
+      "system": "wh40k-unified"
+    },
+    {
+      "name": "only-war-talents",
+      "label": "Only War \u2014 Talents",
+      "path": "packs/only-war-talents.db",
+      "type": "Item",
+      "system": "wh40k-unified"
+    },
+    {
+      "name": "rogue-trader-backgrounds",
+      "label": "Rogue Trader \u2014 Backgrounds & Roles",
+      "path": "packs/rogue-trader-backgrounds.db",
+      "type": "Item",
+      "system": "wh40k-unified"
+    },
+    {
+      "name": "rogue-trader-talents",
+      "label": "Rogue Trader \u2014 Talents",
+      "path": "packs/rogue-trader-talents.db",
+      "type": "Item",
+      "system": "wh40k-unified"
+    }
+  ],
+  "url": "https://github.com/Galivent/wh40k-unified",
+  "manifest": "https://raw.githubusercontent.com/Galivent/wh40k-unified/main/system.json",
+  "download": "https://github.com/Galivent/wh40k-unified/archive/refs/heads/main.zip"
+}
